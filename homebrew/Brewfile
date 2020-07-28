@@ -1,0 +1,82 @@
+
+
+# Taps
+tap 'buo/cask-upgrade'
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-drivers'
+tap 'homebrew/bundle'
+tap 'homebrew/cask-versions'
+
+# Binaries
+brew 'ghq'
+brew 'git'
+brew 'mackup'
+brew 'mas'
+brew 'wget'
+brew 'zsh'
+
+# Development
+brew 'composer'
+brew 'mariadb'
+brew 'mysql'
+brew 'node'
+brew 'npm'
+brew 'php'
+brew 'php@7.2'
+brew 'php@7.3'
+brew 'yarn'
+
+# Other
+brew 'youtube-dl'
+
+# Apps
+cask '1password'
+cask '1password-cli'
+cask 'alfred'
+cask 'android-file-transfer'
+cask 'bartender'
+cask 'cleanmymac'
+cask 'craftmanager'
+cask 'dash'
+cask 'discord'
+cask 'docker'
+cask 'dropbox'
+cask 'firefox'
+cask 'flux'
+cask 'garmin-express'
+cask 'grammarly'
+cask 'insomnia'
+cask 'iterm2'
+cask 'moom'
+cask 'notion'
+cask 'obs'
+cask 'sketch'
+cask 'sketch-toolbox'
+cask 'skype'
+cask 'slack'
+cask 'spotify'
+cask 'tableplus'
+cask 'telegram'
+cask 'tower'
+cask 'visual-studio-code'
+cask 'visual-studio-code-insiders'
+cask 'zoomus'
+
+# Fonts
+cask 'font-cascadia-mono'
+cask 'font-courier-prime-code'
+cask 'font-fira-code'
+cask 'font-hack'
+cask 'font-ibm-plex'
+cask 'font-input'
+cask 'font-jetbrains-mono'
+cask 'font-victor-mono'
+
+# Mac App Store
+mas 'Annotate', id: 918207447
+mas 'LittleIpsum', id: 405772121
+mas 'Numbers', id: 409203825
+mas 'Pages', id:409201541
+mas 'Todoist', id: 585829637
+mas 'Xcode', id: 497799835

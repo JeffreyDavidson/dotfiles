@@ -19,3 +19,8 @@
 - shell:
     - description: install homebrew
       command: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+- brewfile:
+    file: homebrew/Brewfile
+    stdout: true
+    stderr: true
