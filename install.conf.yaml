@@ -24,3 +24,7 @@
     file: homebrew/Brewfile
     stdout: true
     stderr: true
+
+- shell:
+    - description: changing shells
+      command: sudo chsh -s /bin/zsh jeffreydavidson
