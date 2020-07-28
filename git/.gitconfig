@@ -1,0 +1,49 @@
+[alias]
+    gs = git status
+    gb = git branch
+    gl = git log
+    gco = git checkout
+    gcom = git checkout master
+    gaa = git add .
+    gc = git commit -m
+    diff = git diff
+    commit = git add . && git commit -m
+    gp = git push
+    force = git push --force
+    nah = git reset --hard && git clean -df
+    pop = git stash pop
+    push = git push
+    pull = git pull
+    resolve = git add . && git commit --no-edit
+    stash = git stash -u
+    unstage = git restore --staged .
+    wip = git add . && git commit -m 'wip'
+    aliases = config --get-regexp alias
+
+    # Remove branches that have already been merged with master
+    # a.k.a. ‘delete merged’
+    dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+[core]
+    excludesfile = ~/.gitignore_global
+
+[user]
+    email = jeffrey.davidson@outlook.com
+    name = Jeffrey Davidson
+
+[gitflow "branch"]
+    master  = master
+    develop = development
+
+[gitflow "prefix"]
+    feature    = feature/
+    release    = release/
+    hotfix     = hotfix/
+    support    = support/
+    versiontag = v
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
