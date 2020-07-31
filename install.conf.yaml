@@ -25,6 +25,9 @@
     stdout: true
     stderr: true
 
+- link:
+    ~/.zshrc: zsh/.zshrc
+
 - shell:
     - description: changing shells
       command: sudo chsh -s /bin/zsh jeffreydavidson
