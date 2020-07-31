@@ -28,3 +28,6 @@
 - shell:
     - description: changing shells
       command: sudo chsh -s /bin/zsh jeffreydavidson
+
+- ghq:
+    - jeffreydavidson/ringside
