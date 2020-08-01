@@ -1,0 +1,16 @@
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+# Terminal stuff
+antigen bundle git
+antigen bundle vscode
+
+# Node stuff
+antigen bundle node
+antigen bundle npm
+
+# Set the theme
+antigen theme dstufft
+
+# Tell Antigen that you're done.
+antigen apply
