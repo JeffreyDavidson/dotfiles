@@ -8,4 +8,4 @@ source $ZSH_BASE/custom/aliases.zsh
 source $ZSH_BASE/custom/plugins/antigen/antigen.zsh
 
 # Load Antigen configurations
-antigen init ~/zsh/.antigenrc
+antigen init $ZSH_BASE/.antigenrc
