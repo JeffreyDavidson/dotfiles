@@ -9,6 +9,6 @@
 	path = submodules/dotbot-ghq
 	url = https://github.com/klane/dotbot-ghq.git
 	ignore = dirty
-[submodule "zsh/plugins/antigen"]
-	path = zsh/plugins/antigen
+[submodule "zsh/custom/plugins/antigen"]
+	path = zsh/custom/plugins/antigen
 	url = https://github.com/zsh-users/antigen.git
