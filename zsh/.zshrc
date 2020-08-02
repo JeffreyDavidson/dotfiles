@@ -1,8 +1,10 @@
 # .zshrc
 ZSH_BASE=$HOME/dotfiles/zsh # Base directory for ZSH configuration
 
-# ALIASES
+# Load Aliases
 source $ZSH_BASE/custom/aliases.zsh
+
+# Load Paths
 source $ZSH_BASE/custom/path.zsh
 
 # Load Antigen
