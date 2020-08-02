@@ -10,11 +10,13 @@
 
 - shell:
     - [git submodule update --init --recursive, Updating submodules]
+    - [mkdir -p ~/.composer, Create global composer folder]
 
 - link:
     ~/.hushlogin: .hushlogin
     ~/.gitconfig: git/.gitconfig
     ~/.gitignore: git/.gitignore_global
+    ~/.composer/composer.json: composer/composer.json
 
 - shell:
     - description: install homebrew
@@ -31,6 +33,8 @@
 - shell:
     - description: changing shells
       command: sudo chsh -s /bin/zsh jeffreydavidson
+    - description: installing composer packages globally
+      command: composer global install
 
 - ghq:
     - jeffreydavidson/ringside
