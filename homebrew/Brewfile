@@ -45,6 +45,7 @@ cask 'dropbox'
 cask 'firefox'
 cask 'flux'
 cask 'garmin-express'
+cask 'google-chrome
 cask 'grammarly'
 cask 'insomnia'
 cask 'iterm2'
