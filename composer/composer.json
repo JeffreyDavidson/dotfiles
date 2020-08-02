@@ -1,0 +1,8 @@
+{
+    "require": {
+        "laravel/installer": "^3.1",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "phpunit/phpunit": "^9.1",
+        "tightenco/tlint": "^3.0"
+    }
+}
