@@ -40,3 +40,7 @@
     - jeffreydavidson/ringside
     - jeffreydavidson/jeffreydavidson.net
     - jeffreydavidson/cassandradavidsonflautist.com
+
+- shell:
+    - description: move repositories to correct location
+      command: mv ~/ghq/github.com/jeffreydavidson/ ~/Projects/ && rm -rf ~/ghq
