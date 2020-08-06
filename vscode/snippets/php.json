@@ -1,0 +1,17 @@
+{
+  "Public Method": {
+    "prefix": "pubmet",
+    "body": ["public function $1()", "{", "\t$2", "}"],
+    "description": "New public method."
+  },
+  "Constructor": {
+    "prefix": "con",
+    "body": ["public function __construct()", "{", "", "}"],
+    "description": "Creates a constructor method."
+  },
+  "Protected Method": {
+    "prefix": "promet",
+    "body": ["protected function $1()", "{", "\t$2", "}"],
+    "description": "Creates a protected method."
+  }
+}

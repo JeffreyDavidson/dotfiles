@@ -1,0 +1,83 @@
+{
+    "editor.fontSize": 14,
+    "editor.fontFamily": "'OperatorMono-BookItalic', 'Jetbrains Mono', Monaco, 'Courier New', monospace",
+    "editor.minimap.enabled": false,
+    "editor.tabCompletion": "on",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.formatOnPaste": true,
+    "editor.letterSpacing": 1,
+    "editor.fontLigatures": true,
+    "editor.renderWhitespace": "all",
+    "editor.scrollBeyondLastLine": false,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 120,
+    "editor.tokenColorCustomizations": {},
+    "editor.cursorBlinking": "solid",
+    "editor.lineHeight": 24,
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "workbench.statusBar.visible": false,
+    "workbench.activityBar.visible": false,
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.colorTheme": "GitHub Dark",
+    "workbench.settings.editor": "ui",
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.perEditorGroup": true,
+    "workbench.editor.limit.value": 5,
+    "workbench.editor.showTabs": true,
+    "workbench.colorCustomizations": {
+        "[Community Material Theme High Contrast]": {
+            "editor.wordHighlightBackground": "#1f2d30",
+            "editor.wordHighlightBorder": "#1f2d30",
+            "editor.wordHighlightStrongBackground": "#1f2d30",
+            "editor.wordHighlightStrongBorder": "#1f2d30",
+            "editorBracketMatch.border": "#1f2d30",
+            "editorBracketMatch.background": "#1f2d30",
+            "scrollbarSlider.background": "#ffffff22",
+            "editorOverviewRuler.bracketMatchForeground": "#0000",
+            "editorOverviewRuler.errorForeground": "#0000",
+            "editorOverviewRuler.warningForeground": "#0000",
+            "editorOverviewRuler.infoForeground": "#0000",
+            "editor.background": "#141e20"
+        }
+    },
+    "explorer.openEditors.visible": 0,
+    "files.trimTrailingWhitespace": true,
+    "files.associations": {
+        "*.blade.php": "html"
+    },
+    "php-cs-fixer.config": ".php_cs.laravel;.php_cs;.php_cs.dist;",
+    "php-cs-fixer.executablePath": "php-cs-fixer",
+    "php-cs-fixer.lastDownload": 1579008133609,
+    "php-cs-fixer.autoFixBySemicolon": true,
+    "php-cs-fixer.onsave": true,
+    "phpConstructor.visibility": "public",
+    "terminal.integrated.lineHeight": 1.125,
+    "terminal.integrated.shell.osx": "zsh",
+    "terminal.integrated.scrollback": 5000,
+    "terminal.integrated.fontSize": 14,
+    "terminal.external.osxExec": "iTerm.app",
+    "window.zoomLevel": 1,
+    "sync.gist": "79e844de264c416cbe36748896569714",
+    "sync.quietSync": false,
+    "breadcrumbs.enabled": false,
+    "git.enabled": false,
+    "prettier.disableLanguages": [
+        "vue",
+        "php",
+        "blade"
+    ],
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2
+    },
+    "[php]": {
+        "editor.defaultFormatter": "junstyle.php-cs-fixer"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}
