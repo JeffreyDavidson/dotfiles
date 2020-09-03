@@ -59,9 +59,7 @@ cask 'slack'
 cask 'spotify'
 cask 'tableplus'
 cask 'telegram'
-cask 'tower'
 cask 'visual-studio-code'
-cask 'visual-studio-code-insiders'
 cask 'zoomus'
 
 # Fonts
