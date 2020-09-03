@@ -14,13 +14,3 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 if [[ -d "/Applications/Visual Studio Code.app" ]];
     then export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH";
 fi
-
-# Add visual studio code insiders to PATH
-if [[ -d "/Applications/Visual Studio Code - Insiders.app" ]];
-    then export PATH="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin:$PATH";
-fi
-
-# Add tower to PATH
-if [[ -d "/Applications/Tower.app" ]];
-    then export PATH="/Applications/Tower.app/Contents/Resources/app/bin:$PATH";
-fi
