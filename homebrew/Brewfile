@@ -18,21 +18,13 @@ brew 'zsh'
 
 # Development
 brew 'composer'
-brew 'mariadb'
 brew 'mysql'
 brew 'node'
 brew 'npm'
 brew 'php'
-brew 'php@7.2'
-brew 'php@7.3'
-brew 'yarn'
-
-# Other
-brew 'youtube-dl'
 
 # Apps
 cask '1password'
-cask '1password-cli'
 cask 'alfred'
 cask 'android-file-transfer'
 cask 'bartender'
@@ -43,7 +35,6 @@ cask 'discord'
 cask 'docker'
 cask 'dropbox'
 cask 'firefox'
-cask 'flux'
 cask 'garmin-express'
 cask 'google-chrome'
 cask 'grammarly'
