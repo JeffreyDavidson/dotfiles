@@ -1,5 +1,3 @@
-
-
 # Taps
 tap 'buo/cask-upgrade'
 tap 'homebrew/cask'
@@ -18,9 +16,6 @@ brew 'zsh'
 
 # Development
 brew 'composer'
-brew 'mysql'
-brew 'node'
-brew 'npm'
 brew 'php'
 
 # Apps
@@ -30,7 +25,6 @@ cask 'android-file-transfer'
 cask 'bartender'
 cask 'cleanmymac'
 cask 'craftmanager'
-cask 'dash'
 cask 'discord'
 cask 'docker'
 cask 'dropbox'
@@ -51,7 +45,7 @@ cask 'spotify'
 cask 'tableplus'
 cask 'telegram'
 cask 'visual-studio-code'
-cask 'zoomus'
+cask 'zoom'
 
 # Fonts
 cask 'font-cascadia-mono'
