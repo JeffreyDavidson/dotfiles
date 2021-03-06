@@ -35,12 +35,3 @@
       command: sudo chsh -s /bin/zsh jeffreydavidson
     - description: installing composer packages globally
       command: composer global install
-
-- ghq:
-    - jeffreydavidson/ringside
-    - jeffreydavidson/jeffreydavidson.net
-    - jeffreydavidson/cassandradavidsonflautist.com
-
-- shell:
-    - description: move repositories to correct location
-      command: mv ~/ghq/github.com/jeffreydavidson/ ~/Projects/ && rm -rf ~/ghq
