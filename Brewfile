@@ -39,7 +39,7 @@ brew 'composer'
 brew 'node'
 brew 'npm'
 brew 'php'
-†
+
 # DevOps
 cask 'docker'
 
@@ -105,6 +105,17 @@ cask 'focusrite-control'
 #############################################################
 # MacOS-Specific Stuff                                      #
 #############################################################
+
+# Fonts
+tap 'homebrew/cask-fonts'
+cask 'font-cascadia-mono'
+cask 'font-courier-prime-code'
+cask 'font-fira-code'
+cask 'font-hack'
+cask 'font-input'
+cask 'font-jetbrains-mono'
+cask 'font-meslo-lg-nerd-font'
+cask 'font-victor-mono'
 
 # Mac OS Mods and Improvements
 cask 'alfred'
