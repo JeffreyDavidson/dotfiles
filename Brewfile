@@ -108,4 +108,7 @@ cask 'istat-menus'
 cask 'raycast'
 cask 'the-unarchiver'
 
+# Mac App Store
+mas 'Todoist', id: 585829637
+
 # EOF
