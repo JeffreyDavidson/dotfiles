@@ -7,6 +7,7 @@ tap 'homebrew/bundle'
 
 # CLI Essentials
 brew 'bat'
+brew 'bat-extras'
 brew 'eza'
 brew 'fortune'
 brew 'git'
