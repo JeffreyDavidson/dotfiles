@@ -1,5 +1,6 @@
 # Set Variables
 export HOMEBREW_CASK_OPTS="--no quarantine"
+export NULLCMD=bat
 
 # Create Aliases
 alias ls='eza -lAFh --git'
