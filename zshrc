@@ -9,6 +9,7 @@ alias ls='eza -lAFh --git'
 alias eza='eza -laFh --git'
 alias man=batman
 alias trail='<<<${(F)fpath}'
+alias rm=trash
 
 # Customize Prompts
 PROMPT='
