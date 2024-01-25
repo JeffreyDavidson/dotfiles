@@ -39,6 +39,7 @@ cask 'warp'
 
 # Development Langs, Compilers, Package Managers and SDKs
 brew 'composer'
+brew 'n'
 brew 'node'
 brew 'npm'
 brew 'php'
