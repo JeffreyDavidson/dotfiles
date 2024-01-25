@@ -11,3 +11,10 @@ else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   n latest
 fi
+
+# Install Global NPM Packages
+npm install --global http-server
+npm install --global json-server
+
+echo "Global NPM Packages Installed:"
+npm list --global --depth=0
