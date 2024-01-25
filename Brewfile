@@ -26,6 +26,8 @@ brew 'zsh'
 # Development Apps
 cask 'gitkraken'
 cask 'insomnia'
+cask 'iterm2'
+cask 'jetbrains-toolbox'
 cask 'ray'
 cask 'tableplus'
 cask 'tinkerwell'
@@ -37,7 +39,7 @@ brew 'composer'
 brew 'node'
 brew 'npm'
 brew 'php'
-
+†
 # DevOps
 cask 'docker'
 
@@ -54,6 +56,7 @@ cask 'audacity'
 # Media
 cask '4k-video-downloader'
 cask 'spotify'
+cask 'vlc'
 
 # Personal Applications
 cask '1password'
@@ -66,14 +69,17 @@ cask 'grammarly'
 cask 'grammarly-desktop'
 cask 'powerphotos'
 cask 'quicken'
+cask 'synology-drive'
 cask 'zoom'
 
 # Browsers
+cask 'arc'
 cask 'google-chrome'
 cask 'firefox'
 
 # Chat Applications
 cask 'discord'
+cask 'microsoft-teams'
 cask 'slack'
 
 # Productivity
@@ -104,6 +110,7 @@ cask 'focusrite-control'
 cask 'alfred'
 cask 'alt-tab'
 cask 'bartender'
+cask 'caffeine'
 cask 'istat-menus'
 cask 'raycast'
 cask 'the-unarchiver'
