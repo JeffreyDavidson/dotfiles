@@ -18,6 +18,7 @@
 
 - create:
     - ~/Code
+    - ~/Screenshots
 
 - shell:
     - command: ./setup_homebrew.zsh
