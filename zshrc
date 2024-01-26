@@ -11,11 +11,7 @@ alias man=batman
 alias trail='<<<${(F)fpath}'
 alias rm=trash
 
-# Customize Prompts
-PROMPT='
-%1! %L %# '
-
-RPROMPT='%*'
+eval "$(starship init zsh)"
 
 # Add Locations to $path Array
 typeset -U path
