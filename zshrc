@@ -13,6 +13,8 @@ alias rm=trash
 
 eval "$(starship init zsh)"
 
+neofetch
+
 # Add Locations to $path Array
 typeset -U path
 path=(
