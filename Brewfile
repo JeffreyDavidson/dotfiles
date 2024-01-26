@@ -22,6 +22,11 @@ brew 'starship'
 brew 'tldr'
 brew 'zsh'
 
+# CLI Development Suits
+brew 'git-delta'
+brew 'lazydocker'
+brew 'lazygit'
+
 #############################################################
 # Software Development                                      #
 #############################################################
