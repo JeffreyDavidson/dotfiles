@@ -33,3 +33,7 @@
     - command: ./setup_macos.zsh
       stdout: true
       stderr: true
+
+- link:
+   ~/.warp/themes/nord.yaml:
+      path: warp/themes/nord.yaml
