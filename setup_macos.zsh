@@ -141,6 +141,14 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 
+###############################################################################
+# iterm2                                                                      #
+###############################################################################
+
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "~/.dotfiles/iterm2"
+defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
+
 # Finish macOS Setup
 killall Finder
 killall Dock
