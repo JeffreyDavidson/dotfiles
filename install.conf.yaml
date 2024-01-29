@@ -4,8 +4,10 @@
 
 - clean: ['~']
 
+- shell:
+  - [ touch $HOME/.hushlogin ]
+
 - link:
-    ~/.hushlogin:
     ~/.zshrc:
     ~/.zshenv:
     ~/.gitconfig:
