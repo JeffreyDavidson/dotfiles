@@ -39,3 +39,7 @@
 - link:
    ~/.warp/themes/nord.yaml:
       path: warp/themes/nord.yaml
+   ~/Library/Preferences/dev.warp.Warp-Stable.plist:
+      create: true
+      force: true
+      path: warp/dev.warp.Warp-Stable.plist
