@@ -117,8 +117,9 @@ cask 'focusrite-control'
 
 # Fonts
 tap 'homebrew/cask-fonts'
-cask 'font-jetbrains-mono'
+cask 'font-jetbrains-mono-nerd--font'
 cask 'font-meslo-lg-nerd-font'
+cask 'font-space-mono-nerd-font'
 
 # Mac OS Mods and Improvements
 cask 'alfred'
