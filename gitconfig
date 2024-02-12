@@ -1,3 +1,6 @@
 [user]
 	name = Jeffrey Davidson
 	email = 3826104+JeffreyDavidson@users.noreply.github.com
+
+[alias]
+nah = "!f(){ git reset --hard; git clean -df; if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then git rebase --abort; fi; }; f"
