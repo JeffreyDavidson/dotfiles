@@ -114,6 +114,9 @@ path=(
   "$N_PREFIX/bin"
 )
 
+autoload -Uz compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+
 # Write Handy Functions
 function mkcd() {
   mkdir -p "$@" && cd "$_";
