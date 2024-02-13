@@ -74,12 +74,6 @@ defaults write com.apple.dock showhidden -bool true
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
 
-# Add a spacer to the left side of the Dock (where the applications are)
-defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
-
-# Add a spacer to the right side of the Dock (where the Trash is)
-defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
-
 ###############################################################################
 # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
 ###############################################################################
@@ -113,14 +107,16 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desk
 # Finder: show hidden files by default
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-# Keep folders on top when sorting by name
-defaults write com.apple.finder _FXSortFoldersFirst -bool true
-
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
 # Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Arrange by
+# Kind, Name, Application, Date Last Opened,
+# Date Added, Date Modified, Date Created, Size, Tags, None
+defaults write com.apple.finder FXPreferredGroupBy -string "Name"
 
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -130,16 +126,6 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-
-# Increase grid spacing for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
-
-# Increase the size of icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
 
 ###############################################################################
 # iterm2                                                                      #
