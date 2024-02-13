@@ -5,8 +5,8 @@ export N_PREFIX="$HOME/.n"
 export PREFIX="$N_PREFIX"
 
 # Create Aliases
-alias ls='eza -lAFh --git'
-alias eza='eza -laFh --git'
+alias ls='eza -lAFh --git --icons'
+alias eza='eza -laFh --git --icons'
 alias man=batman
 alias trail='<<<${(F)fpath}'
 alias rm=trash
