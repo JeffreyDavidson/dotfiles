@@ -4,6 +4,9 @@
 
 - clean: ['~']
 
+- link: 
+    ~/.zshrc: zshrc
+
 - create:
     - ~/Projects
 
