@@ -20,3 +20,4 @@
      command: ./setup_homebrew.zsh
      stdout: true
      stderr: true
+     stdin: true
