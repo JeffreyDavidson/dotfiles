@@ -1,5 +1,3 @@
-echo 'Hello from .zshrc'
-
 # Set variables
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 
