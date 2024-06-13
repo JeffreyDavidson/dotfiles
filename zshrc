@@ -1,8 +1,6 @@
 echo 'Hello from .zshrc'
 
 # Set variables
-# Syntax highlighting for man pages using bat
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 
 # Change ZSH Options
@@ -10,6 +8,7 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 # Create Aliases
 alias ls='eza'
 alias eza='eza -lah --git'
+alias man='batman'
 
 # Customize Prompt(s)
 
