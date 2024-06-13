@@ -6,6 +6,7 @@ brew "bat"
 brew "eza"
 brew "git"
 brew "httpie"
+brew "mas"
 
 # Casks (Applications)
 cask "dropbox"
