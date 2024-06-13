@@ -8,7 +8,8 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 # Change ZSH Options
 
 # Create Aliases
-alias ls='ls -lAFh'
+alias ls='eza'
+alias eza='eza -lah --git'
 
 # Customize Prompt(s)
 
