@@ -3,6 +3,7 @@ tap "homebrew/bundle"
 
 # Brews (Packages)
 brew "bat"
+brew "bat-extras"
 brew "eza"
 brew "git"
 brew "httpie"
