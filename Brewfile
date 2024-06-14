@@ -10,6 +10,7 @@ brew "httpie"
 brew "less"
 brew "mas"
 brew "nano"
+brew "zsh"
 
 # Casks (Applications)
 cask "1password"
