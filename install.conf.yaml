@@ -16,8 +16,10 @@
     - ~/Projects
 
 - shell:
-   - 
-     command: ./setup_homebrew.zsh
+   - command: ./setup_homebrew.zsh
      stdout: true
      stderr: true
      stdin: true
+   - command: ./setup_zsh.zsh
+     stdout: true
+     stderr: true
