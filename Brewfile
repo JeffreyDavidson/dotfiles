@@ -7,7 +7,9 @@ brew "bat-extras"
 brew "eza"
 brew "git"
 brew "httpie"
+brew "less"
 brew "mas"
+brew "nano"
 
 # Casks (Applications)
 cask "1password"
