@@ -7,6 +7,7 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 alias ls='eza'
 alias eza='eza -lah --git'
 alias man='batman'
+alias trail='<<<${(F)path}'
 
 # Customize Prompt(s)
 
