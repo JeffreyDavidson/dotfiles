@@ -21,6 +21,8 @@ path=(
   "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 )
 
+eval "$(starship init zsh)"
+
 # Write Handy Functions
 function mkcd() {
   mkdir -p "$@" && cd "$_"; 

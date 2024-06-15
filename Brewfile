@@ -11,6 +11,7 @@ brew "less"
 brew "mas"
 brew "n"
 brew "nano"
+brew "starship"
 brew "zsh"
 
 # Casks (Applications)

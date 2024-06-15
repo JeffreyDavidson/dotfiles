@@ -11,6 +11,9 @@
     ~/.config/bat: 
       create: true;
       path: config/bat
+    ~/.config/starship: 
+      create: true;
+      path: config/starship
 
 - create:
     - ~/Projects
