@@ -9,6 +9,7 @@ brew "git"
 brew "httpie"
 brew "less"
 brew "mas"
+brew "n"
 brew "nano"
 brew "zsh"
 
