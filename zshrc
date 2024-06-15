@@ -1,6 +1,6 @@
 # Set variables
 export NULLCMD=bat
-export HOMEBREW_CASK_OPTS="--no-quarantine"
+export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
 export N_PREFIX="$HOME/.n"
 export PREFIX="$N_PREFIX"
 
