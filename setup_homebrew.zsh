@@ -15,3 +15,8 @@ fi
 # https://github.com/Homebrew/homebrew-bundle/issues/474
 
 brew bundle --verbose
+
+# Should we wrap this in a conditional?
+echo "Enter superuser (sudo) password to accept Xcode license"
+sudo xcodebuild -license accept
+sudo xcodebuild -runFirstLaunch
