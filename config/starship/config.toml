@@ -1,0 +1,36 @@
+format = """\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$php\
+$fill\
+$battery\
+$cmd_duration\
+$time\
+[\n]()\
+$character\
+"""
+
+[git_status]
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+
+[php]
+format = '[$symbol($version)]($style) '
+
+[fill]
+symbol = ' '
+
+[time]
+disabled = false
+time_format = '%I:%M %p'
+
+[directory]
+format = '[$path]($style)[$read_only]($read_only_style) '
+
+[cmd_duration]
+min_time = 1
