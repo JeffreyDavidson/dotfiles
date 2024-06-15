@@ -18,6 +18,7 @@ fi
 npm install --global typescript
 npm install --global json-server
 npm install --global http-server
+npm install --global trash-cli
 
 echo "Global NPM Packages Installed:"
 npm list --global --depth=0

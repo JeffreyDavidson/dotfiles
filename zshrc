@@ -11,6 +11,7 @@ alias ls='eza'
 alias eza='eza -lah --git'
 alias man='batman'
 alias trail='<<<${(F)path}'
+alias rm=trash
 
 # Customize Prompt(s)
 
