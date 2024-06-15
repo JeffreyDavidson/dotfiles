@@ -24,3 +24,7 @@ cask "iterm2"
 cask "raycast"
 cask "slack"
 cask "visual-studio-code"
+
+cask 'font-jetbrains-mono-nerd-font'
+cask 'font-meslo-lg-nerd-font'
+cask 'font-space-mono-nerd-font'
