@@ -1,5 +1,6 @@
 # Set variables
 export NULLCMD=bat
+export DOTFILES="$HOME/dotfiles"
 
 # Change ZSH Options
 
