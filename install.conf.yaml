@@ -5,6 +5,9 @@
 - clean: ['~']
 
 - link: 
+    ~/.shell:
+      path: shell
+      create: true
     ~/.zshrc:
       path: zsh/zshrc
     ~/.zshenv:
