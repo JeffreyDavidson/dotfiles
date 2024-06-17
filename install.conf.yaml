@@ -19,6 +19,7 @@
     ~/.config/starship: 
       create: true;
       path: config/starship
+    ~/.hushlogin:
 
 - create:
     - ~/Projects
