@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+# `.functions` provides helper functions for shell.
+
+function mkcd() {
+  mkdir -p "$@" && cd "$_"; 
+}

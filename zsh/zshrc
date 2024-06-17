@@ -18,11 +18,8 @@ path=(
 eval "$(starship init zsh)"
 
 source "$HOME/.shell/.aliases"
+source "$HOME/.shell/.functions"
 
-# Write Handy Functions
-function mkcd() {
-  mkdir -p "$@" && cd "$_"; 
-}
 # Use ZSH Plugins
 
 # ...and Other Surprises
