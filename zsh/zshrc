@@ -4,8 +4,6 @@ export DOTFILES="$HOME/dotfiles"
 
 # Change ZSH Options
 
-# Customize Prompt(s)
-
 # Add Locations to $path Array
 typeset -U path
 
@@ -20,6 +18,3 @@ eval "$(starship init zsh)"
 source "$HOME/.shell/.aliases"
 source "$HOME/.shell/.functions"
 
-# Use ZSH Plugins
-
-# ...and Other Surprises
