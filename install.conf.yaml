@@ -13,6 +13,8 @@
     ~/.zshenv:
       path: zsh/zshenv
     ~/.gitconfig:
+      path: config/git/gitconfig
+      force: true
     ~/.config/bat: 
       create: true;
       path: config/bat
