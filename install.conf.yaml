@@ -12,6 +12,8 @@
       path: zsh/zshrc
     ~/.zshenv:
       path: zsh/zshenv
+    ~/.zprofile:
+      path: zsh/zprofile
     ~/.gitconfig:
       path: config/git/gitconfig
       force: true
