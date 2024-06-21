@@ -9,24 +9,25 @@ tap "homebrew/bundle"
 brew "bat"
 brew "bat-extras"
 brew "eza"
-brew 'fortune'
+brew "fortune"
 brew "git"
 brew "httpie"
 brew "less"
-brew 'mackup'
+brew "mackup"
 brew "mas"
-brew 'neofetch'
-brew 'neovim'
+brew "neofetch"
+brew "neovim"
 brew "ranger"
 brew "starship"
-brew 'tldr'
-brew 'xdg-ninja'
+brew "tldr"
+brew "tmux"
+brew "xdg-ninja"
 brew "zsh"
 
 # CLI Development Suits
-brew 'git-delta'
-brew 'lazydocker'
-brew 'lazygit'
+brew "git-delta"
+brew "lazydocker"
+brew "lazygit"
 
 #############################################################
 # Software Development                                      #
@@ -46,18 +47,18 @@ cask 'visual-studio-code'
 cask 'warp'
 
 # Development Langs, Compilers, Package Managers and SDKs
-brew 'composer'
-brew 'n'
+brew "composer"
+brew "n"
 brew "nano"
-brew 'node'
-brew 'npm'
-brew 'php'
+brew "node"
+brew "npm"
+brew "php"
 
 # DevOps
 cask 'docker'
 
 # Development Utils
-brew 'gh'
+brew "gh"
 
 #############################################################
 # Desktop Applications                                      #
