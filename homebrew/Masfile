@@ -1,0 +1,14 @@
+# Taps
+tap "homebrew/bundle"
+
+#############################################################
+# MacOS-Specific Stuff                                      #
+#############################################################
+
+# Mac App Store
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas 'Todoist', id: 585829637
+mas 'Xcode', id: 497799835
+
+# EOF
