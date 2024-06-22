@@ -7,7 +7,10 @@ path=(
   "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 )
 
+source <(fzf --zsh)
+
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
 source "$HOME/.shell/.exports"
 source "$HOME/.shell/.aliases"
