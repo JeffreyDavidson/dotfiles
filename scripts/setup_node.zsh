@@ -22,3 +22,5 @@ npm install --global trash-cli
 
 echo "Global NPM Packages Installed:"
 npm list --global --depth=0
+
+echo "\n<<< Finished Node Setup >>>\n"

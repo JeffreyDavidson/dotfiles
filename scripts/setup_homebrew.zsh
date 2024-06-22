@@ -31,3 +31,5 @@ fi
 brew bundle --verbose --file=./homebrew/Brewfile
 brew bundle --verbose --file=./homebrew/Caskfile
 brew bundle --verbose --file=./homebrew/Masfile
+
+echo "\n<<< Finished Homebrew Setup >>>\n"
