@@ -2,40 +2,6 @@
 tap "homebrew/bundle"
 
 #############################################################
-# Command Line                                              #
-#############################################################
-
-# CLI Essentials
-brew "bat"
-brew "bat-extras"
-brew "coreutils"
-brew "eza"
-brew "fd"
-brew "fzf"
-brew "fortune"
-brew "git"
-brew "grip"
-brew "httpie"
-brew "less"
-brew "mackup"
-brew "mas"
-brew "neofetch"
-brew "neovim"
-brew "ranger"
-brew "starship"
-brew "tldr"
-brew "tmux"
-brew "wget"
-brew "xdg-ninja"
-brew "zoxide"
-brew "zsh"
-
-# CLI Development Suits
-brew "git-delta"
-brew "lazydocker"
-brew "lazygit"
-
-#############################################################
 # Software Development                                      #
 #############################################################
 
@@ -52,19 +18,8 @@ cask 'tinkerwell'
 cask 'visual-studio-code'
 cask 'warp'
 
-# Development Langs, Compilers, Package Managers and SDKs
-brew "composer"
-brew "n"
-brew "nano"
-brew "node"
-brew "npm"
-brew "php"
-
 # DevOps
 cask 'docker'
-
-# Development Utils
-brew "gh"
 
 #############################################################
 # Desktop Applications                                      #
