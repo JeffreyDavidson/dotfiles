@@ -1,2 +1,4 @@
 Brewfile.lock.json
+Caskfile.lock.json
+Masfile.lock.json 
 .DS_Store
