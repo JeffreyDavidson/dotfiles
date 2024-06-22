@@ -28,9 +28,6 @@ fi
 # which makes them available to Homebrew for the
 # first install (before our `zshrc` is sourced).
 
-brew bundle --verbose
-
-# Should we wrap this in a conditional?
-echo "Enter superuser (sudo) password to accept Xcode license"
-sudo xcodebuild -license accept
-sudo xcodebuild -runFirstLaunch
+brew bundle --verbose --file=./homebrew/Brewfile
+brew bundle --verbose --file=./homebrew/Caskfile
+brew bundle --verbose --file=./homebrew/Masfile
