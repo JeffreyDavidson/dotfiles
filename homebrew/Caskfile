@@ -6,91 +6,94 @@ tap "homebrew/bundle"
 #############################################################
 
 # Development Apps
-cask 'android-studio'
-cask 'gitkraken'
-cask 'gitkraken-cli'
-cask 'insomnia'
-cask 'iterm2'
-cask 'jetbrains-toolbox'
-cask 'ray'
-cask 'tableplus'
-cask 'tinkerwell'
-cask 'visual-studio-code'
-cask 'warp'
+cask "android-studio"
+cask "gitkraken"
+cask "gitkraken-cli"
+cask "insomnia"
+cask "jetbrains-toolbox"
+cask "ray"
+cask "tableplus"
+cask "tinkerwell"
+cask "visual-studio-code"
+
+# Terminals
+cask "alacritty"
+cask "iterm2"
+cask "warp"
 
 # DevOps
-cask 'docker'
+cask "docker"
 
 #############################################################
 # Desktop Applications                                      #
 #############################################################
 
 # Creativity
-cask 'audacity'
+cask "audacity"
 
 # Media
-cask '4k-video-downloader'
-cask 'spotify'
+cask "4k-video-downloader"
+cask "spotify"
 
 # Personal Applications
-cask '1password'
-cask 'android-file-transfer'
-cask 'cleanmymac'
-cask 'dropbox'
-cask 'fantastical'
-cask 'figma'
-cask 'grammarly-desktop'
-cask 'microsoft-teams'
-cask 'powerphotos'
-cask 'quicken'
-cask 'synology-drive'
-cask 'zoom'
+cask "1password"
+cask "android-file-transfer"
+cask "cleanmymac"
+cask "dropbox"
+cask "fantastical"
+cask "figma"
+cask "grammarly-desktop"
+cask "microsoft-teams"
+cask "powerphotos"
+cask "quicken"
+cask "synology-drive"
+cask "zoom"
 
 # Browsers
-cask 'arc'
-cask 'google-chrome'
-cask 'firefox'
+cask "arc"
+cask "google-chrome"
+cask "firefox"
 
 # Chat Applications
-cask 'discord'
-cask 'slack'
+cask "discord"
+cask "slack"
 
 # Productivity
-cask 'notion'
-cask 'time-out'
+cask "notion"
+cask "time-out"
 
 #############################################################
 # Content Creation                                          #
 #############################################################
 
 # Video
-cask 'ecamm-live'
+cask "ecamm-live"
 
 # Podcasting
-cask 'forecast'
+cask "forecast"
 
 # Other
-cask 'elgato-camera-hub'
-cask 'elgato-control-center'
-cask 'elgato-stream-deck'
-cask 'focusrite-control'
+cask "elgato-camera-hub"
+cask "elgato-control-center"
+cask "elgato-stream-deck"
+cask "focusrite-control"
 
 #############################################################
 # MacOS-Specific Stuff                                      #
 #############################################################
 
 # Fonts
-cask 'font-jetbrains-mono-nerd-font'
-cask 'font-meslo-lg-nerd-font'
-cask 'font-space-mono-nerd-font'
+cask "font-jetbrains-mono-nerd-font"
+cask "font-meslo-lg-nerd-font"
+cask "font-space-mono-nerd-font"
 
 # Mac OS Mods and Improvements
-cask 'alt-tab'
-cask 'bartender'
-cask 'caffeine'
-cask 'istat-menus'
-cask 'raycast'
-cask 'the-unarchiver'
+cask "alt-tab"
+cask "bartender"
+cask "caffeine"
+cask "istat-menus"
+cask "raycast"
+cask "the-unarchiver"
 
 # Mac App Store
 mas "Numbers", id: 409203825
