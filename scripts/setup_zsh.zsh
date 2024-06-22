@@ -29,3 +29,5 @@ else
   # I'd like for this to work instead.
   # sudo ln -sfv /opt/homebrew/bin/zsh /private/var/select/sh
 fi
+
+echo "\n<<< Finished ZSH Setup >>>\n"
