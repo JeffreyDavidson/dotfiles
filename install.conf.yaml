@@ -29,6 +29,9 @@
     ~/.config/fastfetch: 
       create: true;
       path: config/fastfetch
+    ~/.config/alacritty: 
+      create: true;
+      path: config/alacritty
     ~/.hushlogin:
 
 - create:
