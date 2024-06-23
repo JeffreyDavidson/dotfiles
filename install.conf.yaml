@@ -26,6 +26,9 @@
     ~/.config/starship: 
       create: true;
       path: config/starship
+    ~/.config/fastfetch: 
+      create: true;
+      path: config/fastfetch
     ~/.hushlogin:
 
 - create:
