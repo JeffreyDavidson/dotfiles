@@ -48,3 +48,8 @@
    - command: ./scripts/setup_node.zsh
      stdout: true
      stderr: true
+
+- link:
+    ~/Library/Application Support/Code/User/settings.json:
+      force: true
+      path: vscode/settings.json
