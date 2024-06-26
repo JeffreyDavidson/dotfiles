@@ -6,6 +6,7 @@ tap "homebrew/bundle"
 #############################################################
 
 # CLI Essentials
+brew "antidote"
 brew "bat"
 brew "bat-extras"
 brew "coreutils"
