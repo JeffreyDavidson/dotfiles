@@ -32,4 +32,7 @@ brew bundle --verbose --file=./homebrew/Brewfile
 brew bundle --verbose --file=./homebrew/Caskfile
 brew bundle --verbose --file=./homebrew/Masfile
 
+echo "Installing VS Code Extensions"
+cat vscode/extensions-list | xargs -L 1 code --install-extension
+
 echo "\n<<< Finished Homebrew Setup >>>\n"
