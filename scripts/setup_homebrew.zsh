@@ -35,5 +35,6 @@ brew bundle --verbose --file=./homebrew/Masfile
 echo "Installing VS Code Extensions"
 cat vscode/extensions-list | xargs -L 1 code --install-extension
 code --install-extension vscode/extensions/Better\ Keybindings/Better-Keybindings-0.1.2.vsix
+code --install-extension vscode/extensions/Simple\ Project\ Switcher/Simple-Project-Switcher-0.1.4.vsix
 
 echo "\n<<< Finished Homebrew Setup >>>\n"
