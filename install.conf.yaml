@@ -56,3 +56,6 @@
     ~/Library/Application Support/Code/User/keybindings.json:
       force: true
       path: vscode/keybindings.json
+    ~/Library/Application Support/Code/User/snippets:
+      force: true
+      path: vscode/snippets
