@@ -17,6 +17,9 @@
     ~/.zprofile:
       path: zsh/zprofile
       force: true
+    ~/.zsh_plugins.txt:
+      path: zsh/zsh_plugins.txt
+      force: true
     ~/.gitconfig:
       path: config/git/gitconfig
       force: true
