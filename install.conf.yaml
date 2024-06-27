@@ -4,7 +4,7 @@
 
 - clean: ['~']
 
-- link: 
+- link:
     ~/.shell:
       path: shell
       create: true
@@ -23,17 +23,17 @@
     ~/.gitconfig:
       path: config/git/gitconfig
       force: true
-    ~/.config/bat: 
-      create: true;
+    ~/.config/bat:
+      create: true
       path: config/bat
-    ~/.config/starship: 
-      create: true;
+    ~/.config/starship:
+      create: true
       path: config/starship
-    ~/.config/fastfetch: 
-      create: true;
+    ~/.config/fastfetch:
+      create: true
       path: config/fastfetch
-    ~/.config/alacritty: 
-      create: true;
+    ~/.config/alacritty:
+      create: true
       path: config/alacritty
     ~/.hushlogin:
 
