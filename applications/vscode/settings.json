@@ -69,7 +69,7 @@
     "search.useIgnoreFiles": false,
     "search.exclude": {
         // Hide everything in /vendor, except the "laravel" and "livewire" folder.
-        "**/vendor/{[^l],?[^ai])*": true,
+        "**/vendor/{[^l],?[^ai]}*": true,
         // Hide everything in /public, except "index.php"
         "**/public/{[^i],?[^n]}*": true,
         "**/node_ignore": true,
