@@ -12,3 +12,5 @@ source "$HOME/.shell/.keys"
 
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
+
+autoload -U compinit && compinit
