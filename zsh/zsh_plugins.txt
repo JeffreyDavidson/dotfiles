@@ -1,5 +1,5 @@
+MichaelAquilina/zsh-you-should-use
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-history-substring-search
-MichaelAquilina/zsh-you-should-use
 zsh-users/zsh-syntax-highlighting
