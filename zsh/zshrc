@@ -1,17 +1,9 @@
-# Add Locations to $path Array
-typeset -U path
-
-path=(
-  "$N_PREFIX/bin"
-  $path
-  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-)
-
 source <(fzf --zsh)
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
+source "$HOME/.shell/.path"
 source "$HOME/.shell/.exports"
 source "$HOME/.shell/.aliases"
 source "$HOME/.shell/.functions"
