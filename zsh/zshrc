@@ -10,8 +10,5 @@ source "$HOME/.shell/.functions"
 source "$HOME/.shell/.completions"
 source "$HOME/.shell/.keys"
 
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[A' history-substring-search-down
-
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
