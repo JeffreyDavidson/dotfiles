@@ -29,3 +29,4 @@ format = '[$path]($style)[$read_only]($read_only_style) '
 
 [cmd_duration]
 min_time = 1
+format = '[$duration]($style) '
