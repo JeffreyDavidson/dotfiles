@@ -1,7 +1,6 @@
-source <(fzf --zsh)
-
+eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 source "$HOME/.shell/.path"
 source "$HOME/.shell/.history"
