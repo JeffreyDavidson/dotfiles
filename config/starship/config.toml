@@ -9,7 +9,6 @@ $php\
 $fill\
 $battery\
 $cmd_duration\
-$time\
 [\n]()\
 $character\
 """
@@ -24,10 +23,6 @@ format = '[$symbol($version)]($style) '
 
 [fill]
 symbol = ' '
-
-[time]
-disabled = false
-time_format = '%I:%M %p'
 
 [directory]
 format = '[$path]($style)[$read_only]($read_only_style) '
