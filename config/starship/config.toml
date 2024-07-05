@@ -1,32 +1,48 @@
+add_newline = false
+
 format = """\
+[](#5e81ac)\
+$os\
+[](bg:#81a1c1 fg:#5e81ac)\
 $directory\
+[ ](bg:#88c0d0 fg:#81a1c1)\
 $git_branch\
-$git_commit\
-$git_state\
-$git_metrics\
-$git_status\
-$php\
+[ ](fg:#88c0d0)\
 $fill\
-$battery\
 $cmd_duration\
+$time\
 [\n]()\
 $character\
 """
 
-[git_status]
-ahead = '⇡${count}'
-diverged = '⇕⇡${ahead_count}⇣${behind_count}'
-behind = '⇣${count}'
-
-[php]
-format = '[$symbol($version)]($style) '
-
-[fill]
-symbol = ' '
-
 [directory]
-format = '[$path]($style)[$read_only]($read_only_style) '
+format = "[ \uf07c $path ]($style)"
+style = "fg:#2e3440 bg:#81a1c1"
+truncate_to_repo = false
+
+[git_branch]
+format = "[$symbol$branch(:$remote_branch) ]($style)"
+symbol = "󰘬 "
+style = "fg:#2e3440 bg:#88c0d0"
+always_show_remote = true
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#5e81ac fg:#2e3440"
+format = "[ 󱑍 $time ]($style)"
+
+[os]
+style = "fg:#2e3440 bg:#5e81ac"
+disabled = false
+
+[os.symbols]
+Macos = " "
 
 [cmd_duration]
-min_time = 1
-format = '[$duration]($style) '
+min_time = 0
+style = "fg:#2e3440 bg:#81a1c1"
+format = "[ $duration ]($style)"
+
+[fill]
+symbol = " "
