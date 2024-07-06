@@ -1,6 +1,8 @@
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+eval $(thefuck --alias)
+eval "$(thefuck --alias fk)"
 
 source "$HOME/.shell/.path"
 source "$HOME/.shell/.history"
