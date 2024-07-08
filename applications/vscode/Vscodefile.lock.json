@@ -1,0 +1,40 @@
+{
+  "entries": {
+    "vscode": {
+      "ahinkle.laravel-model-snippets": null,
+      "amiralizadeh9480.laravel-extra-intellisense": null,
+      "arcticicestudio.nord-visual-studio-code": null,
+      "bmewburn.vscode-intelephense-client": null,
+      "calebporzio.better-phpunit": null,
+      "chouzz.vscode-better-align": null,
+      "coachrichbart.better-jest": null,
+      "codingyu.laravel-goto-view": null,
+      "drcika.apc-extension": null,
+      "esbenp.prettier-vscode": null,
+      "junstyle.php-cs-fixer": null,
+      "m1guelpf.better-pest": null,
+      "mehedidracula.php-constructor": null,
+      "mehedidracula.php-namespace-resolver": null,
+      "mrmlnc.vscode-duplicate": null,
+      "onecentlin.laravel-blade": null,
+      "onecentlin.laravel5-snippets": null,
+      "open-southeners.laravel-pint": null,
+      "rebornix.toggle": null,
+      "ryannaddy.laravel-artisan": null,
+      "shufo.vscode-blade-formatter": null,
+      "whizkydee.material-palenight-theme": null
+    }
+  },
+  "system": {
+    "macos": {
+      "sonoma": {
+        "HOMEBREW_VERSION": "4.3.8",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "api",
+        "CLT": "15.3.0.0.1.1708646388",
+        "Xcode": "15.4",
+        "macOS": "14.5"
+      }
+    }
+  }
+}

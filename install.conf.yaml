@@ -67,6 +67,11 @@
     stdout: true
     stderr: true
 
+- brewfile:
+    file: applications/vscode/Vscodefile
+    stdout: true
+    stderr: true
+
 - link:
     ~/Library/Application Support/Code/User/settings.json:
       force: true
