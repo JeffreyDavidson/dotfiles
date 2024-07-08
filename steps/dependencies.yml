@@ -1,0 +1,14 @@
+- brewfile:
+    file: homebrew/Brewfile
+    stdout: true
+    stderr: true
+
+- brewfile:
+    file: homebrew/Caskfile
+    stdout: true
+    stderr: true
+
+- brewfile:
+    file: homebrew/Masfile
+    stdout: true
+    stderr: true
