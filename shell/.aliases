@@ -81,7 +81,6 @@ alias larastan="vendor/bin/phpstan analyse"
 # Directories
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
-alias code="cd $HOME/Projects"
 
 # Vagrant
 alias v="vagrant global-status"
