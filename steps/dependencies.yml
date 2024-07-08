@@ -1,3 +1,9 @@
+- shell:
+   - command: ./scripts/setup_homebrew.zsh
+     stdout: true
+     stderr: true
+     stdin: true
+
 - brewfile:
     file: homebrew/Brewfile
     stdout: true

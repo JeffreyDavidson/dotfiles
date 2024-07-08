@@ -1,10 +1,4 @@
-- defaults:
-    link:
-      relink: true
-
-- clean: ['~']
-
-- link:
+ - link:
     ~/.shell:
       path: shell
       create: true
@@ -35,19 +29,11 @@
     ~/.config/alacritty:
       create: true
       path: config/alacritty
-    ~/.hushlogin:
 
-- create:
-    - ~/Projects
-
-- shell:
-   - command: ./scripts/setup_homebrew.zsh
-     stdout: true
-     stderr: true
-     stdin: true
-   - command: ./scripts/setup_zsh.zsh
-     stdout: true
-     stderr: true
-   - command: ./scripts/setup_node.zsh
-     stdout: true
-     stderr: true
+ - shell:
+    - command: ./scripts/setup_zsh.zsh
+      stdout: true
+      stderr: true
+    - command: ./scripts/setup_node.zsh
+      stdout: true
+      stderr: true
