@@ -12,4 +12,17 @@ cd "${BASEDIR}"
 git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
 git submodule update --init --recursive "${DOTBOT_DIR}"
 
-"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" --plugin-dir dotbot-brewfile -c "${CONFIG}" "${@}"
+run_dotbot () {
+  local config
+  config="$1"
+
+  "$BASEDIR/$DOTBOT_DIR/$DOTBOT_BIN" \
+    -d "$BASEDIR" \
+    --plugin-dir dotbot-brewfile \
+    -c "$config" $ARGS
+}
+
+run_dotbot 'steps/initial.yml' || true
+run_dotbot 'steps/terminal.yml' || true
+run_dotbot 'steps/dependencies.yml' || true
+run_dotbot 'steps/vscode.yml' || true
