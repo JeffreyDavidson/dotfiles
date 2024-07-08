@@ -66,19 +66,3 @@
     file: homebrew/Masfile
     stdout: true
     stderr: true
-
-- brewfile:
-    file: applications/vscode/Vscodefile
-    stdout: true
-    stderr: true
-
-- link:
-    ~/Library/Application Support/Code/User/settings.json:
-      force: true
-      path: applications/vscode/settings.json
-    ~/Library/Application Support/Code/User/keybindings.json:
-      force: true
-      path: applications/vscode/keybindings.json
-    ~/Library/Application Support/Code/User/snippets:
-      force: true
-      path: applications/vscode/snippets
