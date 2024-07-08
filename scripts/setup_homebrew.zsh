@@ -28,10 +28,6 @@ fi
 # which makes them available to Homebrew for the
 # first install (before our `zshrc` is sourced).
 
-brew bundle --verbose --file=./homebrew/Brewfile
-brew bundle --verbose --file=./homebrew/Caskfile
-brew bundle --verbose --file=./homebrew/Masfile
-
 echo "Installing VS Code Extensions"
 cat applications/vscode/extensions-list | xargs -L 1 code --install-extension
 code --install-extension applications/vscode/extensions/Better\ Keybindings/Better-Keybindings-0.1.2.vsix

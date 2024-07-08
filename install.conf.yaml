@@ -52,6 +52,21 @@
      stdout: true
      stderr: true
 
+- brewfile:
+    file: homebrew/Brewfile
+    stdout: true
+    stderr: true
+
+- brewfile:
+    file: homebrew/Caskfile
+    stdout: true
+    stderr: true
+
+- brewfile:
+    file: homebrew/Masfile
+    stdout: true
+    stderr: true
+
 - link:
     ~/Library/Application Support/Code/User/settings.json:
       force: true
