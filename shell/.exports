@@ -3,4 +3,4 @@
 # `.exports` is used to provide custom variables.
 
 export NULLCMD=bat
-export DOTFILES="$HOME/dotfiles"
+export DOTFILES="$HOME/Projects/dotfiles"
