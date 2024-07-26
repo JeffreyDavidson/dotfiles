@@ -4,7 +4,7 @@ set -e
 
 # Exporting the specific shell we want to work with:
 
-SHELL='/bin/bash'
+SHELL='/bin/zsh'
 export SHELL
 
 # Standard dotbot pre-configuration:
