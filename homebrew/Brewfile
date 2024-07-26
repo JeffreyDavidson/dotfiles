@@ -46,7 +46,6 @@ brew "lazygit"
 # Development Langs, Compilers, Package Managers and SDKs
 brew "composer"
 brew "n"
-brew "nano"
 brew "node"
 brew "npm"
 brew "php"
