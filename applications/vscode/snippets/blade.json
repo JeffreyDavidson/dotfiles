@@ -1,0 +1,22 @@
+{
+    "Console Log": {
+        "prefix": "con",
+        "body": [
+            "console.log($1)"
+        ]
+    },
+
+    "Console Log (Alpine.raw)": {
+        "prefix": "raw",
+        "body": [
+            "console.log(Alpine.raw($1))"
+        ]
+    },
+
+    "Tailwind Play CDN": {
+        "prefix": "tailwindcdn",
+        "body": [
+            "<script src=\"https://cdn.tailwindcss.com\"></script>"
+        ]
+    }
+}
