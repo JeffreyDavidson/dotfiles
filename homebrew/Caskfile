@@ -8,7 +8,6 @@ tap "homebrew/bundle"
 # Development Apps
 cask "android-studio"
 cask "gitkraken"
-cask "gitkraken-cli"
 cask "insomnia"
 cask "jetbrains-toolbox"
 cask "ray"
@@ -17,7 +16,6 @@ cask "tinkerwell"
 cask "visual-studio-code"
 
 # Terminals
-cask "alacritty"
 cask "iterm2"
 cask "warp"
 
@@ -33,13 +31,11 @@ cask "audacity"
 
 # Media
 cask "4k-video-downloader"
-cask "spotify"
 
 # Personal Applications
 cask "1password"
 cask "android-file-transfer"
 cask "cleanmymac"
-cask "dropbox"
 cask "fantastical"
 cask "figma"
 cask "grammarly-desktop"
