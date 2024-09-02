@@ -88,6 +88,7 @@ cask "alt-tab"
 cask "bartender"
 cask "caffeine"
 cask "istat-menus"
+cask "openinterminal"
 cask "raycast"
 cask "the-unarchiver"
 
