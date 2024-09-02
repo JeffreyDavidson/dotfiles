@@ -6,6 +6,7 @@ tap "homebrew/bundle"
 #############################################################
 
 # Mac App Store
+mas "Controller for HomeKit", id: 1198176727
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas 'Todoist', id: 585829637
