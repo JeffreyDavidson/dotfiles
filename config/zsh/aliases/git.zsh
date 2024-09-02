@@ -1,0 +1,26 @@
+# Git
+alias gs="git status"
+alias gb="git branch"
+alias gl="git log"
+alias gco="git checkout"
+alias gcom="git checkout master"
+alias gaa="git add ."
+alias gc="git commit -m"
+alias diff="git diff"
+alias commit="git add . && git commit -m"
+alias gp="git push"
+alias force="git push --force"
+alias nah="git reset --hard && git clean -df"
+alias pop="git stash pop"
+alias push="git push"
+alias pull="git pull"
+alias resolve="git add . && git commit --no-edit"
+alias stash="git stash -u"
+alias unstage="git restore --staged ."
+alias wip="git add . && git commit -m 'wip'"
+alias oops="git reset --soft  HEAD~1"
+alias gll="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# Remove branches that have already been merged with master
+# a.k.a. ‘delete merged’
+alias dm="git branch --merged | grep -vE 'main|master|development|\\*' | xargs -n 1 git branch -D"
