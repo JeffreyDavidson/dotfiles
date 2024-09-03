@@ -1,36 +1,26 @@
- - link:
-    ~/.shell:
-      path: shell
+- defaults:
+    link:
       create: true
-    ~/.zshrc:
-      path: zsh/zshrc
-      force: true
-    ~/.zshenv:
-      path: zsh/zshenv
-      force: true
-    ~/.zprofile:
-      path: zsh/zprofile
-      force: true
-    ~/.zsh_plugins.txt:
-      path: zsh/zsh_plugins.txt
-      force: true
-    ~/.gitconfig:
-      path: config/git/gitconfig
-      force: true
-    ~/.config/bat:
-      create: true
-      path: config/bat
-    ~/.config/starship:
-      create: true
-      path: config/starship
-    ~/.config/fastfetch:
-      create: true
-      path: config/fastfetch
-    ~/.config/alacritty:
-      create: true
-      path: config/alacritty
+      relink: true
 
- - shell:
+- clean: ['~', '${XDG_CONFIG_HOME}']
+
+- shell:
+  - description: Set XDG environmental variables
+    command: source ./config/zsh/.zshenv
+
+# Symlink locations for files / directories
+- link:
+    # Essential configs (ZSH, Vim, Tmux)
+    ~/.zshenv: { path: config/zsh/.zshenv, force: true }
+    ${XDG_CONFIG_HOME}/zsh: config/zsh
+    ${XDG_CONFIG_HOME}/nvim: config/nvim
+    ${XDG_CONFIG_HOME}/tmux: config/tmux
+
+    # Utility config files
+    ${XDG_CONFIG_HOME}/git/.gitconfig: config/git/.gitconfig
+
+- shell:
     - command: ./scripts/setup_zsh.zsh
       stdout: true
       stderr: true
