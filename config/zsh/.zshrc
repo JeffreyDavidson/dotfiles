@@ -87,6 +87,16 @@ if [[ "${SHLVL}" -lt 2 ]] && \
   welcome
 fi
 
+# Add Locations to $path Array
+typeset -U path
+
+path=(
+  "$N_PREFIX/bin"
+  $path
+  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+  "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin"
+)
+
 autoload -U compinit && compinit
 
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
