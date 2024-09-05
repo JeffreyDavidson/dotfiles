@@ -10,8 +10,6 @@
 # Licensed under MIT (C) Jeffrey Davidson 2024                       #
 ######################################################################
 
-source "$HOME/.shell/.path"
-source "$HOME/.shell/.functions"
 
 # Directory for all-things ZSH config
 zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
