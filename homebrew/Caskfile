@@ -39,6 +39,7 @@ cask "grammarly-desktop"
 cask "microsoft-teams"
 cask "powerphotos"
 cask "quicken"
+cask "raindropio"
 cask "synology-drive"
 cask "zoom"
 
