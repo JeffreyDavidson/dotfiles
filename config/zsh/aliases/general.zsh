@@ -101,6 +101,11 @@ alias pa='pbpaste' # Paste clipboard contents
 # App Specific
 if command_exists code ; then; alias vsc='code .'; fi # Launch VS Code in current dir
 
+# External Services
+alias myip='curl icanhazip.com'
+alias weather='curl wttr.in'
+alias weather-short='curl "wttr.in?format=3"'
+
 # Random lolz
 alias cls='clear;ls' # Clear and ls
 alias plz="fc -l -1 | cut -d' ' -f2- | xargs sudo" # Re-run last cmd as root
