@@ -10,7 +10,6 @@ tap "jesseduffield/lazygit"
 #############################################################
 
 # CLI Essentials
-brew "antidote"
 brew "bat"
 brew "bat-extras"
 brew "colordiff"

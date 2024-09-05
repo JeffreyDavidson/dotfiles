@@ -87,9 +87,6 @@ if [[ "${SHLVL}" -lt 2 ]] && \
   welcome
 fi
 
-source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
-antidote load
-
 autoload -U compinit && compinit
 
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
