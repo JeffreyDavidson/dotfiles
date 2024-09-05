@@ -6,10 +6,9 @@
 #                                                                            #
 # After editing, re-source .zshrc for new changes to take effect             #
 # For docs and more info, see: https://github.com/jeffreydavidson/dotfiles   #
-######################################################################
-# Licensed under MIT (C) Jeffrey Davidson 2024                       #
-######################################################################
-
+##############################################################################
+# Licensed under MIT (C) Jeffrey Davidson 2024                               #
+##############################################################################
 
 # Directory for all-things ZSH config
 zsh_dir=${${ZDOTDIR}:-$HOME/.config/zsh}
