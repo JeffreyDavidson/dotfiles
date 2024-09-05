@@ -10,12 +10,6 @@
 # Licensed under MIT (C) Jeffrey Davidson 2024                       #
 ######################################################################
 
-eval "$(fzf --zsh)"
-eval "$(starship init zsh)"
-eval "$(zoxide init --cmd cd zsh)"
-eval $(thefuck --alias)
-eval "$(thefuck --alias fk)"
-
 source "$HOME/.shell/.path"
 source "$HOME/.shell/.functions"
 
@@ -98,5 +92,11 @@ path=(
 )
 
 autoload -U compinit && compinit
+
+eval "$(fzf --zsh)"
+eval "$(starship init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+eval $(thefuck --alias)
+eval "$(thefuck --alias fk)"
 
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
