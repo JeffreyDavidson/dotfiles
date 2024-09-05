@@ -22,11 +22,7 @@ utils_dir="${XDG_CONFIG_HOME}/utils"
 
 # Import utility functions (if present)
 if [[ -d $utils_dir ]]; then
-  source ${utils_dir}/transfer.sh
-  source ${utils_dir}/matrix.sh
   source ${utils_dir}/hr.sh
-  source ${utils_dir}/web-search.sh
-  source ${utils_dir}/am-i-online.sh
   source ${utils_dir}/welcome-banner.sh
   source ${utils_dir}/color-map.sh
 fi
