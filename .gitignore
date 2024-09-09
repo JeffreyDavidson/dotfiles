@@ -2,6 +2,7 @@
 Brewfile.lock.json
 Caskfile.lock.json
 Masfile.lock.json
+Vscodefile.lock.json
 
 # Auto-generated files
 config/zsh/.zcompcache/*
