@@ -3,11 +3,12 @@
 # Locations configured here are requred for all other files to be correctly imported
 
 # Set XDG directories
+export XDG_BIN_HOME="${HOME}/.local/bin"
+export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_CONFIG_HOME="${HOME}/.config"
 export XDG_DATA_HOME="${HOME}/.local/share"
-export XDG_BIN_HOME="${HOME}/.local/bin"
 export XDG_LIB_HOME="${HOME}/.local/lib"
-export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_STATE_HOME="${HOME}/.local/state"
 
 # Set default applications
 export EDITOR="vim"
@@ -18,6 +19,7 @@ export NULLCMD=bat
 
 ## Respect XDG directories
 export ADOTDIR="${XDG_CACHE_HOME}/zsh/antigen"
+export ANDROID_USER_HOME="${XDG_DATA_HOME}/android"
 export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export DOTFILES="${HOME}/Projects/dotfiles"
 export GIT_CONFIG="${XDG_CONFIG_HOME}/git/.gitconfig"
