@@ -4,6 +4,7 @@ command_exists () {
 
 # If exa installed, then use exa for some ls commands
 if command_exists eza ; then
+  alias ls='eza'
   alias eza='eza -lah --git --icons --color=always --long --no-filesize --no-time --no-user --no-permissions'
   alias l='eza -aF --icons' # Quick ls
   alias la='eza -aF --icons' # List all
