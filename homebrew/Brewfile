@@ -53,7 +53,6 @@ brew "zsh"
 
 # CLI Development Suits
 brew "git-delta"
-brew 'gitkraken-cli'
 brew "lazydocker"
 brew "lazygit"
 
