@@ -86,6 +86,7 @@
     **/
     // Include "-" in word selection.
     "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
+    "editor.formatOnSave": true,
     "emmet.includeLanguages": {
         "blade": "html",
         "vue-html": "html",
@@ -107,6 +108,7 @@
     "[php]": {
         "editor.defaultFormatter": "junstyle.php-cs-fixer"
     },
+    "php-cs-fixer.lastDownload": 1728572603452,
     "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
     "php-cs-fixer.onsave": true,
     "php-cs-fixer.autoFixByBracket": false,
@@ -119,8 +121,27 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
+    "[blade]": {
+        "editor.defaultFormatter": "shufo.vscode-blade-formatter"
+    },
     "prettier.requireConfig": true,
     "prettier.useEditorConfig": false,
+
+    /**
+    * Namespace Resolver
+    **/
+    "namespaceResolver.highlightOnSave": false,
+    "namespaceResolver.sortAlphabetically": true,
+    "namespaceResolver.sortOnSave": true,
+
+    /**
+    * Laravel Pint
+    **/
     "laravel-pint.enable": true,
-    "editor.formatOnSave": true,
+
+    /**
+    * Other
+    **/
+    "redhat.telemetry.enabled": false,
+    "extensions.ignoreRecommendations": true
 }
