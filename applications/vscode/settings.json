@@ -54,7 +54,7 @@
     **/
     "workbench.colorTheme": "Nord",
     "editor.fontFamily": "MonoLisa",
-    "editor.fontSize": 18,
+    "editor.fontSize": 15,
     "editor.lineHeight": 45,
     "editor.suggestFontSize": 18,
     "editor.suggestLineHeight":  28,
@@ -106,9 +106,9 @@
     * PHP CS Fixer
     **/
     "[php]": {
-        "editor.defaultFormatter": "junstyle.php-cs-fixer"
+        "editor.defaultFormatter": "open-southeners.laravel-pint"
     },
-    "php-cs-fixer.lastDownload": 1728572603452,
+    "php-cs-fixer.lastDownload": 1735140435233,
     "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
     "php-cs-fixer.onsave": true,
     "php-cs-fixer.autoFixByBracket": false,
@@ -138,10 +138,17 @@
     * Laravel Pint
     **/
     "laravel-pint.enable": true,
+    "laravel-pint.runInLaravelSail": true,
+    "laravel-pint.dirtyOnly": true,
+    "laravel-pint.preset": "laravel",
+
+    /**
+    * TailwindCSS
+    **/
+    "tailwindCSS.emmetCompletions": true,
 
     /**
     * Other
     **/
-    "redhat.telemetry.enabled": false,
     "extensions.ignoreRecommendations": true
 }

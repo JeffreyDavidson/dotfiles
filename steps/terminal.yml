@@ -12,7 +12,7 @@
 
 # Symlink locations for files / directories
 - link:
-    # Essential configs (ZSH, Nvim, Tmux)
+    # Essential configs (ZSH, Vim, Tmux)
     ~/.zshenv: { path: config/zsh/.zshenv, force: true }
     ${XDG_CONFIG_HOME}/zsh: config/zsh
     ${XDG_CONFIG_HOME}/nvim: config/nvim
@@ -20,10 +20,6 @@
 
     # Utility config files
     ${XDG_CONFIG_HOME}/git/.gitconfig: config/git/.gitconfig
-    ${XDG_CONFIG_HOME}/git/.gitignore_global: config/git/.gitignore_global
-
-    # Bash utils
-    ${XDG_CONFIG_HOME}/utils: utils
 
 - shell:
     - command: ./scripts/setup_zsh.zsh
