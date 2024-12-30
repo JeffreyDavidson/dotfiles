@@ -92,4 +92,6 @@ eval "$(zoxide init --cmd cd zsh)"
 eval $(thefuck --alias)
 eval "$(thefuck --alias fk)"
 
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
