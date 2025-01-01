@@ -15,7 +15,6 @@ cask "visual-studio-code"
 
 # Terminals
 cask "iterm2"
-cask "warp"
 
 # DevOps
 cask "docker"
@@ -32,19 +31,19 @@ cask "4k-video-downloader"
 
 # Personal Applications
 cask "1password"
-cask "a-better-finder-rename"
 cask "android-file-transfer"
 cask "cleanmymac"
+cask "cleanshot"
 cask "fantastical"
 cask "figma"
 cask "grammarly-desktop"
 cask "hazel"
-cask "keyboard-cleaner"
+cask "microsoft-auto-update"
 cask "microsoft-teams"
 cask "nordvpn"
 cask "powerphotos"
+cask "readdle-spark"
 cask "quicken"
-cask "raindropio"
 cask "synology-drive"
 cask "zoom"
 
@@ -87,18 +86,15 @@ cask "font-jetbrains-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "font-space-mono-nerd-font"
 cask "font-maple"
+cask "font-maple-mono"
 
 # Mac OS Mods and Improvements
 cask "alt-tab"
-cask "betterdisplay"
 cask "bartender"
-cask "bettertouchtool"
 cask "caffeine"
 cask "flux"
-cask "hammerspoon"
 cask "istat-menus"
 cask "karabiner-elements"
-cask "openinterminal"
 cask "raycast"
 cask "the-unarchiver"
 
