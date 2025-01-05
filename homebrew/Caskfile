@@ -94,7 +94,6 @@ cask "bartender"
 cask "caffeine"
 cask "flux"
 cask "istat-menus"
-cask "karabiner-elements"
 cask "raycast"
 cask "the-unarchiver"
 
