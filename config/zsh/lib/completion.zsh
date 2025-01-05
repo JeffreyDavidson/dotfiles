@@ -2,7 +2,7 @@
 
 # Configure completion cache.
 zstyle ':completion::complete:*'    use-cache           yes                             # Enable cache for completions.
-zstyle ':completion::complete:*'    cache-path          "${ZDOTDIR:-$HOME}/.zcompcache" # Configure completion cache path.
+zstyle ':completion::complete:*'    cache-path          "${ZDOTDIR:-$XDG_CACHE_HOME}/zsh/zcompcache" # Configure completion cache path.
 
 # Configure matches and grouping in completion menu.
 zstyle ':completion:*'              matcher-list        'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*' # Enable case insensitive completion.
