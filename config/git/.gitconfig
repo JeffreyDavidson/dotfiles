@@ -2,6 +2,7 @@
 	name = Jeffrey Davidson
 	email = 3826104+JeffreyDavidson@users.noreply.github.com
     username = jeffreydavidson
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF9iTxi3muZr3YctMKzyhxXWGoPS3PE+VV9Yalb/GRUh
 [init]
 	defaultBranch = main
 [core]
@@ -23,3 +24,9 @@
     conflictstyle = diff3
 [diff]
     colorMoved = default
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
