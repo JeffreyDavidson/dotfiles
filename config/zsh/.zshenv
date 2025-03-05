@@ -23,6 +23,7 @@ export ANDROID_USER_HOME="${XDG_DATA_HOME}/android"
 export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export DOTFILES="${HOME}/Projects/dotfiles"
 export GIT_CONFIG="${XDG_CONFIG_HOME}/git/.gitconfig"
+export HISTFILE="${XDG_STATE_HOME}/zsh/history"
 export LESSHISTFILE="{$XDG_STATE_HOME}/less/history" # Disable less history.
 export N_PREFIX="${HOME}/.n"
 export PREFIX="$N_PREFIX"
