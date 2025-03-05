@@ -26,9 +26,6 @@ cask "docker"
 # Creativity
 cask "audacity"
 
-# Media
-cask "4k-video-downloader"
-
 # Personal Applications
 cask "1password"
 cask "android-file-transfer"
@@ -36,10 +33,7 @@ cask "cleanmymac"
 cask "cleanshot"
 cask "fantastical"
 cask "figma"
-cask "grammarly-desktop"
 cask "hazel"
-cask "microsoft-auto-update"
-cask "microsoft-teams"
 cask "nordvpn"
 cask "powerphotos"
 cask "readdle-spark"
@@ -49,7 +43,6 @@ cask "zoom"
 
 # Browsers
 cask "arc"
-cask "google-chrome"
 cask "firefox"
 
 # Chat Applications
@@ -75,7 +68,6 @@ cask "elgato-camera-hub"
 cask "elgato-control-center"
 cask "elgato-stream-deck"
 cask "focusrite-control"
-cask "keycastr"
 
 #############################################################
 # MacOS-Specific Stuff                                      #
@@ -93,8 +85,6 @@ cask "alt-tab"
 cask "bartender"
 cask "caffeine"
 cask "flux"
-cask "istat-menus"
-cask "karabiner-elements"
 cask "raycast"
 cask "the-unarchiver"
 
