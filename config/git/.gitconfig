@@ -16,7 +16,7 @@
     navigate = true    # use n and N to move between diff sections
     side-by-side = true
     line-numbers = true
-
+    features = arctic-fox
 [merge]
     conflictstyle = diff3
 [diff]
@@ -27,3 +27,5 @@
     program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
     gpgsign = true
+[include]
+    path = $HOME/.config/delta/themes.gitconfig
