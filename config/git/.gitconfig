@@ -1,15 +1,15 @@
 [user]
-	name = Jeffrey Davidson
-	email = 3826104+JeffreyDavidson@users.noreply.github.com
+    name = Jeffrey Davidson
+    email = 3826104+JeffreyDavidson@users.noreply.github.com
     username = jeffreydavidson
     signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF9iTxi3muZr3YctMKzyhxXWGoPS3PE+VV9Yalb/GRUh
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [core]
     pager = delta
-    excludesfile = /Users/jeffreydavidson/.config/git/.gitignore_global
+    excludesfile = $HOME/.config/git/.gitignore_global
 [web]
-	browser = firefox
+    browser = firefox
 [interactive]
     diffFilter = delta --color-only
 [delta]
@@ -17,16 +17,13 @@
     side-by-side = true
     line-numbers = true
 
-    # delta detects terminal colors automatically; set one of these to disable auto-detection
-    # dark = true
-    # light = true
 [merge]
     conflictstyle = diff3
 [diff]
     colorMoved = default
 [gpg]
-	format = ssh
+    format = ssh
 [gpg "ssh"]
-	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+    program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
-	gpgsign = true
+    gpgsign = true
