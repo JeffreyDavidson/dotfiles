@@ -33,4 +33,5 @@ run_dotbot () {
 run_dotbot 'steps/initial.yml' || true
 run_dotbot 'steps/terminal.yml' || true
 run_dotbot 'steps/dependencies.yml' || true
+run_dotbot 'steps/node.yml' || true
 run_dotbot 'steps/vscode.yml' || true
