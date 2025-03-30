@@ -21,6 +21,9 @@
     # Utility config files
     ${XDG_CONFIG_HOME}/git/.gitconfig: config/git/.gitconfig
 
+    # Bash utils
+    ${XDG_CONFIG_HOME}/utils: utils
+
 - shell:
     - command: ./scripts/setup_zsh.zsh
       stdout: true
