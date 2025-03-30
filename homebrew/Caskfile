@@ -3,10 +3,8 @@
 #############################################################
 
 # Development Apps
-cask "android-studio"
 cask "gitkraken"
 cask "insomnia"
-cask "jetbrains-toolbox"
 cask "helo"
 cask "ray"
 cask "tableplus"
@@ -29,16 +27,13 @@ cask "audacity"
 
 # Personal Applications
 cask "1password"
-cask "android-file-transfer"
 cask "cleanmymac"
 cask "cleanshot"
-cask "fantastical"
 cask "figma"
 cask "hazel"
 cask "nordvpn"
 cask "powerphotos"
 cask "readdle-spark"
-cask "quicken"
 cask "synology-drive"
 cask "zoom"
 
@@ -68,7 +63,6 @@ cask "forecast"
 cask "elgato-camera-hub"
 cask "elgato-control-center"
 cask "elgato-stream-deck"
-cask "focusrite-control"
 
 #############################################################
 # MacOS-Specific Stuff                                      #
@@ -78,14 +72,11 @@ cask "focusrite-control"
 cask "font-jetbrains-mono-nerd-font"
 cask "font-meslo-lg-nerd-font"
 cask "font-space-mono-nerd-font"
-cask "font-maple"
 cask "font-maple-mono"
 
 # Mac OS Mods and Improvements
 cask "alt-tab"
 cask "bartender"
-cask "caffeine"
-cask "flux"
 cask "raycast"
 cask "the-unarchiver"
 
