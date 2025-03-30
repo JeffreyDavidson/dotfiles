@@ -1,9 +1,9 @@
- - brewfile:
-    file: applications/vscode/Vscodefile
-    stdout: true
-    stderr: true
+- shell:
+    - command: brew bundle --file="applications/vscode/Vscodefile"
+      stdout: true
+      stderr: true
 
- - link:
+- link:
     ~/Library/Application Support/Code/User/settings.json:
       force: true
       path: applications/vscode/settings.json
