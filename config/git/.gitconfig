@@ -2,7 +2,7 @@
     name = Jeffrey Davidson
     email = 3826104+JeffreyDavidson@users.noreply.github.com
     username = jeffreydavidson
-    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF9iTxi3muZr3YctMKzyhxXWGoPS3PE+VV9Yalb/GRUh
+    signingKey = 438C2DE185242897F58B45C8DEF1F428A35B77BC
 [init]
     defaultBranch = main
 [core]
@@ -29,3 +29,5 @@
     gpgsign = true
 [include]
     path = $HOME/.config/delta/themes.gitconfig
+[alias]
+nah = "!f(){ git reset --hard; git clean -df; if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then git rebase --abort; fi; }; f"
