@@ -5,3 +5,7 @@
     - ~/Projects
     - ~/Screenshots
 
+- shell:
+    - command: ./scripts/setup_macos.zsh
+      stdout: true
+      stderr: true
