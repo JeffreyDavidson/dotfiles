@@ -6,6 +6,7 @@
 cask "gitkraken"
 cask "insomnia"
 cask "helo"
+cask "herd"
 cask "ray"
 cask "tableplus"
 cask "tinkerwell"
@@ -27,6 +28,7 @@ cask "audacity"
 
 # Personal Applications
 cask "1password"
+cask '1password-cli'
 cask "cleanmymac"
 cask "cleanshot"
 cask "figma"
