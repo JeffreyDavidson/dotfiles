@@ -4,6 +4,7 @@
 - create:
     - ~/Projects
     - ~/Screenshots
+    - ~/Herd
 
 - shell:
     - command: ./scripts/setup_macos.zsh
