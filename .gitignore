@@ -8,6 +8,7 @@ Vscodefile.lock.json
 config/zsh/.zcompcache/*
 config/zsh/*/*.zwc
 config/zsh/.zsh_sessions/*
+config/zsh/.zcompdump*
 
 # MacOS
 .DS_Store
