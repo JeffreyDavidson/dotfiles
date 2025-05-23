@@ -19,7 +19,7 @@
     ${XDG_CONFIG_HOME}/tmux: config/tmux
 
     # Utility config files
-    ${XDG_CONFIG_HOME}/git/.gitconfig: config/git/.gitconfig
+    ${XDG_CONFIG_HOME}/git/config: config/git/.gitconfig
 
     # Bash utils
     ${XDG_CONFIG_HOME}/utils: utils
