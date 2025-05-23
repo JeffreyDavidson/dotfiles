@@ -53,12 +53,12 @@
     * Typography
     **/
     "workbench.colorTheme": "Nord",
-    "editor.fontFamily": "MonoLisa",
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
     "editor.fontSize": 15,
     "editor.lineHeight": 45,
     "editor.suggestFontSize": 18,
     "editor.suggestLineHeight":  28,
-    "terminal.integrated.fontFamily": "MesloLGS Nerd Font",
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
     "terminal.integrated.fontSize": 18,
     "terminal.integrated.lineHeight": 1.5,
     "workbench.activityBar.location": "hidden",
@@ -108,7 +108,7 @@
     "[php]": {
         "editor.defaultFormatter": "open-southeners.laravel-pint"
     },
-    "php-cs-fixer.lastDownload": 1745538772013,
+    "php-cs-fixer.lastDownload": 1747491726708,
     "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
     "php-cs-fixer.onsave": true,
     "php-cs-fixer.autoFixByBracket": false,
@@ -150,5 +150,6 @@
     /**
     * Other
     **/
-    "extensions.ignoreRecommendations": true
+    "extensions.ignoreRecommendations": true,
+    "workbench.editor.empty.hint": "hidden"
 }
