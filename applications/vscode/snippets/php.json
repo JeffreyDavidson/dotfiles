@@ -66,4 +66,15 @@
         ],
         "description": "PHP private function"
     },
+    "Constructor Method": {
+        "prefix": "con",
+        "body": [
+            "public function __construct(${1})",
+            "{",
+            "    ${0}",
+            "}",
+            ""
+        ],
+        "description": "PHP constructor function"
+    },
 }
