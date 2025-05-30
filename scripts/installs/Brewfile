@@ -9,7 +9,6 @@ tap "jesseduffield/lazygit"
 #############################################################
 
 # CLI Essentials
-brew "awscli"
 brew "bat"
 brew "bat-extras"
 brew "coreutils"
