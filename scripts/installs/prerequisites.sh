@@ -1,17 +1,5 @@
 #!/usr/bin/env bash
 
-##############################################################################
-# Core Dependency Install Script                                             #
-##############################################################################
-# Installs essential pre-requsite packages, when using new systems           #
-# Intended to be run before install.sh, if packages not yet present.         #
-# All other package installs are managed in system-specific scripts          #
-# For docs and more info, see: https://github.com/JeffreyDavidson/dotfiles   #
-# IMPORTANT: Before running, read through everything very carefully!         #
-##############################################################################
-# Licensed under MIT (C) Jeffrey Davidson 2022 <https://jeffreydavidson.me>  #
-##############################################################################
-
 # List of apps to install
 core_packages=(
   'git' # Needed to fetch dotfiles
