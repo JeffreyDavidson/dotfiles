@@ -2,7 +2,7 @@
     name = Jeffrey Davidson
     email = 3826104+JeffreyDavidson@users.noreply.github.com
     username = jeffreydavidson
-    signingKey = 438C2DE185242897F58B45C8DEF1F428A35B77BC
+	signingKey = BDF8EC45E2312834FD3F5A9C187A6919A2641507
 [init]
     defaultBranch = main
 [core]
@@ -21,8 +21,6 @@
     conflictstyle = diff3
 [diff]
     colorMoved = default
-[gpg]
-    format = ssh
 [commit]
     gpgsign = true
 [include]
