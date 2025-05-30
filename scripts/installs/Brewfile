@@ -1,4 +1,57 @@
 #############################################################
+# Homebrew Taps                                             #
+#############################################################
+
+tap "jesseduffield/lazygit"
+
+#############################################################
+# Command Line                                              #
+#############################################################
+
+# CLI Essentials
+brew "awscli"
+brew "bat"
+brew "bat-extras"
+brew "coreutils"
+brew "dockutil"
+brew "eza"
+brew "fd"
+brew "fzf"
+brew "fortune"
+brew "gh"
+brew "git"
+brew "grep"
+brew "less"
+brew "mas"
+brew "neovim"
+brew "ranger"
+brew "starship"
+brew "thefuck"
+brew "tlrc"
+brew "tmux"
+brew "trash-cli"
+brew "wget"
+brew "xdg-ninja"
+brew "zoxide"
+brew "zsh"
+
+# CLI Development Suits
+brew "git-delta"
+brew "lazydocker"
+brew "lazygit"
+
+#############################################################
+# Software Development                                      #
+#############################################################
+
+# Development Langs, Compilers, Package Managers and SDKs
+brew "composer"
+brew "n"
+brew "node"
+brew "npm"
+brew "php"
+
+#############################################################
 # Software Development                                      #
 #############################################################
 
@@ -81,5 +134,14 @@ cask "alt-tab"
 cask "bartender"
 cask "raycast"
 cask "the-unarchiver"
+
+#############################################################
+# MacOS-Specific Stuff                                      #
+#############################################################
+
+# Mac App Store
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas 'Xcode', id: 497799835
 
 # EOF
