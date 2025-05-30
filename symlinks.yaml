@@ -20,11 +20,19 @@
 
     # Utility config files
     ${XDG_CONFIG_HOME}/git/config: config/git/.gitconfig
+    ${XDG_CONFIG_HOME}/git/.gitignore_global: config/git/.gitignore_global
 
     # Bash utils
     ${XDG_CONFIG_HOME}/utils: utils
 
-- shell:
-    - command: ./scripts/setup_zsh.zsh
-      stdout: true
-      stderr: true
+    ${XDG_CONFIG_HOME}/Brewfile:
+      if: '[ `uname` = Darwin ]'
+      path: scripts/installs/Brewfile
+
+- link:
+    ~/.hushlogin:
+
+- create:
+    - ~/Projects
+    - ~/Screenshots
+    - ~/Herd
