@@ -15,7 +15,7 @@ alias larastan="vendor/bin/phpstan analyse"
 # PHP
 alias cfresh="rm -rf vendor/ composer.lock && composer i"
 alias composer="composer"
-alias php="herd php"
+alias php="php"
 
 # JS
 alias nfresh="rm -rf node_modules/ package-lock.json && npm install"
