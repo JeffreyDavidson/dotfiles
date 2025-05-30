@@ -33,3 +33,4 @@ export ZLIB="${ZDOTDIR}/lib"
 
 export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
 export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_BUNDLE_FILE="${XDG_CONFIG_HOME}/Brewfile"
