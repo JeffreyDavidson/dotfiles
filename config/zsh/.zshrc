@@ -95,3 +95,25 @@ eval "$(thefuck --alias fk)"
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
 test -r "~/.dir_colors" && eval $(dircolors ~/.dir_colors)
+
+export PATH="/Users/jeffreydavidson/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/Users/jeffreydavidson/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+# Herd injected NVM configuration
+export NVM_DIR="/Users/jeffreydavidson/Library/Application Support/Herd/config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This load nvm
+
+[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app"
+
+# Herd injected PHP binary.
+export PATH="/Users/jeffreydavidson/Library/Application Support/Herd/bin/":$PATH
+export PATH="/usr/local/opt/php@8.3/bin:$PATH"
+export PATH="/usr/local/opt/php@8.3/sbin:$PATH"
+export PATH="/usr/local/opt/php@8.4/bin:$PATH"
+export PATH="/usr/local/opt/php@8.4/sbin:$PATH"
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/jeffreydavidson/Library/Application Support/Herd/config/php/84/"
+
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/jeffreydavidson/Library/Application Support/Herd/config/php/83/"
