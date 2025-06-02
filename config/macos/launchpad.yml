@@ -1,0 +1,30 @@
+apps:
+  pages:
+    - number: 1
+      items:
+        - folder: Dev
+          pages:
+            - number: 1
+              items:
+              - Gitkraken
+              - TablePlus
+              - Visual Studio Code
+              - Insomnia
+              - Helo
+              - Herd
+              - Ray
+              - Tinkerwell
+              - Docker
+              - Postman
+        - folder: Mac Mods
+          pages:
+          - number: 1
+            items:
+            - Raycast
+            - Stats
+            - AltTab
+            - Bartender
+widgets:
+  pages: []
+dock_items:
+desktop: {}
