@@ -12,7 +12,7 @@
 
 # Symlink locations for files / directories
 - link:
-    # Essential configs (ZSH, Vim, Tmux)
+    # Essential configs (ZSH, Nvim, Tmux)
     ~/.zshenv: { path: config/zsh/.zshenv, force: true }
     ${XDG_CONFIG_HOME}/zsh: config/zsh
     ${XDG_CONFIG_HOME}/nvim: config/nvim
