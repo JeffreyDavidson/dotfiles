@@ -1,146 +1,148 @@
+# Options
+cask_args appdir: '~/Applications', require_sha: true
+
 #############################################################
 # Homebrew Taps                                             #
 #############################################################
 
-tap "jesseduffield/lazygit"
+tap 'jesseduffield/lazygit'
 
 #############################################################
 # Command Line                                              #
 #############################################################
 
 # CLI Essentials
-brew "bat"
-brew "bat-extras"
-brew "coreutils"
-brew "dockutil"
-brew "eza"
-brew "fd"
-brew "fzf"
-brew "fortune"
-brew "gh"
-brew "git"
-brew "grep"
-brew "less"
-brew "mas"
-brew "neovim"
-brew "ranger"
-brew "starship"
-brew "thefuck"
-brew "tlrc"
-brew "tmux"
-brew "trash-cli"
-brew "wget"
-brew "xdg-ninja"
-brew "zoxide"
-brew "zsh"
+brew 'bat'
+brew 'bat-extras'
+brew 'coreutils'
+brew 'dockutil'
+brew 'eza'
+brew 'fd'
+brew 'fzf'
+brew 'fortune'
+brew 'gh'
+brew 'jq'
+brew 'git'
+brew 'grep'
+brew 'less'
+brew 'mas'
+brew 'neovim'
+brew 'ranger'
+brew 'starship'
+brew 'terminal-notifier'
+brew 'thefuck'
+brew 'tlrc'
+brew 'tmux'
+brew 'trash-cli'
+brew 'wget'
+brew 'xdg-ninja'
+brew 'zoxide'
+brew 'zsh'
 
 # CLI Development Suits
-brew "git-delta"
-brew "lazydocker"
-brew "lazygit"
+brew 'git-delta'
+brew 'lazydocker'
+brew 'lazygit'
 
 #############################################################
 # Software Development                                      #
 #############################################################
 
 # Development Langs, Compilers, Package Managers and SDKs
-brew "composer"
-brew "n"
-brew "node"
-brew "npm"
-brew "php"
+brew 'composer'
+brew 'n'
+brew 'node'
+brew 'npm'
+brew 'php'
 
 #############################################################
 # Software Development                                      #
 #############################################################
 
 # Development Apps
-cask "gitkraken"
-cask "insomnia"
-cask "helo"
-cask "herd"
-cask "ray"
-cask "tableplus"
-cask "tinkerwell"
-cask "visual-studio-code"
+cask 'gitkraken'
+cask 'insomnia'
+cask 'helo'
+cask 'herd'
+cask 'ray'
+cask 'tableplus'
+cask 'tinkerwell'
+cask 'visual-studio-code'
 
 # Terminals
-cask "iterm2"
-cask "warp"
+cask 'iterm2'
+cask 'warp'
 
 # DevOps
-cask "docker"
+cask 'docker'
 
 #############################################################
 # Desktop Applications                                      #
 #############################################################
 
 # Creativity
-cask "audacity"
+cask 'audacity'
 
 # Personal Applications
-cask "1password"
+cask '1password'
 cask '1password-cli'
-cask "cleanmymac"
-cask "cleanshot"
-cask "figma"
-cask "hazel"
-cask "nordvpn"
-cask "powerphotos"
-cask "readdle-spark"
-cask "synology-drive"
-cask "zoom"
+cask 'cleanmymac'
+cask 'cleanshot'
+cask 'figma'
+cask 'hazel'
+cask 'nordvpn'
+cask 'powerphotos'
+cask 'readdle-spark'
+cask 'synology-drive'
+cask 'zoom'
 
 # Browsers
-cask "arc"
-cask "firefox"
+cask 'arc'
+cask 'firefox'
 
 # Chat Applications
-cask "discord"
-cask "slack"
+cask 'discord'
+cask 'slack'
 
 # Productivity
-cask "notion"
-cask "time-out"
+cask 'notion'
+cask 'time-out'
 
 #############################################################
 # Content Creation                                          #
 #############################################################
 
 # Video
-cask "ecamm-live"
+cask 'ecamm-live'
 
 # Podcasting
-cask "forecast"
+cask 'forecast'
 
 # Other
-cask "elgato-camera-hub"
-cask "elgato-control-center"
-cask "elgato-stream-deck"
+cask 'elgato-camera-hub'
+cask 'elgato-control-center'
+cask 'elgato-stream-deck'
 
 #############################################################
 # MacOS-Specific Stuff                                      #
 #############################################################
 
 # Fonts
-cask "font-jetbrains-mono-nerd-font"
-cask "font-meslo-lg-nerd-font"
-cask "font-space-mono-nerd-font"
-cask "font-maple-mono"
+cask 'font-jetbrains-mono-nerd-font'
+cask 'font-meslo-lg-nerd-font'
+cask 'font-space-mono-nerd-font'
+cask 'font-maple-mono'
 
 # Mac OS Mods and Improvements
-cask "alt-tab"
-cask "bartender"
-cask "raycast"
-cask "the-unarchiver"
-
-#############################################################
-# MacOS-Specific Stuff                                      #
-#############################################################
+cask 'alt-tab'
+cask 'bartender'
+brew 'blacktop/tap/lporg'
+cask 'raycast', args: { require_sha: false }
+cask 'the-unarchiver'
 
 # Mac App Store
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
+mas 'Numbers', id: 409203825
+mas 'Pages', id: 409201541
 mas 'Xcode', id: 497799835
 
 # EOF
