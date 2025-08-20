@@ -10,5 +10,15 @@ config/zsh/*/*.zwc
 config/zsh/.zsh_sessions/*
 config/zsh/.zcompdump*
 
+# Neovim/Vim state (do not commit)
+.local/state/nvim/
+.local/share/nvim/
+.cache/nvim/
+.viminfo
+.vim/.netrwhist
+.vim/backup/
+.vim/swap/
+.vim/undo/
+
 # MacOS
 .DS_Store
