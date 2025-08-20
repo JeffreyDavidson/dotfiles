@@ -1,0 +1,6 @@
+- shell:
+  - description: Create Warp themes folder
+    command: mkdir -p ~/.warp && cd ~/.warp
+
+  - description: Clone themes repo
+    command: git clone https://github.com/warpdotdev/themes.git
