@@ -79,6 +79,8 @@
         "**/package-lock.json": true,
         "storage": true,
         ".phpunit.result.cache": true,
+        "tests/coverage": true,
+        ".phpunit.cache": true,
     },
 
     /**
