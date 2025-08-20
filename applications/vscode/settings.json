@@ -53,7 +53,7 @@
     * Typography
     **/
     "workbench.colorTheme": "Nord",
-    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "editor.fontFamily": "'MonoLisa'",
     "editor.fontSize": 15,
     "editor.lineHeight": 45,
     "editor.suggestFontSize": 18,
@@ -94,7 +94,8 @@
     },
     "files.associations": {
         ".php_cs": "php",
-        ".php_cs.dist": "php"
+        ".php_cs.dist": "php",
+        "*.php": "php"
     },
 
     /**
@@ -108,7 +109,7 @@
     "[php]": {
         "editor.defaultFormatter": "open-southeners.laravel-pint"
     },
-    "php-cs-fixer.lastDownload": 1748104438914,
+    "php-cs-fixer.lastDownload": 1752377229741,
     "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
     "php-cs-fixer.onsave": true,
     "php-cs-fixer.autoFixByBracket": false,
