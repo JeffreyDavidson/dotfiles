@@ -162,4 +162,5 @@
     "extensions.ignoreRecommendations": true,
     "workbench.editor.empty.hint": "hidden",
     "javascript.updateImportsOnFileMove.enabled": "always",
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
 }
