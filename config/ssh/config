@@ -1,0 +1,98 @@
+# SSH Client Configuration
+# Secure SSH client settings following security best practices
+
+# Global defaults for all hosts
+Host *
+    # Security settings
+    Protocol 2
+    
+    # Prefer strong authentication methods
+    PreferredAuthentications publickey,keyboard-interactive,password
+    PubkeyAuthentication yes
+    PasswordAuthentication yes
+    ChallengeResponseAuthentication yes
+    
+    # Use strong ciphers and algorithms
+    Ciphers chacha20-poly1305@openssh.com,aes256-gcm@openssh.com,aes128-gcm@openssh.com,aes256-ctr,aes192-ctr,aes128-ctr
+    MACs hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha2-256,hmac-sha2-512
+    KexAlgorithms curve25519-sha256@libssh.org,diffie-hellman-group16-sha512,diffie-hellman-group18-sha512,diffie-hellman-group14-sha256
+    
+    # Host key verification settings
+    HostKeyAlgorithms ssh-ed25519-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com,ssh-ed25519,rsa-sha2-512,rsa-sha2-256
+    StrictHostKeyChecking ask
+    HashKnownHosts yes
+    
+    # Connection settings
+    ServerAliveInterval 60
+    ServerAliveCountMax 3
+    TCPKeepAlive yes
+    
+    # Compression (disable for security over slow connections)
+    Compression no
+    
+    # Forward agent and X11 settings (disabled by default for security)
+    ForwardAgent no
+    ForwardX11 no
+    ForwardX11Trusted no
+    
+    # Disable potentially dangerous features
+    PermitLocalCommand no
+    Tunnel no
+    
+    # Key management
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentitiesOnly yes
+    
+    # Connection multiplexing for performance
+    ControlMaster auto
+    ControlPath ~/.ssh/sockets/%r@%h-%p
+    ControlPersist 10m
+
+# GitHub configuration
+Host github.com
+    HostName github.com
+    User git
+    Port 22
+    IdentityFile ~/.ssh/id_ed25519
+    PreferredAuthentications publickey
+    
+# GitHub alternative hostname for when port 22 is blocked
+Host github-443
+    HostName ssh.github.com
+    User git
+    Port 443
+    IdentityFile ~/.ssh/id_ed25519
+    PreferredAuthentications publickey
+
+# Example for common development servers (uncomment and modify as needed)
+# Host production
+#     HostName your-server.com
+#     User deploy
+#     Port 22
+#     IdentityFile ~/.ssh/id_ed25519_production
+#     ForwardAgent no
+#     
+# Host staging
+#     HostName staging.your-server.com
+#     User deploy
+#     Port 22
+#     IdentityFile ~/.ssh/id_ed25519_staging
+#     ForwardAgent no
+
+# Local development (Docker, VMs, etc.)
+Host localhost
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    LogLevel QUIET
+
+Host 127.0.0.1
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    LogLevel QUIET
+
+# Private network ranges (adjust as needed for your network)
+Host 10.* 172.16.* 172.17.* 172.18.* 172.19.* 172.20.* 172.21.* 172.22.* 172.23.* 172.24.* 172.25.* 172.26.* 172.27.* 172.28.* 172.29.* 172.30.* 172.31.* 192.168.*
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+    LogLevel QUIET

@@ -1,0 +1,80 @@
+# GitHub CLI Configuration
+# Enhanced GitHub workflow settings and preferences
+
+# What version of the config format this is
+version: 1
+
+# What editor gh should run when creating issues, pull requests, etc.
+# If blank, will refer to environment.
+editor: code
+
+# When to interactively prompt. This is a global config that cannot be overridden by hostname.
+# Supported values: enabled, disabled
+prompt: enabled
+
+# A pager program to send command output to, e.g. "less".
+# Set the value to "cat" to disable the pager.
+pager: less
+
+# Aliases allow you to create nicknames for gh commands
+aliases:
+    # Repository management
+    co: pr checkout
+    pv: pr view
+    pc: pr create
+    pm: pr merge
+    repo-clone: repo clone
+    repo-fork: repo fork
+    
+    # Issue management  
+    ic: issue create
+    iv: issue view
+    il: issue list
+    
+    # Quick workflows
+    drafts: pr list --state=all --draft
+    reviews: pr list --state=all --search="review-requested:@me"
+    assigned: issue list --assignee="@me"
+    created: issue list --author="@me"
+    
+    # Repository insights
+    contributors: api repos/:owner/:repo/contributors
+    releases: release list
+    workflows: run list
+    
+    # Advanced shortcuts
+    open-repo: repo view --web
+    open-pr: pr view --web
+    open-issue: issue view --web
+    
+    # Development workflow
+    feature: |
+        !git checkout -b feature/"$1" && git push -u origin feature/"$1" && gh pr create --draft --title "$1" --body "Feature: $1"
+    hotfix: |
+        !git checkout -b hotfix/"$1" && git push -u origin hotfix/"$1" && gh pr create --title "Hotfix: $1" --body "Hotfix: $1"
+
+# The path to a unix socket through which send HTTP connections. If blank, HTTP traffic will be handled by net/http.DefaultTransport.
+http_unix_socket:
+
+# What protocol to use when performing git operations. Supported values: ssh, https
+git_protocol: ssh
+
+# What browser gh should use when opening URLs. If blank, will refer to environment.
+browser: firefox
+
+# Configuration specific to GitHub Enterprise Server installations
+hosts:
+    github.com:
+        # What protocol to use when performing git operations for this hostname. Supported values: ssh, https
+        git_protocol: ssh
+        # Configure gh to act as a GitHub App when interacting with this hostname
+        # app_auth: false
+        # OAuth token or personal access token for github.com
+        # oauth_token: 
+        # Preferred editor when creating issues, pull requests, etc. for this hostname
+        # If blank, will deferr to the global editor config.
+        editor: code
+        # When to interactively prompt for this hostname. Supported values: enabled, disabled
+        prompt: enabled
+        # A pager program to send command output to for this hostname, e.g. "less"
+        pager: less
