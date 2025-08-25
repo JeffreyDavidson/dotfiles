@@ -41,8 +41,11 @@ brew 'zsh'
 
 # CLI Development Suits
 brew 'git-delta'
-brew 'lazydocker'
 brew 'lazygit'
+
+# Security Tools
+brew 'gnupg'
+brew 'pinentry-mac'
 
 #############################################################
 # Software Development                                      #
@@ -74,7 +77,7 @@ cask 'iterm2'
 cask 'warp'
 
 # DevOps
-cask 'docker'
+# Docker removed - Laravel Herd handles PHP development needs
 
 #############################################################
 # Desktop Applications                                      #
