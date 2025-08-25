@@ -19,7 +19,6 @@ utils_dir="${XDG_CONFIG_HOME}/utils"
 
 # Import utility functions (if present)
 if [[ -d $utils_dir ]]; then
-  source ${utils_dir}/hr.sh
   source ${utils_dir}/welcome-banner.sh
   source ${utils_dir}/color-map.sh
 fi
