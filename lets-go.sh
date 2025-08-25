@@ -1,15 +1,23 @@
 #!/bin/bash
 
+# Nord Color Variables
+NORD_BLUE='\033[38;2;94;129;172m'      # #5E81AC - Primary accent
+NORD_CYAN='\033[38;2;136;192;208m'     # #88C0D0 - Highlights  
+NORD_GREEN='\033[38;2;163;190;140m'    # #A3BE8C - Success
+NORD_WHITE='\033[38;2;236;239;244m'    # #ECEFF4 - Light text
+NORD_GRAY='\033[38;2;76;86;106m'       # #4C566A - Secondary text
+RESET='\033[0m'
+
 # If not already set, specify dotfiles destination directory and source repo
 DOTFILES_DIR="${DOTFILES_DIR:-$HOME/dotfiles}"
 DOTFILES_REPO="${DOTFILES_REPO:-https://github.com/jeffreyDavidson/dotfiles.git}"
 
 # Print starting message
-echo -e "\033[1;35m""JeffreyDavidson/Dotfiles Installation Script 🧰
-\033[0;35mThis script will install or update specified dotfiles:
-- From \033[4;35m${DOTFILES_REPO}\033[0;35m
-- Into \033[4;35m${DOTFILES_DIR}\033[0;35m
-Be sure you've read and understood the what will be applied.\033[0m\n"
+echo -e "${NORD_CYAN}JeffreyDavidson/Dotfiles Installation Script 🧰
+${NORD_BLUE}This script will install or update specified dotfiles:
+- From ${NORD_WHITE}${DOTFILES_REPO}${NORD_BLUE}
+- Into ${NORD_WHITE}${DOTFILES_DIR}${NORD_BLUE}
+Be sure you've read and understood what will be applied.${RESET}\n"
 
 # If dependencies not met, install them
 if ! hash git 2> /dev/null; then
