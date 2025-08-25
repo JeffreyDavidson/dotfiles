@@ -28,8 +28,9 @@ This is Jeffrey Davidson's personal dotfiles repository organized with the follo
 - `scripts/` - Installation and setup scripts
   - `installs/` - Contains Brewfile and prerequisite installation scripts
   - `macos-setup/` - macOS-specific preference and app configuration scripts
+  - `setup/` - Individual tool setup scripts (Node.js, SSH, VS Code)
 - `utils/` - Utility scripts (color-map, weather, welcome banner)
-- `steps/` - Modular configuration steps (node.yml, vscode.yml, warp.yml)
+- `steps/` - Dotbot configuration modules (node.yml, vscode.yml, warp.yml)
 
 ### Environment Configuration
 

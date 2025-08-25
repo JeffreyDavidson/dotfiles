@@ -31,5 +31,29 @@ config/gnupg/openpgp-revocs.d/
 config/gnupg/public-keys.d/
 config/gnupg/trustdb.gpg
 
+# Binary files and assets
+*.png
+*.jpg
+*.jpeg  
+*.gif
+*.pdf
+*.vsix
+*.dmg
+*.zip
+*.tar.gz
+
+# VS Code extensions (install via script instead)
+applications/vscode/extensions/**/
+!applications/vscode/extensions/README.md
+
+# Compiled/cached files
+*.zwc
+*.pyc
+__pycache__/
+.pytest_cache/
+
 # MacOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*

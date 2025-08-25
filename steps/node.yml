@@ -1,4 +1,4 @@
 - shell:
-    - command: ./scripts/setup_node.zsh
+    - command: ./scripts/setup/setup_node.zsh
       stdout: true
       stderr: true
