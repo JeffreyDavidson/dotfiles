@@ -20,5 +20,8 @@ config/zsh/.zcompdump*
 .vim/swap/
 .vim/undo/
 
+# Claude Code personal data
+config/claude/claude.json
+
 # MacOS
 .DS_Store
