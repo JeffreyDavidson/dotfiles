@@ -1,0 +1,23 @@
+# Python startup configuration
+import os
+import atexit
+import readline
+
+# Set up history file in XDG state directory
+history = os.path.join(os.environ.get('XDG_STATE_HOME', os.path.expanduser('~/.local/state')), 'python', 'history')
+
+# Create directory if it doesn't exist
+os.makedirs(os.path.dirname(history), exist_ok=True)
+
+try:
+    readline.read_history_file(history)
+    # Default history length is -1 (infinite), which may grow unruly
+    readline.set_history_length(1000)
+except FileNotFoundError:
+    pass
+
+def save_history(history_path=history):
+    import readline
+    readline.write_history_file(history_path)
+
+atexit.register(save_history)
