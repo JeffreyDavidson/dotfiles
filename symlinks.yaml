@@ -70,3 +70,17 @@
     ${XDG_CONFIG_HOME}/Brewfile:
       if: '[ `uname` = Darwin ]'
       path: scripts/installs/Brewfile
+
+    # VS Code settings (macOS)
+    ~/Library/Application Support/Code/User/settings.json:
+      if: '[ `uname` = Darwin ]'
+      force: true
+      path: applications/vscode/settings.json
+    ~/Library/Application Support/Code/User/keybindings.json:
+      if: '[ `uname` = Darwin ]'
+      force: true  
+      path: applications/vscode/keybindings.json
+    ~/Library/Application Support/Code/User/snippets:
+      if: '[ `uname` = Darwin ]'
+      force: true
+      path: applications/vscode/snippets
