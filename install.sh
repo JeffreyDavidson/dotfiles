@@ -285,6 +285,16 @@ function apply_preferences () {
     fi
   fi
 
+  # Setup GPG with XDG compliance  
+  if [[ -f "./scripts/setup-gpg-xdg.sh" ]] && [[ "$SYSTEM_TYPE" == "Darwin" ]]; then
+    echo -e "\n${NORD_CYAN}Would you like to setup GPG with XDG compliance? (y/N)${RESET}"
+    read -t $PROMPT_TIMEOUT -n 1 -r ans_gpg
+    if [[ $ans_gpg =~ ^[Yy]$ ]] || [[ $AUTO_YES == true ]] ; then
+      echo -e "${NORD_BLUE}Setting up GPG with XDG compliance${RESET}"
+      ./scripts/setup-gpg-xdg.sh
+    fi
+  fi
+
   # Prompt user to update ZSH plugins, then reload each
   echo -e "\n${NORD_CYAN}Would you like to install / update ZSH plugins? (y/N)${RESET}"
   read -t $PROMPT_TIMEOUT -n 1 -r ans_cliplugins

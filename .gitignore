@@ -23,5 +23,13 @@ config/zsh/.zcompdump*
 # Claude Code personal data
 config/claude/claude.json
 
+# GPG keys and personal crypto data
+config/gnupg/*.gpg
+config/gnupg/*.kbx
+config/gnupg/private-keys-v1.d/
+config/gnupg/openpgp-revocs.d/
+config/gnupg/public-keys.d/
+config/gnupg/trustdb.gpg
+
 # MacOS
 .DS_Store

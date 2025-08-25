@@ -58,8 +58,7 @@
     ${XDG_CONFIG_HOME}/python: config/python
     ${XDG_CONFIG_HOME}/wget: config/wget
     
-    # Security configurations
-    ${XDG_CONFIG_HOME}/gnupg: config/gnupg
+    # Security configurations (gnupg excluded - contains machine-specific keys)
     ${XDG_CONFIG_HOME}/ssh: config/ssh
     
     # Enhanced shell tools
