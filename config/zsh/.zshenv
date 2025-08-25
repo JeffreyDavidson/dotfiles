@@ -20,7 +20,6 @@ export NULLCMD=bat
 ## Respect XDG directories
 export ADOTDIR="${XDG_CACHE_HOME}/zsh/antigen"
 export ANDROID_USER_HOME="${XDG_DATA_HOME}/android"
-export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export DOTFILES="${HOME}/Projects/dotfiles"
 export GIT_CONFIG="${XDG_CONFIG_HOME}/git/.gitconfig"
 export HISTFILE="${XDG_STATE_HOME}/zsh/history"
@@ -34,3 +33,18 @@ export ZLIB="${ZDOTDIR}/lib"
 export HOMEBREW_CASK_OPTS="--no-quarantine --no-binaries"
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_BUNDLE_FILE="${XDG_CONFIG_HOME}/Brewfile"
+
+# Additional XDG compliance for applications
+export VIMINIT='source $XDG_CONFIG_HOME/vim/vimrc'
+export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
+export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+export _Z_DATA="$XDG_STATE_HOME/z/data"
+
+# Enhanced shell tools
+export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --inline-info"
+export TMUX_CONFIG="${XDG_CONFIG_HOME}/tmux/tmux.conf"
+export _ZO_DATA_DIR="${XDG_DATA_HOME}/zoxide"
+
+# GPG and SSH
+export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
+export SSH_CONFIG_FILE="${XDG_CONFIG_HOME}/ssh/config"
