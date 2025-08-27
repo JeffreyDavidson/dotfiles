@@ -40,11 +40,17 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export _Z_DATA="$XDG_STATE_HOME/z/data"
 
+# Development tools XDG compliance
+export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
+export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
+export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
+
 # Enhanced shell tools
 export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --inline-info"
 export TMUX_CONFIG="${XDG_CONFIG_HOME}/tmux/tmux.conf"
 export _ZO_DATA_DIR="${XDG_DATA_HOME}/zoxide"
 
-# GPG and SSH
+# GPG, SSH, and Docker
 export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
 export SSH_CONFIG_FILE="${XDG_CONFIG_HOME}/ssh/config"
+export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
