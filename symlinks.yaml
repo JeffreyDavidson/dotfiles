@@ -13,9 +13,8 @@
     command: |
       [ -f ~/.gitconfig ] && rm ~/.gitconfig || true
       [ -f ~/.gitignore_global ] && rm ~/.gitignore_global || true
-  - description: Remove legacy ZSH config files if they exist
+  - description: Remove legacy ZSH config files if they exist (except .zshrc which will be symlinked)
     command: |
-      [ -f ~/.zshrc ] && rm ~/.zshrc || true
       [ -f ~/.zsh_history ] && rm ~/.zsh_history || true
       [ -f ~/.zprofile ] && rm ~/.zprofile || true
       [ -f ~/.zlogin ] && rm ~/.zlogin || true
@@ -40,6 +39,7 @@
 - link:
     # Core shell configuration
     ~/.zshenv: { path: config/zsh/.zshenv, force: true }
+    ~/.zshrc: { path: config/zsh/.zshrc, force: true }
     ~/.hushlogin: hushlogin
 
     # XDG-compliant configurations
