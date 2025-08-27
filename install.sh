@@ -54,6 +54,7 @@ EARLY_XDG_SCRIPT="./scripts/setup-xdg-early.sh"
 DOCKER_XDG_SCRIPT="./scripts/setup-docker-xdg.sh"
 DEV_TOOLS_XDG_SCRIPT="./scripts/setup-dev-tools-xdg.sh"
 SSH_XDG_SCRIPT="./scripts/setup-ssh-xdg.sh"
+REMAINING_XDG_SCRIPT="./scripts/setup-remaining-xdg.sh"
 MACOS_SETTINGS_DIR="${DOTFILES_DIR}/scripts/macos-setup"
 LINUX_DCONF_SCRIPT="${DOTFILES_DIR}/scripts/linux/dconf-prefs.sh"
 
@@ -1095,6 +1096,30 @@ setup_ssh_xdg() {
   fi
 }
 
+# Setup remaining applications with XDG compliance  
+setup_remaining_xdg() {
+  local remaining_script="$REMAINING_XDG_SCRIPT"
+  
+  if [[ ! -f "$remaining_script" ]]; then
+    return 1
+  fi
+  
+  echo -e "\n${NORD_CYAN}Would you like to clean up remaining directories and migrate supported apps to XDG? (y/N)${RESET}"
+  read -t $PROMPT_TIMEOUT -n 1 -r ans_remaining
+  if [[ $ans_remaining =~ ^[Yy]$ ]] || [[ $AUTO_YES == true ]] ; then
+    echo -e "${NORD_BLUE}Cleaning up remaining directories with XDG compliance...${RESET}"
+    
+    if chmod +x "$remaining_script" && "$remaining_script"; then
+      echo -e "${NORD_GREEN}✅ Remaining directories cleanup complete${RESET}"
+    else
+      echo -e "${NORD_RED}❌ Remaining directories cleanup failed${RESET}"
+      return 1
+    fi
+  else
+    echo -e "\n${NORD_BLUE}Skipping remaining directories cleanup${RESET}"
+  fi
+}
+
 # Setup Docker with XDG compliance
 setup_docker_xdg() {
   local docker_script="$DOCKER_XDG_SCRIPT"
@@ -1220,6 +1245,7 @@ function apply_preferences() {
   setup_ssh_xdg
   setup_docker_xdg
   setup_gpg_xdg
+  setup_remaining_xdg
   install_zsh_plugins
   apply_system_preferences
 }
