@@ -49,6 +49,7 @@
     ${XDG_CONFIG_HOME}/git/.gitignore_global: config/git/.gitignore_global
     ${XDG_CONFIG_HOME}/starship: config/starship
     ${XDG_CONFIG_HOME}/bat: config/bat
+    ${XDG_CONFIG_HOME}/dircolors: config/dircolors
     ${XDG_CONFIG_HOME}/utils: utils
     
     # Additional XDG-compliant configurations
