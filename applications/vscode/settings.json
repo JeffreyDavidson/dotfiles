@@ -111,7 +111,7 @@
     "[php]": {
         "editor.defaultFormatter": "open-southeners.laravel-pint"
     },
-    "php-cs-fixer.lastDownload": 1752377229741,
+    "php-cs-fixer.lastDownload": 1756169693017,
     "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
     "php-cs-fixer.onsave": true,
     "php-cs-fixer.autoFixByBracket": false,
