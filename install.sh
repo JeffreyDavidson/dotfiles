@@ -50,6 +50,10 @@ PREREQUISITE_URL="https://raw.githubusercontent.com/${REPO_NAME}/refs/heads/${GI
 BREWFILE_PATH="${DOTFILES_DIR}/scripts/installs/Brewfile"
 LAUNCHPAD_LAYOUT_PATH="${DOTFILES_DIR}/config/macos/launchpad.yml"
 GPG_SETUP_SCRIPT="./scripts/setup-gpg-xdg.sh"
+EARLY_XDG_SCRIPT="./scripts/setup-xdg-early.sh"
+DOCKER_XDG_SCRIPT="./scripts/setup-docker-xdg.sh"
+DEV_TOOLS_XDG_SCRIPT="./scripts/setup-dev-tools-xdg.sh"
+SSH_XDG_SCRIPT="./scripts/setup-ssh-xdg.sh"
 MACOS_SETTINGS_DIR="${DOTFILES_DIR}/scripts/macos-setup"
 LINUX_DCONF_SCRIPT="${DOTFILES_DIR}/scripts/linux/dconf-prefs.sh"
 
@@ -636,6 +640,21 @@ function pre_setup_tasks() {
   setup_dotfiles_directory
 }
 
+# Run early XDG directory setup to prevent ~/.docker and ~/.gnupg creation
+setup_early_xdg_directories() {
+  local early_xdg_script="$EARLY_XDG_SCRIPT"
+  
+  # Only run if we're in the dotfiles directory and script exists
+  if [[ -f "$early_xdg_script" ]]; then
+    echo -e "${NORD_BLUE}Setting up early XDG directories...${RESET}"
+    if chmod +x "$early_xdg_script" && "$early_xdg_script"; then
+      echo -e "${GREEN}✓ Early XDG directories created${RESET}"
+    else
+      echo -e "${YELLOW_B}⚠️  Early XDG setup failed, continuing${RESET}"
+    fi
+  fi
+}
+
 # Configure XDG Base Directory variables
 configure_xdg_variables() {
   if [ -z "${XDG_CONFIG_HOME+x}" ]; then
@@ -653,6 +672,9 @@ configure_xdg_variables() {
   fi
   
   echo -e "${GREEN}✓ XDG variables configured${RESET}"
+  
+  # Run early XDG setup to prevent ~/.docker and ~/.gnupg creation
+  setup_early_xdg_directories
 }
 
 # Setup and validate dotfiles directory
@@ -1025,6 +1047,78 @@ setup_default_shell() {
   fi
 }
 
+# Setup development tools with XDG compliance
+setup_dev_tools_xdg() {
+  local dev_tools_script="$DEV_TOOLS_XDG_SCRIPT"
+  
+  if [[ ! -f "$dev_tools_script" ]]; then
+    return 1
+  fi
+  
+  echo -e "\n${NORD_CYAN}Would you like to migrate development tools (npm, jupyter, ipython) to XDG locations? (y/N)${RESET}"
+  read -t $PROMPT_TIMEOUT -n 1 -r ans_devtools
+  if [[ $ans_devtools =~ ^[Yy]$ ]] || [[ $AUTO_YES == true ]] ; then
+    echo -e "${NORD_BLUE}Setting up development tools with XDG compliance...${RESET}"
+    
+    if chmod +x "$dev_tools_script" && "$dev_tools_script"; then
+      echo -e "${NORD_GREEN}✅ Development tools XDG setup complete${RESET}"
+    else
+      echo -e "${NORD_RED}❌ Development tools XDG setup failed${RESET}"
+      return 1
+    fi
+  else
+    echo -e "\n${NORD_BLUE}Skipping development tools XDG setup${RESET}"
+  fi
+}
+
+# Setup SSH with XDG compliance
+setup_ssh_xdg() {
+  local ssh_script="$SSH_XDG_SCRIPT"
+  
+  if [[ ! -f "$ssh_script" ]]; then
+    return 1
+  fi
+  
+  echo -e "\n${NORD_CYAN}Would you like to migrate SSH configuration to XDG location? (y/N)${RESET}"
+  read -t $PROMPT_TIMEOUT -n 1 -r ans_ssh
+  if [[ $ans_ssh =~ ^[Yy]$ ]] || [[ $AUTO_YES == true ]] ; then
+    echo -e "${NORD_BLUE}Setting up SSH with XDG compliance...${RESET}"
+    
+    if chmod +x "$ssh_script" && "$ssh_script"; then
+      echo -e "${NORD_GREEN}✅ SSH XDG setup complete${RESET}"
+    else
+      echo -e "${NORD_RED}❌ SSH XDG setup failed${RESET}"
+      return 1
+    fi
+  else
+    echo -e "\n${NORD_BLUE}Skipping SSH XDG setup${RESET}"
+  fi
+}
+
+# Setup Docker with XDG compliance
+setup_docker_xdg() {
+  local docker_script="$DOCKER_XDG_SCRIPT"
+  
+  if [[ ! -f "$docker_script" ]]; then
+    return 1
+  fi
+  
+  echo -e "\n${NORD_CYAN}Would you like to setup Docker with XDG compliance? (y/N)${RESET}"
+  read -t $PROMPT_TIMEOUT -n 1 -r ans_docker
+  if [[ $ans_docker =~ ^[Yy]$ ]] || [[ $AUTO_YES == true ]] ; then
+    echo -e "${NORD_BLUE}Setting up Docker with XDG compliance...${RESET}"
+    
+    if chmod +x "$docker_script" && "$docker_script"; then
+      echo -e "${NORD_GREEN}✅ Docker XDG setup complete${RESET}"
+    else
+      echo -e "${NORD_RED}❌ Docker XDG setup failed${RESET}"
+      return 1
+    fi
+  else
+    echo -e "\n${NORD_BLUE}Skipping Docker XDG setup${RESET}"
+  fi
+}
+
 # Setup GPG with XDG compliance
 setup_gpg_xdg() {
   local gpg_script="$GPG_SETUP_SCRIPT"
@@ -1122,6 +1216,9 @@ apply_system_preferences() {
 # Main preferences application function
 function apply_preferences() {
   setup_default_shell
+  setup_dev_tools_xdg
+  setup_ssh_xdg
+  setup_docker_xdg
   setup_gpg_xdg
   install_zsh_plugins
   apply_system_preferences
