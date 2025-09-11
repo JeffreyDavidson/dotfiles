@@ -73,7 +73,6 @@ cask 'tinkerwell'
 cask 'visual-studio-code'
 
 # Terminals
-cask 'iterm2'
 cask 'warp'
 
 # DevOps
