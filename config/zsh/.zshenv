@@ -20,7 +20,7 @@ export NULLCMD=bat
 ## Respect XDG directories
 export ADOTDIR="${XDG_CACHE_HOME}/zsh/antigen"
 export ANDROID_USER_HOME="${XDG_DATA_HOME}/android"
-export DOTFILES="${HOME}/Projects/dotfiles"
+export DOTFILES="${HOME}/dotfiles"
 export GIT_CONFIG="${XDG_CONFIG_HOME}/git/.gitconfig"
 export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
 export HISTFILE="${XDG_STATE_HOME}/zsh/history"
