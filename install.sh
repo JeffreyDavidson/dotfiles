@@ -529,31 +529,30 @@ prompt_user() {
   local default="${2:-N}"
   local timeout="${3:-$PROMPT_TIMEOUT}"
   local response
-  
-  # Create a nicely formatted prompt
+  response=""
+
   local prompt_text="${NORD_CYAN}❓ $message${RESET}"
-  if [[ "$default" == "Y" ]] || [[ "$default" == "y" ]]; then
+  if [[ "$default" == [Yy] ]]; then
     prompt_text="$prompt_text ${NORD_GRAY}[Y/n]${RESET}"
   else
     prompt_text="$prompt_text ${NORD_GRAY}[y/N]${RESET}"
   fi
-  
-  echo -e "$prompt_text"
-  
+
   if [[ $AUTO_YES == true ]]; then
     echo -e "${NORD_GRAY}Auto-yes enabled, using default: $default${RESET}"
     echo "$default"
     return 0
   fi
-  
-  read -t "$timeout" -n 1 -r response
-  echo  # Add newline after response
-  
-  # Handle timeout or empty response
+
+  # Make sure prompt displays even if stdout is redirected
+  echo -e "$prompt_text" >/dev/tty
+  read -t "$timeout" -n 1 -r response </dev/tty
+  echo >/dev/tty
+
   if [[ -z "$response" ]]; then
-    response="$default"
+    response="${response:-$default}"
   fi
-  
+
   echo "$response"
 }
 
