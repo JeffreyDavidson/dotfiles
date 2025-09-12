@@ -19,12 +19,12 @@ SRC_DIR=$(dirname ${0})
 
 # Dotfiles Source Repo and Destination Directory
 REPO_NAME="${REPO_NAME:-jeffreydavidson/dotfiles}"
-DOTFILES_DIR="${DOTFILES_DIR:-${SRC_DIR:-$HOME/Projects/dotfiles}}"
+DOTFILES_DIR="${DOTFILES_DIR:-${SRC_DIR:-$HOME/dotfiles}}"
 DOTFILES_REPO="${DOTFILES_REPO:-https://github.com/${REPO_NAME}.git}"
 
 # Config Names and Locations
 TITLE="🧰 ${REPO_NAME} Setup"
-SYMLINK_FILE="${SYMLINK_FILE:-symlinks.yaml}"
+DOTBOT_CONFIG="${DOTBOT_CONFIG:-symlinks.yaml}"
 DOTBOT_DIR='lib/dotbot'
 DOTBOT_BIN='bin/dotbot'
 
@@ -790,59 +790,60 @@ validate_dotfiles_structure() {
     done
     terminate
   fi
-  
+
   echo -e "${GREEN}✓ Dotfiles structure validated${RESET}"
 }
 
 # Set up symlinks using dotbot
 setup_symlinks_with_dotbot() {
   echo -e "${NORD_BLUE}Setting up symlinks...${RESET}"
-  
+
   # Ensure we're in the dotfiles directory
   cd "${DOTFILES_DIR}" || terminate
-  
+
   # Sync and update dotbot submodule
   if ! git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive; then
     echo -e "${YELLOW_B}⚠️  Failed to sync dotbot submodule${RESET}"
   fi
-  
+
   if ! git submodule update --init --recursive "${DOTBOT_DIR}"; then
     echo -e "${RED_B}❌ Failed to update dotbot submodule${RESET}"
     terminate
   fi
-  
+
   # Make dotbot executable
   local dotbot_path="${DOTBOT_DIR}/${DOTBOT_BIN}"
   if ! chmod +x "$dotbot_path"; then
     echo -e "${RED_B}❌ Failed to make dotbot executable${RESET}"
     terminate
   fi
-  
+
   # Run dotbot to create symlinks
-  echo -e "${NORD_GRAY}Running dotbot with configuration: $SYMLINK_FILE${RESET}"
-  if ! "${DOTFILES_DIR}/${dotbot_path}" -d "${DOTFILES_DIR}" -c "${SYMLINK_FILE}" "${@}"; then
+  echo -e "${NORD_GRAY}Running dotbot with configuration: $DOTBOT_CONFIG${RESET}"
+  # Pass through any additional args only if provided; avoid forwarding an empty string
+  if ! "${DOTFILES_DIR}/${dotbot_path}" -d "${DOTFILES_DIR}" -c "${DOTBOT_CONFIG}" "$@"; then
     echo -e "${RED_B}❌ Dotbot symlink creation failed${RESET}"
     terminate
   fi
-  
+
   echo -e "${GREEN}✓ Symlinks created successfully${RESET}"
 }
 
-# Based on system type, uses appropriate package manager to install / updates apps
+# Based on system type, uses appropriate package manager to install / updates appsq
 function install_packages() {
   show_section "System Packages" "$NORD_BLUE"
-  
+
   echo -e "${NORD_GRAY}This will install and update system packages using your platform's package manager.${RESET}"
   echo -e "${NORD_GRAY}On macOS, this includes development tools, applications, and utilities.${RESET}\n"
-  
+
   local response
   response=$(prompt_user "Install and update system packages?" "Y")
-  
+
   if ! is_yes "$response"; then
     echo -e "\n${NORD_BLUE}⏭️  Skipping package installation and updates${RESET}"
     return 0
   fi
-  
+
   case "$SYSTEM_TYPE" in
     "Darwin")
       install_macos_packages
