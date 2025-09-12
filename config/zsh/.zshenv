@@ -41,8 +41,6 @@ export _Z_DATA="$XDG_STATE_HOME/z/data"
 
 # Development tools XDG compliance
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
-export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
-export IPYTHONDIR="$XDG_CONFIG_HOME/ipython"
 export COMPOSER_HOME="$XDG_CONFIG_HOME/composer"
 
 # Enhanced shell tools

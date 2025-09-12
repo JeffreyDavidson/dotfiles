@@ -37,19 +37,15 @@ echo "   ✓ GPG home: $GNUPG_HOME"
 
 # Development tools
 NPM_CACHE_DIR="$XDG_CACHE_HOME/npm"
-JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME/jupyter"
-IPYTHON_CONFIG_DIR="$XDG_CONFIG_HOME/ipython"
 FONTCONFIG_DIR="$XDG_CONFIG_HOME/fontconfig"
 COMPOSER_CONFIG_DIR="$XDG_CONFIG_HOME/composer"
 COMPOSER_DATA_DIR="$XDG_DATA_HOME/composer"
 
 mkdir -p "$NPM_CACHE_DIR"
-mkdir -p "$JUPYTER_CONFIG_DIR" 
-mkdir -p "$IPYTHON_CONFIG_DIR"
 mkdir -p "$FONTCONFIG_DIR"
 mkdir -p "$COMPOSER_CONFIG_DIR"
 mkdir -p "$COMPOSER_DATA_DIR"
-echo "   ✓ Development tools: npm, jupyter, ipython, fontconfig, composer"
+echo "   ✓ Development tools: npm, fontconfig, composer"
 
 # Other common XDG applications
 mkdir -p "$XDG_DATA_HOME/zsh"
