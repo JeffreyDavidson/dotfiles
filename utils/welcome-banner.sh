@@ -210,10 +210,6 @@ function show_dev_environment() {
     dev_tools+=("PHP $(php --version 2>/dev/null | head -1 | awk '{print $2}' | cut -d'-' -f1)")
   fi
   
-  if command -v python3 >/dev/null 2>&1; then
-    dev_tools+=("Python $(python3 --version 2>/dev/null | awk '{print $2}')")
-  fi
-  
   if [[ ${#dev_tools[@]} -gt 0 ]]; then
     echo -e "${NORD_GRAY}🛠️  Dev Tools:${RESET} $(IFS=', '; echo "${dev_tools[*]}")"
   fi

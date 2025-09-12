@@ -1075,16 +1075,16 @@ setup_dev_tools_xdg() {
 # Setup SSH with XDG compliance
 setup_ssh_xdg() {
   local ssh_script="$SSH_XDG_SCRIPT"
-  
+
   if [[ ! -f "$ssh_script" ]]; then
     return 1
   fi
-  
+
   echo -e "\n${NORD_CYAN}Would you like to migrate SSH configuration to XDG location? (y/N)${RESET}"
   read -t $PROMPT_TIMEOUT -n 1 -r ans_ssh
   if [[ $ans_ssh =~ ^[Yy]$ ]] || [[ $AUTO_YES == true ]] ; then
     echo -e "${NORD_BLUE}Setting up SSH with XDG compliance...${RESET}"
-    
+
     if chmod +x "$ssh_script" && "$ssh_script"; then
       echo -e "${NORD_GREEN}✅ SSH XDG setup complete${RESET}"
     else

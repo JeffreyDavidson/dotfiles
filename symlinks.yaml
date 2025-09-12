@@ -30,10 +30,8 @@
       [ -f ~/.wget-hsts ] && rm ~/.wget-hsts || true
 
 - create:
-    - ~/Projects
     - ~/Screenshots
     - ~/Herd
-    - ~/.ssh/sockets
 
 # Symlink locations for files / directories
 - link:
@@ -51,17 +49,16 @@
     ${XDG_CONFIG_HOME}/bat: config/bat
     ${XDG_CONFIG_HOME}/dircolors: config/dircolors
     ${XDG_CONFIG_HOME}/utils: utils
-    
+
     # Additional XDG-compliant configurations
     ${XDG_CONFIG_HOME}/vim: config/vim
     ${XDG_CONFIG_HOME}/act: config/act
     ${XDG_CONFIG_HOME}/claude: config/claude
-    ${XDG_CONFIG_HOME}/python: config/python
     ${XDG_CONFIG_HOME}/wget: config/wget
-    
+
     # Security configurations (gnupg excluded - contains machine-specific keys)
     ${XDG_CONFIG_HOME}/ssh: config/ssh
-    
+
     # Enhanced shell tools
     ${XDG_CONFIG_HOME}/fzf: config/fzf
     ${XDG_CONFIG_HOME}/zoxide: config/zoxide
