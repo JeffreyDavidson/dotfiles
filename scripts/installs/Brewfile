@@ -2,12 +2,6 @@
 cask_args appdir: '~/Applications', require_sha: true
 
 #############################################################
-# Homebrew Taps                                             #
-#############################################################
-
-tap 'jesseduffield/lazygit'
-
-#############################################################
 # Command Line                                              #
 #############################################################
 
@@ -41,7 +35,6 @@ brew 'zsh'
 
 # CLI Development Suits
 brew 'git-delta'
-brew 'lazygit'
 
 # Security Tools
 brew 'gnupg'
