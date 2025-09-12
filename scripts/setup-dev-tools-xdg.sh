@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Development Tools XDG Migration Script
-# Safely migrates npm, jupyter, ipython, and other dev tools to XDG locations
+# Safely migrates npm and other dev tools to XDG locations
 
 set -euo pipefail
 
@@ -46,16 +46,6 @@ if [[ -d "$HOME/.npm" ]]; then
     migrate_directory "$HOME/.npm" "$NPM_CACHE" "npm cache"
 fi
 
-# Jupyter
-JUPYTER_OLD="$HOME/.jupyter"
-JUPYTER_NEW="$XDG_CONFIG_HOME/jupyter"
-migrate_directory "$JUPYTER_OLD" "$JUPYTER_NEW" "Jupyter"
-
-# IPython
-IPYTHON_OLD="$HOME/.ipython"
-IPYTHON_NEW="$XDG_CONFIG_HOME/ipython"  
-migrate_directory "$IPYTHON_OLD" "$IPYTHON_NEW" "IPython"
-
 # FontConfig (usually already XDG compliant but sometimes creates ~/.fontconfig)
 FONTCONFIG_OLD="$HOME/.fontconfig"
 FONTCONFIG_NEW="$XDG_CONFIG_HOME/fontconfig"
@@ -79,7 +69,5 @@ echo "✅ Development tools XDG migration complete!"
 echo ""
 echo "📝 Summary of environment variables set:"
 echo "   NPM_CONFIG_CACHE=$XDG_CACHE_HOME/npm"
-echo "   JUPYTER_CONFIG_DIR=$XDG_CONFIG_HOME/jupyter"  
-echo "   IPYTHONDIR=$XDG_CONFIG_HOME/ipython"
 echo ""
 echo "🔄 Restart your terminal to apply the new environment variables."
