@@ -80,7 +80,6 @@ fi
 typeset -U path
 
 path=(
-  "$N_PREFIX/bin"
   $path
   "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
   "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin"
