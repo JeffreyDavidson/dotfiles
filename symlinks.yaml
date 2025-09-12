@@ -76,7 +76,7 @@
       path: applications/vscode/settings.json
     ~/Library/Application Support/Code/User/keybindings.json:
       if: '[ `uname` = Darwin ]'
-      force: true  
+      force: true
       path: applications/vscode/keybindings.json
     ~/Library/Application Support/Code/User/snippets:
       if: '[ `uname` = Darwin ]'

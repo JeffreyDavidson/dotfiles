@@ -75,7 +75,7 @@ LOGO_PATH="./.github/logo.png"
 
 # Nord Color Variables
 NORD_BLUE='\033[38;2;94;129;172m'      # #5E81AC - Primary accent
-NORD_CYAN='\033[38;2;136;192;208m'     # #88C0D0 - Highlights  
+NORD_CYAN='\033[38;2;136;192;208m'     # #88C0D0 - Highlights
 NORD_GREEN='\033[38;2;163;190;140m'    # #A3BE8C - Success
 NORD_YELLOW='\033[38;2;235;203;139m'   # #EBCB8B - Warnings
 NORD_RED='\033[38;2;191;97;106m'       # #BF616A - Errors
@@ -160,15 +160,15 @@ handle_error() {
   local line_number=$2
   error_log "Script failed at line $line_number with exit code $exit_code"
   error_log "Command that failed: ${BASH_COMMAND}"
-  
+
   if [[ -n "${LOG_FILE:-}" ]]; then
     error_log "Full log available at: $LOG_FILE"
   fi
-  
+
   echo -e "\n${RED_B}❌ Error occurred in install.sh at line $line_number (exit code: $exit_code)${RESET}"
   echo -e "${NORD_GRAY}Command: ${BASH_COMMAND}${RESET}"
   echo -e "${NORD_GRAY}Please check the output above for details${RESET}"
-  
+
   cleanup_on_exit
   exit $exit_code
 }
@@ -176,13 +176,13 @@ handle_error() {
 # Cleanup function for exit
 cleanup_on_exit() {
   debug_log "Performing cleanup..."
-  
+
   # Restore cursor if it was hidden
   echo -e "\033[?25h"
-  
+
   # Reset terminal color
   echo -e "${RESET}"
-  
+
   # Log cleanup completion
   if [[ -n "${LOG_FILE:-}" ]] && [[ $DEBUG_MODE == true ]]; then
     debug_log "Cleanup completed. Log file: $LOG_FILE"
@@ -192,10 +192,10 @@ cleanup_on_exit() {
 # Validate system requirements
 validate_system_requirements() {
   local errors=0
-  
+
   debug_log "Starting system requirements validation"
   log_system_info
-  
+
   # Check operating system
   debug_log "Validating operating system: $SYSTEM_TYPE"
   case "$SYSTEM_TYPE" in
@@ -209,7 +209,7 @@ validate_system_requirements() {
       ((errors++))
       ;;
   esac
-  
+
   # Check required commands
   info_log "Checking required commands"
   echo -e "${NORD_BLUE}Checking required commands...${RESET}"
@@ -224,7 +224,7 @@ validate_system_requirements() {
       ((errors++))
     fi
   done
-  
+
   # Check optional commands
   info_log "Checking optional commands"
   echo -e "${NORD_BLUE}Checking optional commands...${RESET}"
@@ -238,7 +238,7 @@ validate_system_requirements() {
       echo -e "  ${YELLOW_B}⚠️  $cmd (optional)${RESET}"
     fi
   done
-  
+
   # Check network connectivity
   echo -e "${NORD_BLUE}Checking network connectivity...${RESET}"
   if curl -s --connect-timeout $CONNECT_TIMEOUT "https://github.com" >/dev/null; then
@@ -247,7 +247,7 @@ validate_system_requirements() {
     echo -e "  ${RED_B}❌ No internet connection or GitHub unreachable${RESET}"
     ((errors++))
   fi
-  
+
   # Check available disk space (at least 1GB)
   echo -e "${NORD_BLUE}Checking disk space...${RESET}"
   local available_space
@@ -259,14 +259,14 @@ validate_system_requirements() {
       echo -e "  ${YELLOW_B}⚠️  Low disk space (less than 1GB available)${RESET}"
     fi
   fi
-  
+
   if [[ $errors -gt 0 ]]; then
     error_log "System validation failed with $errors error(s)"
     echo -e "\n${RED_B}System validation failed with $errors error(s).${RESET}"
     echo -e "${NORD_BLUE}Please resolve these issues before continuing.${RESET}"
     return 1
   fi
-  
+
   success_log "System validation passed"
   echo -e "\n${GREEN}✅ System validation passed${RESET}"
   return 0
@@ -276,19 +276,19 @@ validate_system_requirements() {
 validate_directory_permissions() {
   local dir="$1"
   local parent_dir="$(dirname "$dir")"
-  
+
   # Check if parent directory is writable
   if [[ ! -w "$parent_dir" ]]; then
     echo -e "${RED_B}❌ Parent directory is not writable: $parent_dir${RESET}"
     return 1
   fi
-  
+
   # If directory exists, check if it's writable
   if [[ -d "$dir" ]] && [[ ! -w "$dir" ]]; then
     echo -e "${RED_B}❌ Directory is not writable: $dir${RESET}"
     return 1
   fi
-  
+
   return 0
 }
 
@@ -298,9 +298,9 @@ retry_with_backoff() {
   local delay="$2"
   local command="${@:3}"
   local attempt=1
-  
+
   debug_log "Retrying command with backoff: $command (max attempts: $max_attempts)"
-  
+
   while [[ $attempt -le $max_attempts ]]; do
     debug_log "Attempt $attempt/$max_attempts: $command"
     if eval "$command"; then
@@ -316,7 +316,7 @@ retry_with_backoff() {
       ((attempt++))
     fi
   done
-  
+
   error_log "Command failed after $max_attempts attempts: $command"
   echo -e "${RED_B}❌ Command failed after $max_attempts attempts${RESET}"
   return 1
@@ -346,16 +346,16 @@ make_banner() {
 # Display comprehensive help information
 show_help() {
   make_banner "📚 JeffreyDavidson/Dotfiles Help" "$NORD_CYAN" 2
-  
+
   echo -e "${NORD_BLUE}DESCRIPTION:${RESET}"
   echo -e "  Comprehensive dotfiles installation and configuration script for macOS and Linux."
   echo -e "  Automates the setup of development environment, applications, and system preferences."
   echo -e ""
-  
+
   echo -e "${NORD_BLUE}USAGE:${RESET}"
   echo -e "  ./install.sh [OPTIONS]"
   echo -e ""
-  
+
   echo -e "${NORD_BLUE}OPTIONS:${RESET}"
   echo -e "  ${GREEN}--auto-yes${RESET}          Skip all prompts and use default 'yes' responses"
   echo -e "  ${GREEN}--no-clear${RESET}          Don't clear the screen at startup"
@@ -363,7 +363,7 @@ show_help() {
   echo -e "  ${GREEN}--log${RESET}               Enable logging to file"
   echo -e "  ${GREEN}--help, -h${RESET}          Show this help message"
   echo -e ""
-  
+
   echo -e "${NORD_BLUE}ENVIRONMENT VARIABLES:${RESET}"
   echo -e "  ${GREEN}DOTFILES_DIR${RESET}        Target directory for dotfiles (default: $HOME/dotfiles)"
   echo -e "  ${GREEN}DOTFILES_REPO${RESET}       Repository URL (default: github.com/jeffreyDavidson/dotfiles.git)"
@@ -371,7 +371,7 @@ show_help() {
   echo -e "  ${GREEN}XDG_CONFIG_HOME${RESET}     XDG config directory (default: ~/.config)"
   echo -e "  ${GREEN}XDG_DATA_HOME${RESET}       XDG data directory (default: ~/.local/share)"
   echo -e ""
-  
+
   echo -e "${NORD_BLUE}INSTALLATION PHASES:${RESET}"
   echo -e "  ${NORD_PURPLE}1. Pre-Setup${RESET}         System validation and environment setup"
   echo -e "  ${NORD_PURPLE}2. Dotfiles Setup${RESET}    Clone/update repository and create symlinks"
@@ -379,7 +379,7 @@ show_help() {
   echo -e "  ${NORD_PURPLE}4. Preferences${RESET}       Configure shell, plugins, and system settings"
   echo -e "  ${NORD_PURPLE}5. Finishing${RESET}        Refresh environment and display summary"
   echo -e ""
-  
+
   echo -e "${NORD_BLUE}EXAMPLES:${RESET}"
   echo -e "  ${NORD_GRAY}# Interactive installation (recommended)${RESET}"
   echo -e "  ./install.sh"
@@ -393,14 +393,14 @@ show_help() {
   echo -e "  ${NORD_GRAY}# Custom dotfiles directory${RESET}"
   echo -e "  DOTFILES_DIR=~/my-config ./install.sh"
   echo -e ""
-  
+
   echo -e "${NORD_BLUE}FILES AND DIRECTORIES:${RESET}"
   echo -e "  ${GREEN}symlinks.yaml${RESET}       Main configuration file for dotbot"
   echo -e "  ${GREEN}scripts/installs/Brewfile${RESET} macOS package definitions"
   echo -e "  ${GREEN}config/${RESET}             Application configurations"
   echo -e "  ${GREEN}lib/dotbot/${RESET}         Dotbot symlink manager"
   echo -e ""
-  
+
   echo -e "${NORD_BLUE}TROUBLESHOOTING:${RESET}"
   echo -e "  ${YELLOW_B}System validation fails:${RESET}   Install missing required commands"
   echo -e "  ${YELLOW_B}Git clone fails:${RESET}           Check network connection and repository URL"
@@ -409,7 +409,7 @@ show_help() {
   echo -e ""
   echo -e "  For detailed troubleshooting, run with: ${GREEN}--debug --log${RESET}"
   echo -e ""
-  
+
   echo -e "${NORD_BLUE}MORE INFORMATION:${RESET}"
   echo -e "  Repository: ${NORD_CYAN}https://github.com/${REPO_NAME}${RESET}"
   echo -e "  Issues:     ${NORD_CYAN}https://github.com/${REPO_NAME}/issues${RESET}"
@@ -489,17 +489,17 @@ show_spinner() {
   local message="$2"
   local spinner_chars='⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏'
   local i=0
-  
+
   # Hide cursor
   echo -ne "\033[?25l"
-  
+
   echo -n "${NORD_BLUE}$message ${RESET}"
   while kill -0 $pid 2>/dev/null; do
     printf "\r${NORD_BLUE}$message ${spinner_chars:$i:1}${RESET}"
     i=$(((i + 1) % ${#spinner_chars}))
     sleep 0.1
   done
-  
+
   # Show cursor and print completion
   echo -ne "\033[?25h"
   printf "\r${NORD_BLUE}$message ${GREEN}✓${RESET}\n"
@@ -514,10 +514,10 @@ show_progress_bar() {
   local percentage=$((current * 100 / total))
   local completed=$((current * width / total))
   local remaining=$((width - completed))
-  
+
   printf "\r${NORD_BLUE}$message [${GREEN}%*s${NORD_GRAY}%*s${NORD_BLUE}] %d%%${RESET}" \
     $completed "" $remaining "" $percentage | tr ' ' '█' | sed "s/█/${GREEN}█/g; s/$/${RESET}/"
-  
+
   if [[ $current -eq $total ]]; then
     echo ""
   fi
@@ -566,7 +566,7 @@ is_yes() {
 show_section() {
   local title="$1"
   local color="${2:-$NORD_CYAN}"
-  
+
   echo -e "\n${color}┌" + "─" * $((${#title} + 4)) + "┐${RESET}"
   echo -e "${color}│  $title  │${RESET}"
   echo -e "${color}└" + "─" * $((${#title} + 4)) + "┘${RESET}\n"
@@ -612,8 +612,9 @@ function pre_setup_tasks() {
 
   # Confirm that the user would like to proceed
   local response
+  response=""
   response=$(prompt_user "Ready to begin installation?" "N")
-  
+
   if ! is_yes "$response"; then
     echo -e "\n${NORD_BLUE}👋 No worries! Feel free to come back another time.${RESET}"
     make_banner "🚧 Installation Aborted" "${YELLOW_B}" 1
@@ -643,7 +644,7 @@ function pre_setup_tasks() {
 # Run early XDG directory setup to prevent ~/.docker and ~/.gnupg creation
 setup_early_xdg_directories() {
   local early_xdg_script="$EARLY_XDG_SCRIPT"
-  
+
   # Only run if we're in the dotfiles directory and script exists
   if [[ -f "$early_xdg_script" ]]; then
     echo -e "${NORD_BLUE}Setting up early XDG directories...${RESET}"
@@ -661,18 +662,18 @@ configure_xdg_variables() {
     echo -e "${YELLOW_B}XDG_CONFIG_HOME not set. Using ~/.config${RESET}"
     export XDG_CONFIG_HOME="${HOME}/.config"
   fi
-  
+
   if [ -z "${XDG_DATA_HOME+x}" ]; then
     echo -e "${YELLOW_B}XDG_DATA_HOME not set. Using ~/.local/share${RESET}"
     export XDG_DATA_HOME="${HOME}/.local/share"
   fi
-  
+
   if [ -z "${XDG_CACHE_HOME+x}" ]; then
     export XDG_CACHE_HOME="${HOME}/.cache"
   fi
-  
+
   echo -e "${GREEN}✓ XDG variables configured${RESET}"
-  
+
   # Run early XDG setup to prevent ~/.docker and ~/.gnupg creation
   setup_early_xdg_directories
 }
@@ -684,7 +685,7 @@ setup_dotfiles_directory() {
     echo -e "${RED_B}❌ DOTFILES_DIR cannot be empty${RESET}"
     exit 1
   fi
-  
+
   # Prevent dangerous paths
   case "$DOTFILES_DIR" in
     "/"|"$HOME"|"$HOME/")
@@ -693,57 +694,57 @@ setup_dotfiles_directory() {
       exit 1
       ;;
   esac
-  
+
   # Validate directory permissions
   if ! validate_directory_permissions "$DOTFILES_DIR"; then
     exit 1
   fi
-  
+
   # If neither source directory nor dotfiles directory exist, set default
   if [[ ! -d "$SRC_DIR" ]] && [[ ! -d "$DOTFILES_DIR" ]]; then
     echo -e "${YELLOW_B}Setting default dotfiles directory: $DOTFILES_DIR${RESET}"
     echo -e "${NORD_CYAN}To specify a custom location, set DOTFILES_DIR environment variable${RESET}"
   fi
-  
+
   echo -e "${GREEN}✓ Dotfiles directory validated: $DOTFILES_DIR${RESET}"
 }
 
 # Downloads / updates dotfiles and symlinks them
 function setup_dot_files() {
   local git_operation_failed=false
-  
+
   # If dotfiles not yet present, clone the repo
   if [[ ! -d "$DOTFILES_DIR" ]]; then
     echo -e "${NORD_BLUE}Cloning dotfiles repository...${RESET}"
     echo -e "${NORD_GRAY}Repository: ${DOTFILES_REPO}${RESET}"
     echo -e "${NORD_GRAY}Destination: ${DOTFILES_DIR}${RESET}"
-    
+
     # Create parent directory if needed
     if ! mkdir -p "$(dirname "$DOTFILES_DIR")"; then
       echo -e "${RED_B}❌ Failed to create parent directory${RESET}"
       terminate
     fi
-    
+
     # Clone with retry logic
     if ! retry_with_backoff $MAX_RETRIES $RETRY_DELAY "git clone --recursive --progress '$DOTFILES_REPO' '$DOTFILES_DIR'"; then
       echo -e "${RED_B}❌ Failed to clone dotfiles repository${RESET}"
       terminate
     fi
-    
+
     cd "${DOTFILES_DIR}" || terminate
     echo -e "${GREEN}✓ Repository cloned successfully${RESET}"
-    
+
   else
     # Dotfiles already downloaded, just fetch latest changes
     echo -e "${NORD_BLUE}Updating existing dotfiles repository...${RESET}"
     cd "${DOTFILES_DIR}" || terminate
-    
+
     # Verify it's a git repository
     if [[ ! -d ".git" ]]; then
       echo -e "${RED_B}❌ Directory exists but is not a git repository: $DOTFILES_DIR${RESET}"
       terminate
     fi
-    
+
     # Fetch latest changes with retry logic
     if ! retry_with_backoff $MAX_RETRIES $RETRY_DELAY "git pull origin '$GIT_DEFAULT_BRANCH'"; then
       echo -e "${YELLOW_B}⚠️  Failed to pull latest changes, continuing with current version${RESET}"
@@ -751,7 +752,7 @@ function setup_dot_files() {
     else
       echo -e "${GREEN}✓ Repository updated successfully${RESET}"
     fi
-    
+
     # Update submodules
     echo -e "${NORD_BLUE}Updating submodules...${RESET}"
     if ! retry_with_backoff $MAX_RETRIES $RETRY_DELAY "git submodule update --recursive --remote --init --jobs='$GIT_SUBMODULE_JOBS'"; then
@@ -764,24 +765,24 @@ function setup_dot_files() {
 
   # Validate critical files exist
   validate_dotfiles_structure
-  
+
   # Set up symlinks with dotbot
   setup_symlinks_with_dotbot
 }
 
 # Validate that critical dotfiles structure exists
 validate_dotfiles_structure() {
-  local required_files=("$SYMLINK_FILE" "$DOTBOT_DIR/$DOTBOT_BIN")
+  local required_files=("$DOTBOT_CONFIG" "$DOTBOT_DIR/$DOTBOT_BIN")
   local missing_files=()
-  
+
   echo -e "${NORD_BLUE}Validating dotfiles structure...${RESET}"
-  
+
   for file in "${required_files[@]}"; do
     if [[ ! -f "$file" ]]; then
       missing_files+=("$file")
     fi
   done
-  
+
   if [[ ${#missing_files[@]} -gt 0 ]]; then
     echo -e "${RED_B}❌ Missing critical files:${RESET}"
     for file in "${missing_files[@]}"; do
@@ -859,7 +860,7 @@ function install_packages() {
       echo -e "${YELLOW_B}⚠️  Package management not supported for: $SYSTEM_TYPE${RESET}"
       ;;
   esac
-  
+
   return 0
 }
 
@@ -867,37 +868,37 @@ function install_packages() {
 install_homebrew_if_needed() {
   if ! command_exists brew; then
     show_section "Homebrew Package Manager" "$NORD_PURPLE"
-    
+
     echo -e "${NORD_GRAY}Homebrew is a package manager that simplifies software installation on macOS.${RESET}"
     echo -e "${NORD_GRAY}It will be used to install development tools and applications.${RESET}\n"
-    
+
     local response
     response=$(prompt_user "Install Homebrew package manager?" "Y")
-    
+
     if is_yes "$response"; then
       echo -e "\n🍺 ${NORD_BLUE}Installing Homebrew...${RESET}"
-      
+
       # Run installation in background to show spinner
       (
         /bin/bash -c "$(curl -fsSL $HOMEBREW_INSTALL_URL)"
       ) &
       show_spinner $! "Installing Homebrew package manager"
       wait $!
-      
+
       # Add Homebrew to PATH
       for brew_path in "${HOMEBREW_PATHS[@]}"; do
         if [[ -d "$brew_path" ]] && [[ ":$PATH:" != *":$brew_path:"* ]]; then
           export PATH="$brew_path:$PATH"
         fi
       done
-      
+
       # Verify installation
       if ! command_exists brew; then
         error_log "Homebrew installation failed"
         echo -e "${RED_B}❌ Homebrew installation failed${RESET}"
         return 1
       fi
-      
+
       success_log "Homebrew installed successfully"
       echo -e "${GREEN}✅ Homebrew installed successfully${RESET}"
     else
@@ -913,38 +914,38 @@ install_homebrew_if_needed() {
 # Update and install Homebrew packages
 update_homebrew_packages() {
   local brewfile="$BREWFILE_PATH"
-  
+
   if ! command_exists brew; then
     echo -e "${NORD_BLUE}Skipping package updates - Homebrew not available${RESET}"
     return 1
   fi
-  
+
   if [[ ! -f "$brewfile" ]]; then
     echo -e "${NORD_YELLOW}⚠️  Brewfile not found at $brewfile${RESET}"
     return 1
   fi
-  
+
   echo -e "\n${NORD_BLUE}Updating homebrew and packages...${RESET}"
-  
+
   # Update Brew to latest version
   echo -e "${NORD_GRAY}Updating Homebrew...${RESET}"
   brew update
-  
+
   # Upgrade all installed packages
   echo -e "${NORD_GRAY}Upgrading installed packages...${RESET}"
   brew upgrade
-  
+
   # Install all listed Brew apps
   echo -e "${NORD_GRAY}Installing packages from Brewfile...${RESET}"
   brew bundle --file "$brewfile"
-  
+
   # Remove stale lock files and outdated downloads
   echo -e "${NORD_GRAY}Cleaning up...${RESET}"
   brew cleanup
-  
+
   # Restart finder (required for some apps)
   killall Finder 2>/dev/null || true
-  
+
   echo -e "${NORD_GREEN}✅ Package management complete${RESET}"
   return 0
 }
@@ -952,15 +953,15 @@ update_homebrew_packages() {
 # Restore launchpad layout using lporg
 restore_launchpad_layout() {
   local launchpad_layout="$LAUNCHPAD_LAYOUT_PATH"
-  
+
   if ! command_exists lporg; then
     return 1
   fi
-  
+
   if [[ ! -f "$launchpad_layout" ]]; then
     return 1
   fi
-  
+
   echo -e "\n${NORD_CYAN}Would you like to restore launchpad layout? (y/N)${RESET}"
   read -t $PROMPT_TIMEOUT -n 1 -r ans_restorelayout
   if [[ $ans_restorelayout =~ ^[Yy]$ ]] || [[ $AUTO_YES = true ]] ; then
@@ -978,10 +979,10 @@ check_macos_updates() {
   read -t $PROMPT_TIMEOUT -n 1 -r ans_macoscheck
   if [[ $ans_macoscheck =~ ^[Yy]$ ]] || [[ $AUTO_YES = true ]] ; then
     echo -e "${NORD_BLUE}Checking for software updates...${RESET}"
-    
+
     local pending_updates
     pending_updates=$(softwareupdate -l 2>&1)
-    
+
     if [[ ! $pending_updates == *"No new software available."* ]]; then
       echo -e "${NORD_BLUE}📱 A new version of macOS is available${RESET}"
       echo -e "${NORD_CYAN}Would you like to update to the latest version of macOS? (y/N)${RESET}"
@@ -1017,25 +1018,25 @@ setup_default_shell() {
     echo -e "${NORD_GREEN}✅ ZSH is already your default shell${RESET}"
     return 0
   fi
-  
+
   if ! command_exists zsh; then
     echo -e "${NORD_YELLOW}⚠️  ZSH not found, skipping shell setup${RESET}"
     return 1
   fi
-  
+
   echo -e "\n${NORD_CYAN}Would you like to set ZSH as your default shell? (y/N)${RESET}"
   read -t $PROMPT_TIMEOUT -n 1 -r ans_zsh
   if [[ $ans_zsh =~ ^[Yy]$ ]] || [[ $AUTO_YES = true ]] ; then
     echo -e "${NORD_BLUE}Setting ZSH as default shell...${RESET}"
-    
+
     local zsh_path
     zsh_path=$(which zsh)
-    
+
     # Add zsh to /etc/shells if not present
     if ! grep -q "$zsh_path" /etc/shells 2>/dev/null; then
       echo "$zsh_path" | sudo tee -a /etc/shells >/dev/null
     fi
-    
+
     # Change the default shell
     if chsh -s "$zsh_path" "$USER"; then
       echo -e "${NORD_GREEN}✅ ZSH set as default shell (restart terminal to apply)${RESET}"
@@ -1051,16 +1052,16 @@ setup_default_shell() {
 # Setup development tools with XDG compliance
 setup_dev_tools_xdg() {
   local dev_tools_script="$DEV_TOOLS_XDG_SCRIPT"
-  
+
   if [[ ! -f "$dev_tools_script" ]]; then
     return 1
   fi
-  
-  echo -e "\n${NORD_CYAN}Would you like to migrate development tools (npm, jupyter, ipython) to XDG locations? (y/N)${RESET}"
+
+  echo -e "\n${NORD_CYAN}Would you like to migrate development tools (npm) to XDG locations? (y/N)${RESET}"
   read -t $PROMPT_TIMEOUT -n 1 -r ans_devtools
   if [[ $ans_devtools =~ ^[Yy]$ ]] || [[ $AUTO_YES == true ]] ; then
     echo -e "${NORD_BLUE}Setting up development tools with XDG compliance...${RESET}"
-    
+
     if chmod +x "$dev_tools_script" && "$dev_tools_script"; then
       echo -e "${NORD_GREEN}✅ Development tools XDG setup complete${RESET}"
     else
@@ -1096,19 +1097,19 @@ setup_ssh_xdg() {
   fi
 }
 
-# Setup remaining applications with XDG compliance  
+# Setup remaining applications with XDG compliance
 setup_remaining_xdg() {
   local remaining_script="$REMAINING_XDG_SCRIPT"
-  
+
   if [[ ! -f "$remaining_script" ]]; then
     return 1
   fi
-  
+
   echo -e "\n${NORD_CYAN}Would you like to clean up remaining directories and migrate supported apps to XDG? (y/N)${RESET}"
   read -t $PROMPT_TIMEOUT -n 1 -r ans_remaining
   if [[ $ans_remaining =~ ^[Yy]$ ]] || [[ $AUTO_YES == true ]] ; then
     echo -e "${NORD_BLUE}Cleaning up remaining directories with XDG compliance...${RESET}"
-    
+
     if chmod +x "$remaining_script" && "$remaining_script"; then
       echo -e "${NORD_GREEN}✅ Remaining directories cleanup complete${RESET}"
     else
@@ -1123,16 +1124,16 @@ setup_remaining_xdg() {
 # Setup Docker with XDG compliance
 setup_docker_xdg() {
   local docker_script="$DOCKER_XDG_SCRIPT"
-  
+
   if [[ ! -f "$docker_script" ]]; then
     return 1
   fi
-  
+
   echo -e "\n${NORD_CYAN}Would you like to setup Docker with XDG compliance? (y/N)${RESET}"
   read -t $PROMPT_TIMEOUT -n 1 -r ans_docker
   if [[ $ans_docker =~ ^[Yy]$ ]] || [[ $AUTO_YES == true ]] ; then
     echo -e "${NORD_BLUE}Setting up Docker with XDG compliance...${RESET}"
-    
+
     if chmod +x "$docker_script" && "$docker_script"; then
       echo -e "${NORD_GREEN}✅ Docker XDG setup complete${RESET}"
     else
@@ -1147,16 +1148,16 @@ setup_docker_xdg() {
 # Setup GPG with XDG compliance
 setup_gpg_xdg() {
   local gpg_script="$GPG_SETUP_SCRIPT"
-  
+
   if [[ ! -f "$gpg_script" ]] || [[ "$SYSTEM_TYPE" != "Darwin" ]]; then
     return 1
   fi
-  
+
   echo -e "\n${NORD_CYAN}Would you like to setup GPG with XDG compliance? (y/N)${RESET}"
   read -t $PROMPT_TIMEOUT -n 1 -r ans_gpg
   if [[ $ans_gpg =~ ^[Yy]$ ]] || [[ $AUTO_YES == true ]] ; then
     echo -e "${NORD_BLUE}Setting up GPG with XDG compliance...${RESET}"
-    
+
     if chmod +x "$gpg_script" && "$gpg_script"; then
       echo -e "${NORD_GREEN}✅ GPG XDG setup complete${RESET}"
     else
@@ -1174,12 +1175,12 @@ install_zsh_plugins() {
     echo -e "${NORD_YELLOW}⚠️  ZSH not found, skipping plugin installation${RESET}"
     return 1
   fi
-  
+
   echo -e "\n${NORD_CYAN}Would you like to install / update ZSH plugins? (y/N)${RESET}"
   read -t $PROMPT_TIMEOUT -n 1 -r ans_cliplugins
   if [[ $ans_cliplugins =~ ^[Yy]$ ]] || [[ $AUTO_YES = true ]] ; then
     echo -e "${NORD_BLUE}Installing ZSH plugins...${RESET}"
-    
+
     # Install / update ZSH plugins with Antigen
     if /bin/zsh -i -c "antigen update && antigen-apply"; then
       echo -e "${NORD_GREEN}✅ ZSH plugins updated successfully${RESET}"
@@ -1200,10 +1201,10 @@ apply_system_preferences() {
     if [ "$SYSTEM_TYPE" = "Darwin" ]; then
       echo -e "\n${NORD_BLUE}Applying macOS system preferences...${RESET}"
       echo -e "${NORD_YELLOW}⚠️  Please ensure you've reviewed these scripts before proceeding${RESET}\n"
-      
+
       local macos_settings_dir="$MACOS_SETTINGS_DIR"
       local scripts=("${MACOS_SCRIPTS[@]}")
-      
+
       for script in "${scripts[@]}"; do
         local script_path="$macos_settings_dir/$script"
         if [[ -f "$script_path" ]]; then
@@ -1217,11 +1218,11 @@ apply_system_preferences() {
           echo -e "${NORD_YELLOW}⚠️  Script not found: $script_path${RESET}"
         fi
       done
-      
+
     else
       echo -e "\n${NORD_BLUE}Applying preferences to GNOME apps...${RESET}"
       echo -e "${NORD_YELLOW}⚠️  Please ensure you've reviewed this script before proceeding${RESET}\n"
-      
+
       local dconf_script="$LINUX_DCONF_SCRIPT"
       if [[ -f "$dconf_script" ]]; then
         if chmod +x "$dconf_script" && "$dconf_script"; then
