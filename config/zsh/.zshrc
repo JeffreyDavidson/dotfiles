@@ -53,7 +53,7 @@ if [[ -d $zsh_dir ]]; then
   source ${zsh_dir}/helpers/setup-antigen.zsh
   source ${zsh_dir}/helpers/import-plugins.zsh
   source ${zsh_dir}/helpers/misc-stuff.zsh
-  
+
   # Laravel Herd configuration
   source ${zsh_dir}/helpers/herd.zsh
 
