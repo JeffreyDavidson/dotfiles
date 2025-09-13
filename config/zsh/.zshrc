@@ -57,10 +57,7 @@ if [[ -d $zsh_dir ]]; then
   source ${zsh_dir}/lib/key-bindings.zsh
 fi
 
-# Add Zoxide (for cd, quick jump) to shell
-if hash zoxide 2> /dev/null; then
-    eval "$(zoxide init zsh)"
-fi
+# Zoxide initialization is handled below with starship and other tools
 
 # If not running in nested shell, then show welcome message :)
 if [[ "${SHLVL}" -lt 2 ]] && \
