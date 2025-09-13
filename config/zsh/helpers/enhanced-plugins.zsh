@@ -56,6 +56,24 @@ if command -v antigen >/dev/null 2>&1; then
     # Third-party Plugins
     #############################################################
     
+    # Quickly jump into frequently used directories
+    antigen bundle agkozak/zsh-z
+    
+    # Replace zsh default completion menu with fzf
+    antigen bundle Aloxaf/fzf-tab
+    
+    # Run mkdir and cd in one command
+    antigen bundle caarlos0/zsh-mkc
+    
+    # Remind you to use existing aliases
+    antigen bundle MichaelAquilina/zsh-you-should-use
+    
+    # Run artisan from anywhere in a directory
+    antigen bundle jessarcher/zsh-artisan
+    
+    # Open current repository in browser
+    antigen bundle paulirish/git-open
+    
     # Enhanced cd with fuzzy matching
     antigen bundle changyuheng/fz
     
