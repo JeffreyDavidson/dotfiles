@@ -39,8 +39,10 @@
     ${XDG_CONFIG_HOME}/claude: config/claude
     ${XDG_CONFIG_HOME}/wget: config/wget
 
-    # Security configurations (gnupg excluded - contains machine-specific keys)
+    # Security configurations
     ${XDG_CONFIG_HOME}/ssh: config/ssh
+    ${XDG_CONFIG_HOME}/gnupg/gpg.conf: config/gnupg/gpg.conf
+    ${XDG_CONFIG_HOME}/gnupg/gpg-agent.conf: config/gnupg/gpg-agent.conf
 
     # Enhanced shell tools
     ${XDG_CONFIG_HOME}/fzf: config/fzf
