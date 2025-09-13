@@ -48,7 +48,9 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --border --inline-info"
 export TMUX_CONFIG="${XDG_CONFIG_HOME}/tmux/tmux.conf"
 export _ZO_DATA_DIR="${XDG_DATA_HOME}/zoxide"
 
-# GPG, SSH, and Docker
-export GNUPGHOME="${XDG_CONFIG_HOME}/gnupg"
+# GPG, SSH, and Docker (GNUPGHOME already set above at line 25)
 export SSH_CONFIG_FILE="${XDG_CONFIG_HOME}/ssh/config"
 export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
+
+# ZSH completion cache location (prevent creation in dotfiles directory)
+export ZSH_COMPDUMP="${XDG_CACHE_HOME}/zsh/.zcompdump"

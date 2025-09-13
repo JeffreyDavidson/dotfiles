@@ -77,7 +77,7 @@ path=(
   "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin"
 )
 
-autoload -U compinit && compinit
+# compinit is handled in lib/completion.zsh
 
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
