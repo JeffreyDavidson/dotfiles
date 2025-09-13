@@ -6,6 +6,7 @@
 export PATH="/Users/jeffreydavidson/Library/Application Support/Herd/bin/:$PATH"
 
 # Herd PHP version-specific configurations
+export HERD_PHP_82_INI_SCAN_DIR="/Users/jeffreydavidson/Library/Application Support/Herd/config/php/82/"
 export HERD_PHP_83_INI_SCAN_DIR="/Users/jeffreydavidson/Library/Application Support/Herd/config/php/83/"
 export HERD_PHP_84_INI_SCAN_DIR="/Users/jeffreydavidson/Library/Application Support/Herd/config/php/84/"
 export HERD_PHP_85_INI_SCAN_DIR="/Users/jeffreydavidson/Library/Application Support/Herd/config/php/85/"
