@@ -44,7 +44,7 @@ if [[ -d $zsh_dir ]]; then
   # Setup Antigen, and import plugins
   source ${zsh_dir}/helpers/setup-antigen.zsh
   source ${zsh_dir}/helpers/enhanced-plugins.zsh
-  source ${zsh_dir}/helpers/misc-stuff.zsh
+  source ${zsh_dir}/helpers/fallbacks.zsh
 
   # Laravel Herd configuration
   source ${zsh_dir}/helpers/herd.zsh
