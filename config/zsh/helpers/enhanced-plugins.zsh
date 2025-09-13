@@ -161,16 +161,7 @@ fi
 # Additional Plugin Enhancements
 #############################################################
 
-# Enhanced completion settings
-zstyle ':completion:*' menu select
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*:descriptions' format '%F{cyan}-- %d --%f'
-zstyle ':completion:*:warnings' format '%F{red}No matches found%f'
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
 # Git completion enhancements
-zstyle ':completion:*:*:git:*' script ~/.config/zsh/lib/git-completion.bash
 zstyle ':completion:*:*:git:*' user-commands ${${(M)${(f)"$(git help -a 2>/dev/null)"}:#  [a-z]*}#  }
 
 # Laravel Herd completions (if available)
