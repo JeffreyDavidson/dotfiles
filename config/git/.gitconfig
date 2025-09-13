@@ -2,7 +2,7 @@
     name = Jeffrey Davidson
     email = 3826104+JeffreyDavidson@users.noreply.github.com
     username = jeffreydavidson
-	signingKey = C4DBDA11354C7AD2
+	signingKey = 28DB89B8E22C2D6355C3452DDFC32F67B6CE3B8B
 [init]
     defaultBranch = main
 [core]
