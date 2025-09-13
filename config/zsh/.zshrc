@@ -25,15 +25,7 @@ fi
 
 # MacOS-specific services
 if [ "$(uname -s)" = "Darwin" ]; then
-  # Add Brew to path, if it's installed
-  if [[ -d /opt/homebrew/bin ]]; then
-    export PATH=/opt/homebrew/bin:$PATH
-  fi
-
-  # If using iTerm, import the shell integration if availible
-  if [[ -f "${XDG_CONFIG_HOME}/zsh/.iterm2_shell_integration.zsh" ]]; then
-    source "${XDG_CONFIG_HOME}/zsh/.iterm2_shell_integration.zsh"
-  fi
+  # Homebrew PATH is handled by .zprofile
 fi
 
 # Source all ZSH config files (if present)
