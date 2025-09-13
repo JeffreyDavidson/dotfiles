@@ -10,4 +10,4 @@ alias d='dirs -v'
 for index ({1..9}) alias "d$index"="cd +${index}"; unset index
 
 # Easy directory navigation
-# setopt autocd autopushd \ pushdignoredups
+setopt autocd autopushd \ pushdignoredups
