@@ -13,7 +13,7 @@ zstyle ':completion:*:matches'      group               yes                     
 zstyle ':completion:*'              group-name          ''                                          # Separate matches in menu into groups.
 
 # Format group matches in completion menu.
-#zstyle ':completion:*:descriptions' format              '%F{yellow}-- %d --%f'             # Comment when using fzf-tab plugin. For more information,
+zstyle ':completion:*:descriptions' format              '%F{yellow}-- %d --%f'             # Comment when using fzf-tab plugin. For more information,
 zstyle ':completion:*:descriptions' format              '[%d]'                              # see https://github.com/Aloxaf/fzf-tab/issues/43.
 zstyle ':completion:*:corrections'  format              '%F{green}-- %d (errors: %e) --%f'
 zstyle ':completion:*:messages'     format              '%F{purple}-- %d --%f'
