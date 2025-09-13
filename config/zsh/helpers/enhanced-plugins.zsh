@@ -4,6 +4,9 @@
 # Check if antigen is available
 if command -v antigen >/dev/null 2>&1; then
     
+    # Suppress zoxide errors during plugin loading
+    export _ZO_ECHO=0
+    
     # Load oh-my-zsh library
     antigen use oh-my-zsh
     

@@ -78,9 +78,10 @@ path=(
 
 eval "$(fzf --zsh)"
 eval "$(starship init zsh)"
-eval "$(zoxide init --cmd cd zsh)"
-eval $(thefuck --alias)
-eval "$(thefuck --alias fk)"
+# Initialize zoxide quietly, but skip during plugin updates to avoid conflicts
+if command -v zoxide >/dev/null 2>&1 && [[ -z "$ANTIGEN_UPDATING" ]]; then
+  eval "$(zoxide init --cmd cd zsh)" 2>/dev/null || true
+fi
 
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 

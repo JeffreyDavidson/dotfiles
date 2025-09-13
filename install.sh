@@ -1181,8 +1181,8 @@ install_zsh_plugins() {
   if [[ $ans_cliplugins =~ ^[Yy]$ ]] || [[ $AUTO_YES = true ]] ; then
     echo -e "${NORD_BLUE}Installing ZSH plugins...${RESET}"
 
-    # Install / update ZSH plugins with Antigen
-    if /bin/zsh -i -c "antigen update && antigen-apply"; then
+    # Install / update ZSH plugins with Antigen (suppress zoxide during updates)
+    if ANTIGEN_UPDATING=1 /bin/zsh -i -c "antigen update && antigen-apply"; then
       echo -e "${NORD_GREEN}✅ ZSH plugins updated successfully${RESET}"
     else
       echo -e "${NORD_RED}❌ Failed to update ZSH plugins${RESET}"
