@@ -9,5 +9,5 @@ alias d='dirs -v'
 # Jump to a previous directory, by index
 for index ({1..9}) alias "d$index"="cd +${index}"; unset index
 
-# Easy directory navigation
-setopt autocd autopushd \ pushdignoredups
+# Easy directory navigation  
+# setopt autocd autopushd pushd_ignore_dups

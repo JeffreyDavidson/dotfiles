@@ -56,8 +56,7 @@ if command -v antigen >/dev/null 2>&1; then
     # Third-party Plugins
     #############################################################
     
-    # Quickly jump into frequently used directories
-    antigen bundle agkozak/zsh-z
+    # Directory jumping handled by zoxide (initialized in .zshrc)
     
     # Replace zsh default completion menu with fzf
     antigen bundle Aloxaf/fzf-tab
@@ -73,9 +72,6 @@ if command -v antigen >/dev/null 2>&1; then
     
     # Open current repository in browser
     antigen bundle paulirish/git-open
-    
-    # Enhanced cd with fuzzy matching
-    antigen bundle changyuheng/fz
     
     # Kubernetes helpers (if you use k8s)
     # antigen bundle kubectl
