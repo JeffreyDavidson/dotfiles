@@ -48,19 +48,16 @@ setopt extendedglob
 # Allow SSH tab completion for mosh hostnames
 compdef mosh=ssh
 
-# Location for completions
-zcompdump="${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/.zcompdump"
+# Location for completions (use environment variable if set)
+zcompdump="${ZSH_COMPDUMP:-${XDG_CACHE_HOME:-${HOME}/.cache}/zsh/.zcompdump}"
 
-# If completions present, then load them
-if [ -f $zsh_dump_file ]; then
-    compinit -d $zcompdump
-fi
+# Ensure directory exists
+mkdir -p "$(dirname "$zcompdump")"
 
-# Perform compinit only once a day.
-if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]];
-then
-    zcompile "$zcompdump"
-fi
+# Initialize completions with custom dump location
+compinit -d "$zcompdump"
+
+# Note: Compilation of zcompdump is handled by .zlogin in the background
 
 # Disable extended globbing so that ^ will behave as normal.
 unsetopt extendedglob

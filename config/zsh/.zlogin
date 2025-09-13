@@ -4,7 +4,7 @@
 # Executed on startin the background, so won't afftect current session
 # Credit @htr3n. More info: https://htr3n.github.io/2018/07/faster-zsh/
 {
-    zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
+    zcompdump="${ZSH_COMPDUMP:-${XDG_CACHE_HOME:-$HOME/.cache}/zsh/.zcompdump}"
     if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]];
     then
         zcompile "$zcompdump"
