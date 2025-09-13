@@ -9,26 +9,9 @@
 - shell:
   - description: Set XDG environmental variables
     command: source ./config/zsh/.zshenv
-  - description: Remove legacy git config files if they exist
-    command: |
-      [ -f ~/.gitconfig ] && rm ~/.gitconfig || true
-      [ -f ~/.gitignore_global ] && rm ~/.gitignore_global || true
   - description: Remove legacy ZSH config files if they exist (except .zshrc which will be symlinked)
     command: |
-      [ -f ~/.zsh_history ] && rm ~/.zsh_history || true
-      [ -f ~/.zprofile ] && rm ~/.zprofile || true
-      [ -f ~/.zlogin ] && rm ~/.zlogin || true
-      [ -f ~/.zlogout ] && rm ~/.zlogout || true
-      [ -d ~/.zsh_sessions ] && rm -rf ~/.zsh_sessions || true
-  - description: Remove additional legacy config files if they exist
-    command: |
-      [ -f ~/.vimrc ] && rm ~/.vimrc || true
-      [ -f ~/.actrc ] && rm ~/.actrc || true
       [ -f ~/.claude.json ] && rm ~/.claude.json || true
-      [ -f ~/.python_history ] && rm ~/.python_history || true
-      [ -f ~/.z ] && rm ~/.z || true
-      [ -f ~/.wget-hsts ] && rm ~/.wget-hsts || true
-
 - create:
     - ~/Screenshots
     - ~/Herd
