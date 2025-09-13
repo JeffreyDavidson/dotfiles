@@ -191,6 +191,4 @@ fi
 # Load custom completions
 fpath=(~/.config/zsh/completions $fpath)
 
-# Initialize completion system if not already done
-autoload -Uz compinit
-compinit
+# Note: compinit is handled in lib/completion.zsh with proper cache location
