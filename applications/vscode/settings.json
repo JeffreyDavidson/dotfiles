@@ -163,4 +163,5 @@
     "workbench.editor.empty.hint": "hidden",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "workbench.secondarySideBar.defaultVisibility": "hidden",
+    "terminal.integrated.stickyScroll.enabled": false,
 }
