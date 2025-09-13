@@ -114,9 +114,7 @@ alias plz="fc -l -1 | cut -d' ' -f2- | xargs sudo" # Re-run last cmd as root
 # Directories
 alias library="cd $HOME/Library"
 
-# Alias for install script
-alias dotfiles="${DOTFILES_DIR:-$HOME/Projects/dotfiles}/install.sh"
-alias dots="dotfiles"
+# Note: dotfiles navigation aliases are in aliases/dotfiles.zsh
 
 # Command line history
 alias h='history' # Shows full history
