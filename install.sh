@@ -966,7 +966,7 @@ restore_launchpad_layout() {
   read -t $PROMPT_TIMEOUT -n 1 -r ans_restorelayout
   if [[ $ans_restorelayout =~ ^[Yy]$ ]] || [[ $AUTO_YES = true ]] ; then
     echo -e "${NORD_BLUE}Restoring Launchpad Layout...${RESET}"
-    yes "" | lporg load --config="$launchpad_layout"
+    lporg load --config="$launchpad_layout" --yes --no-backup
     echo -e "${NORD_GREEN}✅ Launchpad layout restored${RESET}"
   else
     echo -e "\n${NORD_BLUE}Skipping launchpad layout restoration${RESET}"
