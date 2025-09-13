@@ -85,6 +85,7 @@ if command -v antigen >/dev/null 2>&1; then
     # Apply all antigen configurations
     antigen apply
     
+    
     #############################################################
     # Plugin Configuration
     #############################################################
