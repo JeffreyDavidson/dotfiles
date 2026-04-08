@@ -24,13 +24,12 @@ This is Jeffrey Davidson's personal dotfiles repository organized with the follo
 ### Key Directories
 
 - `config/` - Core application configurations (zsh, nvim, git, starship, bat)
-- `applications/` - Application-specific settings (VS Code, iTerm, Warp terminal)
+- `applications/` - Application-specific settings (VS Code)
 - `scripts/` - Installation and setup scripts
   - `installs/` - Contains Brewfile and prerequisite installation scripts
   - `macos-setup/` - macOS-specific preference and app configuration scripts
   - `setup/` - Individual tool setup scripts (Node.js, SSH, VS Code)
-- `utils/` - Utility scripts (color-map, weather, welcome banner)
-- `steps/` - Dotbot configuration modules (node.yml, vscode.yml, warp.yml)
+- `steps/` - Dotbot configuration modules (node.yml, vscode.yml)
 
 ### Environment Configuration
 

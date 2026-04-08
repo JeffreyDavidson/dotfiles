@@ -64,9 +64,6 @@ cask 'tableplus'
 cask 'tinkerwell'
 cask 'visual-studio-code'
 
-# Terminals
-cask 'warp'
-
 # DevOps
 # Docker removed - Laravel Herd handles PHP development needs
 

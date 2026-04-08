@@ -12,7 +12,6 @@ export XDG_STATE_HOME="${HOME}/.local/state"
 
 # Set default applications
 export EDITOR="vim"
-export TERMINAL="warp"
 export BROWSER="firefox"
 export PAGER="less"
 export NULLCMD=bat
