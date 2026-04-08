@@ -36,6 +36,8 @@
     ${XDG_CONFIG_HOME}/act: config/act
     ${XDG_CONFIG_HOME}/claude: config/claude
     ${XDG_CONFIG_HOME}/wget: config/wget
+    ${XDG_CONFIG_HOME}/python: config/python
+    ${XDG_CONFIG_HOME}/gh: config/gh
 
     # Security configurations (gnupg excluded - contains machine-specific keys)
     ${XDG_CONFIG_HOME}/ssh: config/ssh

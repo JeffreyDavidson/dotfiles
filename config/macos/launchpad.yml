@@ -14,8 +14,6 @@ apps:
               - Herd
               - Ray
               - Tinkerwell
-              - Docker
-              - Postman
         - folder: Mac Mods
           pages:
           - number: 1

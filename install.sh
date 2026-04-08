@@ -55,7 +55,6 @@ DEV_TOOLS_XDG_SCRIPT="./scripts/setup-dev-tools-xdg.sh"
 SSH_XDG_SCRIPT="./scripts/setup-ssh-xdg.sh"
 REMAINING_XDG_SCRIPT="./scripts/setup-remaining-xdg.sh"
 MACOS_SETTINGS_DIR="${DOTFILES_DIR}/scripts/macos-setup"
-LINUX_DCONF_SCRIPT="${DOTFILES_DIR}/scripts/linux/dconf-prefs.sh"
 
 # macOS specific scripts
 MACOS_SCRIPTS=("macos-preferences.sh" "macos-apps.sh")
@@ -1196,20 +1195,6 @@ apply_system_preferences() {
         fi
       done
 
-    else
-      echo -e "\n${NORD_BLUE}Applying preferences to GNOME apps...${RESET}"
-      echo -e "${NORD_YELLOW}⚠️  Please ensure you've reviewed this script before proceeding${RESET}\n"
-
-      local dconf_script="$LINUX_DCONF_SCRIPT"
-      if [[ -f "$dconf_script" ]]; then
-        if chmod +x "$dconf_script" && "$dconf_script"; then
-          echo -e "${NORD_GREEN}✅ GNOME preferences applied${RESET}"
-        else
-          echo -e "${NORD_RED}❌ Failed to apply GNOME preferences${RESET}"
-        fi
-      else
-        echo -e "${NORD_YELLOW}⚠️  GNOME preferences script not found${RESET}"
-      fi
     fi
   else
     echo -e "\n${NORD_BLUE}Skipping system preferences${RESET}"
