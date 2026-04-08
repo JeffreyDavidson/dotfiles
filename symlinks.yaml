@@ -47,6 +47,13 @@
     ${XDG_CONFIG_HOME}/zoxide: config/zoxide
     ${XDG_CONFIG_HOME}/tmux: config/tmux
 
+    # Agent OS v3 commands (slash commands for Claude Code)
+    ~/.claude/commands/discover-standards.md: lib/agent-os/commands/agent-os/discover-standards.md
+    ~/.claude/commands/index-standards.md: lib/agent-os/commands/agent-os/index-standards.md
+    ~/.claude/commands/inject-standards.md: lib/agent-os/commands/agent-os/inject-standards.md
+    ~/.claude/commands/plan-product.md: lib/agent-os/commands/agent-os/plan-product.md
+    ~/.claude/commands/shape-spec.md: lib/agent-os/commands/agent-os/shape-spec.md
+
     # Platform-specific configurations
     ${XDG_CONFIG_HOME}/Brewfile:
       if: '[ `uname` = Darwin ]'
