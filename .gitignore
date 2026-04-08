@@ -2,7 +2,6 @@
 Brewfile.lock.json
 Caskfile.lock.json
 Masfile.lock.json
-Vscodefile.lock.json
 
 # Auto-generated files
 config/zsh/.zcompcache/*
@@ -41,10 +40,6 @@ config/gnupg/trustdb.gpg
 *.dmg
 *.zip
 *.tar.gz
-
-# VS Code extensions (install via script instead)
-applications/vscode/extensions/**/
-!applications/vscode/extensions/README.md
 
 # Compiled/cached files
 *.zwc

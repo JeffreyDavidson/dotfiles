@@ -1,7 +1,0 @@
-- shell:
-    - command: brew bundle --file="applications/vscode/Vscodefile"
-      stdout: true
-      stderr: true
-
-# Note: VS Code settings, keybindings, and snippets are now managed
-# in the main symlinks.yaml configuration file

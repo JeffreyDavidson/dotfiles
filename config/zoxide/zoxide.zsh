@@ -1,35 +1,20 @@
-# Zoxide Configuration
-# Smart directory jumping based on frequency and recency
+# Zoxide Custom Functions
+# Core zoxide init and XDG config are handled in .zshrc and .zshenv
+# This file adds convenience functions on top
 
-# Initialize zoxide (replaces cd with z)
-if command_exists zoxide; then
-  eval "$(zoxide init zsh)"
+if command -v zoxide >/dev/null 2>&1; then
 
-  # Enhanced aliases for directory navigation
-  alias cd='z'
-  alias cdi='zi'  # Interactive mode
-  alias cdb='z -'  # Go back to previous directory
-
-  # Quick navigation aliases
-  alias projects='z ~/Projects'
-  alias config='z ~/.config'
-  alias docs='z ~/Documents'
-  alias downloads='z ~/Downloads'
-  alias desktop='z ~/Desktop'
-
-  # Project-specific shortcuts (adjust these to your common projects)
-  alias dotfiles='z ~/dotfiles'
-
-  # Advanced zoxide functions
+  # Interactive mode
+  alias cdi='zi'
 
   # Jump to directory and list contents
   zl() {
     local dir
     if [[ $# -eq 0 ]]; then
       dir=$(zoxide query --list | fzf --height 40% --reverse --border)
-      [[ -n $dir ]] && z "$dir" && eza
+      [[ -n $dir ]] && cd "$dir" && eza
     else
-      z "$@" && eza
+      cd "$@" && eza
     fi
   }
 
@@ -40,7 +25,7 @@ if command_exists zoxide; then
       dir=$(zoxide query --list | fzf --height 40% --reverse --border)
       [[ -n $dir ]] && cd "$dir" && ${EDITOR:-vim} .
     else
-      z "$@" && ${EDITOR:-vim} .
+      cd "$@" && ${EDITOR:-vim} .
     fi
   }
 
@@ -51,7 +36,7 @@ if command_exists zoxide; then
       dir=$(zoxide query --list | fzf --height 40% --reverse --border)
       [[ -n $dir ]] && cd "$dir" && code .
     else
-      z "$@" && code .
+      cd "$@" && code .
     fi
   }
 
@@ -77,39 +62,6 @@ if command_exists zoxide; then
     echo ""
     echo "Recent additions:"
     zoxide query --list | tail -5
-  }
-
-  # Backup zoxide database
-  zbackup() {
-    local backup_file="$HOME/zoxide-backup-$(date +%Y%m%d-%H%M%S).txt"
-    zoxide query --list > "$backup_file"
-    echo "Zoxide database backed up to: $backup_file"
-  }
-
-  # Restore zoxide database from backup
-  zrestore() {
-    if [[ -z "$1" ]]; then
-      echo "Usage: zrestore <backup-file>"
-      return 1
-    fi
-
-    if [[ ! -f "$1" ]]; then
-      echo "Backup file not found: $1"
-      return 1
-    fi
-
-    echo "This will replace your current zoxide database. Continue? (y/N)"
-    read -q || return 0
-
-    # Clear current database
-    rm -f "${XDG_DATA_HOME:-$HOME/.local/share}/zoxide/db.zo"
-
-    # Add paths from backup
-    while IFS= read -r path; do
-      [[ -d "$path" ]] && zoxide add "$path"
-    done < "$1"
-
-    echo "Zoxide database restored from: $1"
   }
 
   # Smart project switcher with zoxide integration
@@ -138,18 +90,10 @@ if command_exists zoxide; then
           --preview-window=right:50%)
 
     if [[ -n "$selected" ]]; then
-      z "$selected"
+      cd "$selected"
       echo "Switched to project: $(basename "$selected")"
       eza
     fi
   }
 
-  # Export zoxide data directory for XDG compliance
-  export _ZO_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/zoxide"
-
-  # Create data directory if it doesn't exist
-  [[ ! -d "$_ZO_DATA_DIR" ]] && mkdir -p "$_ZO_DATA_DIR"
-
-else
-  echo "Zoxide not installed. Install with: brew install zoxide"
 fi

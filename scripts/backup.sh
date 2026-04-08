@@ -7,7 +7,7 @@ set -euo pipefail
 
 # Configuration
 BACKUP_DIR="$HOME/Backups/dotfiles-$(date +%Y%m%d_%H%M%S)"
-DOTFILES_DIR="${DOTFILES:-$HOME/Projects/dotfiles}"
+DOTFILES_DIR="${DOTFILES:-$HOME/dotfiles}"
 
 echo "🔄 Backing up dotfiles..."
 

@@ -82,23 +82,19 @@ if command -v antigen >/dev/null 2>&1; then
     # AWS CLI helpers (if you use AWS)
     # antigen bundle aws
     
-    # Apply all antigen configurations
-    antigen apply
-    
-    
     #############################################################
-    # Plugin Configuration
+    # Plugin Configuration (must be set before antigen apply)
     #############################################################
-    
+
     # Auto-suggestions configuration
     ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#4C566A,underline"
     ZSH_AUTOSUGGEST_STRATEGY=(history completion)
     ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
     ZSH_AUTOSUGGEST_USE_ASYNC=1
-    
+
     # Syntax highlighting configuration
     ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor)
-    
+
     # Custom syntax highlighting styles (Nord theme)
     typeset -A ZSH_HIGHLIGHT_STYLES
     ZSH_HIGHLIGHT_STYLES[default]='none'
@@ -135,19 +131,20 @@ if command -v antigen >/dev/null 2>&1; then
     ZSH_HIGHLIGHT_STYLES[named-fd]='fg=#D8DEE9'
     ZSH_HIGHLIGHT_STYLES[numeric-fd]='fg=#D8DEE9'
     ZSH_HIGHLIGHT_STYLES[arg0]='fg=#D8DEE9'
-    
+
     # History substring search configuration
     HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_FOUND='bg=#434C5E,fg=#D8DEE9,bold'
     HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=#BF616A,fg=#D8DEE9,bold'
     HISTORY_SUBSTRING_SEARCH_GLOBBING_FLAGS='i'
-    
-    # Key bindings for history substring search
+
+    # Apply all antigen configurations
+    antigen apply
+
+    # Key bindings (must be after antigen apply so widgets exist)
     bindkey '^[[A' history-substring-search-up
     bindkey '^[[B' history-substring-search-down
     bindkey '^P' history-substring-search-up
     bindkey '^N' history-substring-search-down
-    
-    # Key bindings for auto-suggestions
     bindkey '^ ' autosuggest-accept
     bindkey '^]' autosuggest-execute
     bindkey '^[f' forward-word
@@ -170,13 +167,4 @@ if command -v herd >/dev/null 2>&1; then
     zstyle ':completion:*:*:herd:*' option-stacking yes
 fi
 
-# FZF integration with plugins
-if command -v fzf >/dev/null 2>&1; then
-    # FZF + Git integration
-    export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-    
-    # FZF key bindings for plugin compatibility
-    bindkey '^T' transpose-chars  # Restore original Ctrl-T if needed
-fi
-
-# Note: compinit is handled in lib/completion.zsh with proper cache location
+# Note: FZF configuration is handled in config/fzf/fzf.zsh

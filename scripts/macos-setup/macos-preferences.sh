@@ -20,7 +20,7 @@ WARN_1='\033[1;31m'
 WARN_2='\033[0;31m'
 RESET_COLOR='\033[0m'
 
-# Current and total taslks, used for progress updates
+# Current and total tasks, used for progress updates
 current_event=0
 total_events=73
 
@@ -33,7 +33,7 @@ if [ ! "$(uname -s)" = "Darwin" ]; then
   exit 1
 fi
 
-# Print info, and prompt for confrimation
+# Print info, and prompt for confirmation
 if [[ ! $params == *"--skip-intro"* ]]; then
   # Output what stuff will be updated
   echo -e "${PRIMARY_COLOR} MacOS User Preferences${RESET_COLOR}"

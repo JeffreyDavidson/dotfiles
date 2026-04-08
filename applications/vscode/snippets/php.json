@@ -42,7 +42,7 @@
         "prefix": "url",
         "body": [
             "#[Url$3]",
-            "public $1 = $2;",
+            "public $1 = $2;"
         ]
     },
 
@@ -76,5 +76,5 @@
             ""
         ],
         "description": "PHP constructor function"
-    },
+    }
 }

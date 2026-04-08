@@ -1,10 +1,6 @@
 # Security-related aliases and functions
 
 # 1Password CLI aliases (requires 'op' to be installed and configured)
-command_exists () {
-  hash "$1" 2> /dev/null
-}
-
 if command_exists op; then
   # 1Password shortcuts
   alias ops='op signin'

@@ -158,5 +158,5 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "claudeCode.preferredLocation": "panel",
-    "security.workspace.trust.untrustedFiles": "open",
+    "security.workspace.trust.untrustedFiles": "open"
 }

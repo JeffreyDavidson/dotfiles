@@ -47,12 +47,6 @@ ls-archive () {
 
 alias lz='ls-archive'
 
-# Make directory, and cd into it
-mkcd() {
-  local dir="$*";
-  mkdir -p "$dir" && cd "$dir";
-}
-
 # Make dir and copy
 mkcp() {
   local dir="$2"
@@ -83,6 +77,8 @@ fi
 
 if command_exists nvim; then
   alias v='nvim'
+else
+  alias nvim='vim'
 fi
 
 # Use color diff, if availible
@@ -99,7 +95,7 @@ alias ar='unalias' # Remove given alias
 alias cpwd='pwd | pbcopy' # Copy current path
 
 # App Specific
-if command_exists code ; then; alias vsc='code .'; fi # Launch VS Code in current dir
+if command_exists code; then alias vsc='code .'; fi
 alias agent-os='~/.config/agent-os/setup/project.sh' # Agent OS project setup
 
 # External Services

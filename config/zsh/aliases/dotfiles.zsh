@@ -2,21 +2,21 @@
 # Simple shortcuts for managing your dotfiles
 
 # Navigate to dotfiles directory
-alias dotfiles="cd ${DOTFILES:-$HOME/Projects/dotfiles}"
+alias dotfiles="cd ${DOTFILES:-$HOME/dotfiles}"
 alias dots="dotfiles"
 
 # Quick updates
-alias update-dotfiles="cd ${DOTFILES:-$HOME/Projects/dotfiles} && git pull"
-alias backup-dotfiles="${DOTFILES:-$HOME/Projects/dotfiles}/scripts/backup.sh"
+alias update-dotfiles="cd ${DOTFILES:-$HOME/dotfiles} && git pull"
+alias backup-dotfiles="${DOTFILES:-$HOME/dotfiles}/scripts/backup.sh"
 
 # Git shortcuts for dotfiles
-alias dfstatus="cd ${DOTFILES:-$HOME/Projects/dotfiles} && git status"
-alias dfpush="cd ${DOTFILES:-$HOME/Projects/dotfiles} && git add . && git commit -m 'Update dotfiles' && git push"
-alias dflog="cd ${DOTFILES:-$HOME/Projects/dotfiles} && git log --oneline -10"
+alias dfstatus="cd ${DOTFILES:-$HOME/dotfiles} && git status"
+alias dfpush="cd ${DOTFILES:-$HOME/dotfiles} && git add . && git commit -m 'Update dotfiles' && git push"
+alias dflog="cd ${DOTFILES:-$HOME/dotfiles} && git log --oneline -10"
 
 # Re-run installation
-alias install-dotfiles="${DOTFILES:-$HOME/Projects/dotfiles}/install.sh"
-alias setup-dotfiles="${DOTFILES:-$HOME/Projects/dotfiles}/scripts/setup.sh"
+alias install-dotfiles="${DOTFILES:-$HOME/dotfiles}/install.sh"
+alias setup-dotfiles="${DOTFILES:-$HOME/dotfiles}/install.sh"
 
 # Edit common configurations
 alias edit-zsh="code ${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
@@ -27,11 +27,11 @@ alias edit-starship="code ${XDG_CONFIG_HOME:-$HOME/.config}/starship/config.toml
 alias reload-shell="source ~/.zshenv && source ${ZDOTDIR:-$HOME}/.zshrc"
 
 # System info
-alias sysinfo="echo 'System: $(uname -a)' && echo 'Shell: $SHELL' && echo 'Dotfiles: ${DOTFILES:-$HOME/Projects/dotfiles}'"
+alias sysinfo="echo 'System: $(uname -a)' && echo 'Shell: $SHELL' && echo 'Dotfiles: ${DOTFILES:-$HOME/dotfiles}'"
 
 # Show dotfiles structure
 dotfiles-tree() {
-    local dotfiles_dir="${DOTFILES:-$HOME/Projects/dotfiles}"
+    local dotfiles_dir="${DOTFILES:-$HOME/dotfiles}"
     if command -v eza >/dev/null 2>&1; then
         eza --tree "$dotfiles_dir" -L 2 --icons
     elif command -v tree >/dev/null 2>&1; then
@@ -65,7 +65,7 @@ check-symlinks() {
 
 # Show what's new in dotfiles
 dotfiles-status() {
-    local dotfiles_dir="${DOTFILES:-$HOME/Projects/dotfiles}"
+    local dotfiles_dir="${DOTFILES:-$HOME/dotfiles}"
     
     if [[ ! -d "$dotfiles_dir/.git" ]]; then
         echo "❌ Not a git repository: $dotfiles_dir"

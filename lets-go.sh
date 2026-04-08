@@ -259,7 +259,7 @@ run_main_installer() {
     chmod +x ./install.sh || die "Failed to make install.sh executable"
     
     info "Launching main installation script..."
-    echo -e "${NORD_GRAY}" + "─" * 60 + "${RESET}"
+    echo -e "${NORD_GRAY}$(printf '─%.0s' {1..60})${RESET}"
     
     # Execute with all passed parameters, plus --no-clear to preserve our output
     exec ./install.sh --no-clear "$@"

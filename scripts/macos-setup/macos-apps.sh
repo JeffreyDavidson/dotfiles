@@ -20,7 +20,7 @@ WARN_1='\033[1;31m'
 WARN_2='\033[0;31m'
 RESET_COLOR='\033[0m'
 
-# Current and total taslks, used for progress updates
+# Current and total tasks, used for progress updates
 current_event=0
 total_events=37
 

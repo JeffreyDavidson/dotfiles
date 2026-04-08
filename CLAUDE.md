@@ -8,8 +8,7 @@ The following commands are available for development and setup:
 
 - **Install dotfiles:** `./install.sh` - Full interactive setup with symlinks, package installation, and system configuration
 - **Install dotfiles (auto-yes):** `./install.sh --auto-yes` - Non-interactive installation
-- **Quick install:** `./lets-go.sh` - Simplified installation script
-- **Make install:** `make install` - Alternative way to run the install script
+- **Quick install:** `./lets-go.sh` - Remote bootstrap script (clones repo, then runs install.sh)
 
 ## Architecture Overview
 
@@ -28,22 +27,19 @@ This is Jeffrey Davidson's personal dotfiles repository organized with the follo
 - `scripts/` - Installation and setup scripts
   - `installs/` - Contains Brewfile and prerequisite installation scripts
   - `macos-setup/` - macOS-specific preference and app configuration scripts
-  - `setup/` - Individual tool setup scripts (Node.js, SSH, VS Code)
-- `steps/` - Dotbot configuration modules (node.yml, vscode.yml)
 
 ### Environment Configuration
 
 - **XDG Base Directory:** Follows XDG specification with variables set in `config/zsh/.zshenv`
 - **ZSH Setup:** Primary shell configuration with Antigen plugin management
-- **Cross-Platform:** Primarily macOS-focused but includes some Linux support
+- **Platform:** macOS only
 
 ### Development Workflow
 
 The dotfiles use a modular approach where:
 1. `symlinks.yaml` defines the core symlink mappings using dotbot
-2. Individual YAML files in `steps/` handle specific application setups
-3. Shell scripts handle system-level configuration and package installation
-4. Environment variables are centralized in `.zshenv` following XDG standards
+2. Shell scripts handle system-level configuration and package installation
+3. Environment variables are centralized in `.zshenv` following XDG standards
 
 The installation process is designed to be idempotent and can be run multiple times safely.
 
@@ -51,5 +47,4 @@ The installation process is designed to be idempotent and can be run multiple ti
 
 When working with this repository, follow these commit standards:
 
-- **Never include Claude attribution** - Do not add "🤖 Generated with [Claude Code]", "Co-Authored-By: Claude", or similar Claude-related attribution to commit messages
 - **All commits must be signed** - Use GPG signing for security and authenticity. If GPG keys are not set up, use `--no-gpg-sign` temporarily but ensure proper GPG configuration is completed
