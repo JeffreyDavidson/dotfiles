@@ -32,7 +32,6 @@ if [[ -d $zsh_dir ]]; then
   source ${zsh_dir}/aliases/laravel.zsh
   source ${zsh_dir}/aliases/pest.zsh
   source ${zsh_dir}/aliases/phpunit.zsh
-  source ${zsh_dir}/aliases/vagrant.zsh
 
   # Setup Antigen, and import plugins
   source ${zsh_dir}/helpers/setup-antigen.zsh

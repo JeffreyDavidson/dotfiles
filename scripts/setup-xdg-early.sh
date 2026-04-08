@@ -2,7 +2,7 @@
 
 # Early XDG Directory Setup Script
 # Creates XDG-compliant directories before applications can create them in ~/
-# This prevents ~/.docker, ~/.gnupg, and other directories from being created
+# This prevents ~/.gnupg and other directories from being created
 
 set -euo pipefail
 
@@ -22,12 +22,6 @@ mkdir -p "$XDG_STATE_HOME"
 
 # Pre-create application-specific directories to prevent ~/. creation
 echo "📁 Creating application directories in XDG locations..."
-
-# Docker
-DOCKER_CONFIG_DIR="$XDG_CONFIG_HOME/docker"
-mkdir -p "$DOCKER_CONFIG_DIR"
-chmod 700 "$DOCKER_CONFIG_DIR"
-echo "   ✓ Docker config: $DOCKER_CONFIG_DIR"
 
 # GPG
 GNUPG_HOME="$XDG_CONFIG_HOME/gnupg"

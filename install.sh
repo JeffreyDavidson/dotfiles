@@ -51,7 +51,6 @@ BREWFILE_PATH="${DOTFILES_DIR}/scripts/installs/Brewfile"
 LAUNCHPAD_LAYOUT_PATH="${DOTFILES_DIR}/config/macos/launchpad.yml"
 GPG_SETUP_SCRIPT="./scripts/setup-gpg-xdg.sh"
 EARLY_XDG_SCRIPT="./scripts/setup-xdg-early.sh"
-DOCKER_XDG_SCRIPT="./scripts/setup-docker-xdg.sh"
 DEV_TOOLS_XDG_SCRIPT="./scripts/setup-dev-tools-xdg.sh"
 SSH_XDG_SCRIPT="./scripts/setup-ssh-xdg.sh"
 REMAINING_XDG_SCRIPT="./scripts/setup-remaining-xdg.sh"
@@ -641,7 +640,7 @@ function pre_setup_tasks() {
   setup_dotfiles_directory
 }
 
-# Run early XDG directory setup to prevent ~/.docker and ~/.gnupg creation
+# Run early XDG directory setup to prevent ~/.gnupg creation
 setup_early_xdg_directories() {
   local early_xdg_script="$EARLY_XDG_SCRIPT"
 
@@ -674,7 +673,7 @@ configure_xdg_variables() {
 
   echo -e "${GREEN}✓ XDG variables configured${RESET}"
 
-  # Run early XDG setup to prevent ~/.docker and ~/.gnupg creation
+  # Run early XDG setup to prevent ~/.gnupg creation
   setup_early_xdg_directories
 }
 
@@ -1121,29 +1120,6 @@ setup_remaining_xdg() {
   fi
 }
 
-# Setup Docker with XDG compliance
-setup_docker_xdg() {
-  local docker_script="$DOCKER_XDG_SCRIPT"
-
-  if [[ ! -f "$docker_script" ]]; then
-    return 1
-  fi
-
-  echo -e "\n${NORD_CYAN}Would you like to setup Docker with XDG compliance? (y/N)${RESET}"
-  read -t $PROMPT_TIMEOUT -n 1 -r ans_docker
-  if [[ $ans_docker =~ ^[Yy]$ ]] || [[ $AUTO_YES == true ]] ; then
-    echo -e "${NORD_BLUE}Setting up Docker with XDG compliance...${RESET}"
-
-    if chmod +x "$docker_script" && "$docker_script"; then
-      echo -e "${NORD_GREEN}✅ Docker XDG setup complete${RESET}"
-    else
-      echo -e "${NORD_RED}❌ Docker XDG setup failed${RESET}"
-      return 1
-    fi
-  else
-    echo -e "\n${NORD_BLUE}Skipping Docker XDG setup${RESET}"
-  fi
-}
 
 # Setup GPG with XDG compliance
 setup_gpg_xdg() {
@@ -1245,7 +1221,6 @@ function apply_preferences() {
   setup_default_shell
   setup_dev_tools_xdg
   setup_ssh_xdg
-  setup_docker_xdg
   setup_gpg_xdg
   setup_remaining_xdg
   install_zsh_plugins
