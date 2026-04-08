@@ -82,7 +82,7 @@ if command_exists batman; then
 fi
 
 if command_exists nvim; then
-  alias v=nvim
+  alias v='nvim'
 fi
 
 # Use color diff, if availible
@@ -97,10 +97,10 @@ alias ar='unalias' # Remove given alias
 
 # Copy / pasting
 alias cpwd='pwd | pbcopy' # Copy current path
-alias pa='pbpaste' # Paste clipboard contents
 
 # App Specific
 if command_exists code ; then; alias vsc='code .'; fi # Launch VS Code in current dir
+alias agent-os='~/.config/agent-os/setup/project.sh' # Agent OS project setup
 
 # External Services
 alias myip='curl icanhazip.com'
@@ -124,11 +124,10 @@ alias histrg='history -500 | rg' # Rip grep search recent history
 
 alias trail='<<<${(F)path}'
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
-alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
-alias showpublickey='bat ~/.ssh/id_ed25519.pub'
+alias copyssh="pbcopy < ${XDG_CONFIG_HOME:-$HOME/.config}/ssh/id_ed25519.pub"
+alias showpublickey='bat ${XDG_CONFIG_HOME:-$HOME/.config}/ssh/id_ed25519.pub'
 alias showFiles="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app"
 alias hideFiles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app"
-alias v="nvim"
 
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"

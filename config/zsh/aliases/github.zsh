@@ -1,14 +1,10 @@
 # Minimal GitHub CLI Setup
 # Essential backup commands for when GitKraken isn't available
 
-# Essential Git shortcuts (work everywhere)
-alias gst='git status'
-alias gco='git checkout'
+# Git shortcuts not covered in git.zsh
 alias gcb='git checkout -b'
-alias gcm='git checkout main'
 alias gcd='git checkout develop'
 alias gpu='git push -u origin HEAD'
-alias gpl='git pull'
 alias glog='git log --oneline --graph --decorate --all -10'
 
 # Check if GitHub CLI is available

@@ -91,19 +91,20 @@ if command_exists ssh-keygen; then
     local key_name="$1"
     local email="${2:-$(git config user.email)}"
     
-    ssh-keygen -t ed25519 -C "$email" -f "$HOME/.ssh/id_ed25519_$key_name"
-    echo "New SSH key generated: $HOME/.ssh/id_ed25519_$key_name"
-    echo "Add this to your SSH agent: ssh-add $HOME/.ssh/id_ed25519_$key_name"
+    local ssh_dir="${XDG_CONFIG_HOME:-$HOME/.config}/ssh"
+    ssh-keygen -t ed25519 -C "$email" -f "$ssh_dir/id_ed25519_$key_name"
+    echo "New SSH key generated: $ssh_dir/id_ed25519_$key_name"
+    echo "Add this to your SSH agent: ssh-add $ssh_dir/id_ed25519_$key_name"
   }
   
   # Show SSH key fingerprints
-  alias ssh-fingerprints='for key in ~/.ssh/*.pub; do echo "=== $key ==="; ssh-keygen -lf "$key"; done'
+  alias ssh-fingerprints='for key in ${XDG_CONFIG_HOME:-$HOME/.config}/ssh/*.pub; do echo "=== $key ==="; ssh-keygen -lf "$key"; done'
   
   # Copy SSH public key to clipboard
   ssh-copy-key() {
     local key_file="$1"
     if [ -z "$key_file" ]; then
-      key_file="$HOME/.ssh/id_ed25519.pub"
+      key_file="${XDG_CONFIG_HOME:-$HOME/.config}/ssh/id_ed25519.pub"
     fi
     
     if [ -f "$key_file" ]; then
