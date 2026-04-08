@@ -1,6 +1,6 @@
 [user]
-    name = Jeffrey Davidson
-    email = 3826104+JeffreyDavidson@users.noreply.github.com
+	name = Jeffrey Davidson
+	email = 3826104+JeffreyDavidson@users.noreply.github.com
     username = jeffreydavidson
 	signingKey = 28DB89B8E22C2D6355C3452DDFC32F67B6CE3B8B
 [init]
@@ -22,6 +22,14 @@
 [diff]
     colorMoved = default
 [commit]
-    gpgsign = true
+	gpgSign = true
 [alias]
 nah = "!f(){ git reset --hard; git clean -df; if [ -d ".git/rebase-apply" ] || [ -d ".git/rebase-merge" ]; then git rebase --abort; fi; }; f"
+[gpg]
+	format = openpgp
+	program = /opt/homebrew/bin/gpg
+[tag]
+	forceSignAnnotated = true
+[gpg "ssh"]
+	program = 
+	allowedSignersFile = 
