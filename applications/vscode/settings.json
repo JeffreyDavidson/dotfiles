@@ -28,7 +28,7 @@
     "editor.codeLens": false,
     "breadcrumbs.enabled": false,
     "scm.diffDecorations": "none",
-    "editor.hover.enabled": false,
+    "editor.hover.enabled": "off",
     "editor.matchBrackets": "never",
     "workbench.tips.enabled": false,
     "editor.colorDecorators": false,
@@ -108,10 +108,7 @@
     /**
     * PHP CS Fixer
     **/
-    "[php]": {
-        "editor.defaultFormatter": "open-southeners.laravel-pint"
-    },
-    "php-cs-fixer.lastDownload": 1757511935206,
+    "php-cs-fixer.lastDownload": 1775583688203,
     "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
     "php-cs-fixer.onsave": true,
     "php-cs-fixer.autoFixByBracket": false,
@@ -139,14 +136,6 @@
     "namespaceResolver.sortOnSave": true,
 
     /**
-    * Laravel Pint
-    **/
-    "laravel-pint.enable": true,
-    "laravel-pint.runInLaravelSail": true,
-    "laravel-pint.dirtyOnly": true,
-    "laravel-pint.preset": "laravel",
-
-    /**
     * TailwindCSS
     **/
     "tailwindCSS.emmetCompletions": true,
@@ -164,4 +153,10 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     "terminal.integrated.stickyScroll.enabled": false,
+    "chat.mcp.gallery.enabled": true,
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "claudeCode.preferredLocation": "panel",
+    "security.workspace.trust.untrustedFiles": "open",
 }
