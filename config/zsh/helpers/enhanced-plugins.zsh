@@ -179,7 +179,4 @@ if command -v fzf >/dev/null 2>&1; then
     bindkey '^T' transpose-chars  # Restore original Ctrl-T if needed
 fi
 
-# Load custom completions
-fpath=(~/.config/zsh/completions $fpath)
-
 # Note: compinit is handled in lib/completion.zsh with proper cache location

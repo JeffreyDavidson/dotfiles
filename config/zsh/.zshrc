@@ -61,14 +61,12 @@ path=(
   $path
   "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
   "$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin"
-  "$HOME/.fuel"
 )
 
 # compinit is handled in lib/completion.zsh
 
 eval "$(fzf --zsh)"
 eval "$(thefuck --alias)"
-eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 # Initialize zoxide quietly, but skip during plugin updates to avoid conflicts
 if command -v zoxide >/dev/null 2>&1 && [[ -z "$ANTIGEN_UPDATING" ]]; then

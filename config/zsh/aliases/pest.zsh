@@ -1,5 +1,5 @@
 # Pest
 alias pest="vendor/bin/pest"
-alias pestf="pu --filter "
-alias pestg="pu --group "
-alias pestt="pu --testsuite "
+alias pestf="pest --filter "
+alias pestg="pest --group "
+alias pestt="pest --testsuite "
