@@ -33,12 +33,6 @@ brew bundle install --file=scripts/installs/Brewfile
 echo "🔗 Creating symlinks..."
 ./install.sh --auto-yes
 
-# Install git hooks (simple validation)
-echo "🔧 Setting up git hooks..."
-if [[ -f "scripts/install-git-hooks.sh" ]]; then
-    ./scripts/install-git-hooks.sh
-fi
-
 # Set ZSH as default shell
 if [[ "$SHELL" != */zsh ]]; then
     echo "🐚 Setting ZSH as default shell..."

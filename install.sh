@@ -1193,6 +1193,7 @@ install_zsh_plugins() {
   fi
 }
 
+
 # Apply system-specific preferences and settings
 apply_system_preferences() {
   echo -e "\n${NORD_CYAN}Would you like to apply system preferences? (y/N)${RESET}"
