@@ -20,7 +20,6 @@
 - link:
     # Core shell configuration
     ~/.zshenv: { path: config/zsh/.zshenv, force: true }
-    ~/.zshrc: { path: config/zsh/.zshrc, force: true }
     ~/.hushlogin: hushlogin
 
     # XDG-compliant configurations
@@ -31,7 +30,6 @@
     ${XDG_CONFIG_HOME}/starship: config/starship
     ${XDG_CONFIG_HOME}/bat: config/bat
     ${XDG_CONFIG_HOME}/dircolors: config/dircolors
-    ${XDG_CONFIG_HOME}/utils: utils
 
     # Additional XDG-compliant configurations
     ${XDG_CONFIG_HOME}/vim: config/vim
@@ -39,10 +37,8 @@
     ${XDG_CONFIG_HOME}/claude: config/claude
     ${XDG_CONFIG_HOME}/wget: config/wget
 
-    # Security configurations
+    # Security configurations (gnupg excluded - contains machine-specific keys)
     ${XDG_CONFIG_HOME}/ssh: config/ssh
-    ${XDG_CONFIG_HOME}/gnupg/gpg.conf: config/gnupg/gpg.conf
-    ${XDG_CONFIG_HOME}/gnupg/gpg-agent.conf: config/gnupg/gpg-agent.conf
 
     # Enhanced shell tools
     ${XDG_CONFIG_HOME}/fzf: config/fzf
