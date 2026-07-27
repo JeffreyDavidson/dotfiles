@@ -5,6 +5,7 @@ Masfile.lock.json
 
 # Auto-generated files
 config/zsh/.zcompcache/*
+config/zsh/zsh/zcompcache/
 config/zsh/*/*.zwc
 config/zsh/.zsh_sessions/*
 config/zsh/.zcompdump*
@@ -21,6 +22,7 @@ config/zsh/.zcompdump*
 
 # Claude Code personal data
 config/claude/claude.json
+.claude/settings.local.json
 
 # GPG keys and personal crypto data
 config/gnupg/*.gpg

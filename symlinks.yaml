@@ -32,7 +32,6 @@
     ${XDG_CONFIG_HOME}/dircolors: config/dircolors
 
     # Additional XDG-compliant configurations
-    ${XDG_CONFIG_HOME}/vim: config/vim
     ${XDG_CONFIG_HOME}/act: config/act
     ${XDG_CONFIG_HOME}/claude: config/claude
     ${XDG_CONFIG_HOME}/wget: config/wget

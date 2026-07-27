@@ -75,11 +75,7 @@ if command_exists batman; then
   alias man=batman
 fi
 
-if command_exists nvim; then
-  alias v='nvim'
-else
-  alias nvim='vim'
-fi
+alias v='nvim'
 
 # Use color diff, if availible
 if command_exists colordiff ; then

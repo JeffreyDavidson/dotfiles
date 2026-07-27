@@ -11,7 +11,7 @@ export XDG_LIB_HOME="${HOME}/.local/lib"
 export XDG_STATE_HOME="${HOME}/.local/state"
 
 # Set default applications
-export EDITOR="vim"
+export EDITOR="nvim"
 export BROWSER="firefox"
 export PAGER="less"
 export NULLCMD=bat
@@ -33,7 +33,6 @@ export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_BUNDLE_FILE="${XDG_CONFIG_HOME}/Brewfile"
 
 # Additional XDG compliance for applications
-export VIMINIT='source $XDG_CONFIG_HOME/vim/vimrc'
 export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc"
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 export _Z_DATA="$XDG_STATE_HOME/z/data"
@@ -52,3 +51,5 @@ export SSH_CONFIG_FILE="${XDG_CONFIG_HOME}/ssh/config"
 
 # ZSH completion cache location (prevent creation in dotfiles directory)
 export ZSH_COMPDUMP="${XDG_CACHE_HOME}/zsh/.zcompdump"
+
+[[ -r "$HOME/.config/uidotsh/env" ]] && source "$HOME/.config/uidotsh/env"

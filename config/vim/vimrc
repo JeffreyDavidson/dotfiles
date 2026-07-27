@@ -1,3 +1,0 @@
-
-" Disable writing .viminfo (migrating to Neovim)
-set viminfofile=NONE

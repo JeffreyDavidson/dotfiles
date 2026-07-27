@@ -157,6 +157,7 @@
     "[vue]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "claudeCode.preferredLocation": "panel",
-    "security.workspace.trust.untrustedFiles": "open"
+    "claudeCode.preferredLocation":"sidebar",
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.enableMultiLinePasteWarning": "never"
 }

@@ -30,6 +30,3 @@ nah = "!f(){ git reset --hard; git clean -df; if [ -d ".git/rebase-apply" ] || [
 	program = /opt/homebrew/bin/gpg
 [tag]
 	forceSignAnnotated = true
-[gpg "ssh"]
-	program = 
-	allowedSignersFile = 
